@@ -6,7 +6,6 @@ extends Node2D
 @export var spawnInterval: float = 1.0
 
 func _ready():
-	print(spawnInterval)
 	$PacketCreationTimer.wait_time = spawnInterval
 	$PacketCreationTimer.timeout.connect(createPacket)
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bg2x3ubqtv6je" path="res://concepts/relay-tower.png" id="2_2gk58"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
-font_size = 50
+font_size = 30
 
 [node name="HUD" type="CanvasLayer" unique_id=114495]
 

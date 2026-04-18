@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	GameState.onPacketLost.connect(updateHUD)
-	GameState.onPacketReceived.connect(updateHUD)
+	GameState.onPacketReceived.connect(func(payload): updateHUD())
 
 func updateHUD():
 	$PacketsLostLabel.text = str(GameState._packetsLost) + " packets lost"
