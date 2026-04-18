@@ -1,80 +1,13 @@
 [gd_scene format=3 uid="uid://cpqhc4o6gw6nv"]
 
-[ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_74vgp"]
+[ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="1_kr4f8"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="2_mv1ug"]
 [ext_resource type="PackedScene" uid="uid://bujp2ee8lyfqq" path="res://entities/towers/gravity/gravity_tower.tscn" id="3_awagt"]
 [ext_resource type="PackedScene" uid="uid://bh8f05rppbhib" path="res://entities/towers/anti_gravity/anti_gravity_tower.tscn" id="4_kr4f8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1ug"]
-size = Vector2(20, 567.0043)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_awagt"]
-size = Vector2(812.97156, 33.96173)
-
 [node name="TestSender" type="Node2D" unique_id=324347188]
 
-[node name="Walls" type="Node2D" parent="." unique_id=1677494826]
-scale = Vector2(0.11648584, 0.10750823)
-
-[node name="wall_left" type="Sprite2D" parent="Walls" unique_id=233180119]
-texture_repeat = 2
-position = Vector2(532.93756, 12400.998)
-scale = Vector2(53.244038, 42.931465)
-texture = ExtResource("1_74vgp")
-region_enabled = true
-region_rect = Rect2(0, 0, 21.143677, 569)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/wall_left" unique_id=888333886]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall_left/StaticBody2D" unique_id=1156409150]
-position = Vector2(0, -0.37036133)
-shape = SubResource("RectangleShape2D_mv1ug")
-
-[node name="wall_right" type="Sprite2D" parent="Walls" unique_id=1124085888]
-texture_repeat = 2
-position = Vector2(38512.004, 12391.998)
-scale = Vector2(54.297626, 42.899826)
-texture = ExtResource("1_74vgp")
-region_enabled = true
-region_rect = Rect2(0, 0, 21.143677, 569)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/wall_right" unique_id=1316877528]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall_right/StaticBody2D" unique_id=181417445]
-position = Vector2(0, -0.37036133)
-shape = SubResource("RectangleShape2D_mv1ug")
-
-[node name="wall_bottom" type="Sprite2D" parent="Walls" unique_id=1059266268]
-texture_repeat = 2
-position = Vector2(19528.004, 23887.5)
-scale = Vector2(48.078327, 42.999935)
-texture = ExtResource("1_74vgp")
-region_enabled = true
-region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/wall_bottom" unique_id=70321856]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall_bottom/StaticBody2D" unique_id=1031685579]
-position = Vector2(1.2077026, -0.13043213)
-scale = Vector2(0.9999994, 0.9999999)
-shape = SubResource("RectangleShape2D_awagt")
-
-[node name="wall_top" type="Sprite2D" parent="Walls" unique_id=2032520196]
-texture_repeat = 2
-position = Vector2(19528.004, 905.00006)
-scale = Vector2(48.078327, 42.999935)
-texture = ExtResource("1_74vgp")
-region_enabled = true
-region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/wall_top" unique_id=173543520]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall_top/StaticBody2D" unique_id=869483455]
-position = Vector2(1.2077026, -0.13043213)
-scale = Vector2(0.9999994, 0.9999999)
-shape = SubResource("RectangleShape2D_awagt")
-
-[node name="Node2D" type="Node2D" parent="Walls" unique_id=950126300]
+[node name="Walls" parent="." unique_id=903204524 instance=ExtResource("1_kr4f8")]
 
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("2_mv1ug")]
 position = Vector2(277.5947, 400.97012)

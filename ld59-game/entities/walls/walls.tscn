@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://3i1vgtrekd1x"]
+
+[ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_or50a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1ug"]
+size = Vector2(20, 567.0043)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awagt"]
+size = Vector2(812.97156, 33.96173)
+
+[node name="Walls" type="Node2D" unique_id=903204524]
+scale = Vector2(0.11648584, 0.10750823)
+
+[node name="wall_left" type="Sprite2D" parent="." unique_id=826850754]
+texture_repeat = 2
+position = Vector2(532.93756, 12400.998)
+scale = Vector2(53.244038, 42.931465)
+texture = ExtResource("1_or50a")
+region_enabled = true
+region_rect = Rect2(0, 0, 21.143677, 569)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_left" unique_id=596316177]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left/StaticBody2D" unique_id=1948381962]
+position = Vector2(0, -0.37036133)
+shape = SubResource("RectangleShape2D_mv1ug")
+
+[node name="wall_right" type="Sprite2D" parent="." unique_id=1361412375]
+texture_repeat = 2
+position = Vector2(38512.004, 12391.998)
+scale = Vector2(54.297626, 42.899826)
+texture = ExtResource("1_or50a")
+region_enabled = true
+region_rect = Rect2(0, 0, 21.143677, 569)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_right" unique_id=875389524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right/StaticBody2D" unique_id=139602647]
+position = Vector2(0, -0.37036133)
+shape = SubResource("RectangleShape2D_mv1ug")
+
+[node name="wall_bottom" type="Sprite2D" parent="." unique_id=2097180837]
+texture_repeat = 2
+position = Vector2(19528.004, 23887.5)
+scale = Vector2(48.078327, 42.999935)
+texture = ExtResource("1_or50a")
+region_enabled = true
+region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_bottom" unique_id=16091686]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_bottom/StaticBody2D" unique_id=110741449]
+position = Vector2(1.2077026, -0.13043213)
+scale = Vector2(0.9999994, 0.9999999)
+shape = SubResource("RectangleShape2D_awagt")
+
+[node name="wall_top" type="Sprite2D" parent="." unique_id=34154733]
+texture_repeat = 2
+position = Vector2(19528.004, 905.00006)
+scale = Vector2(48.078327, 42.999935)
+texture = ExtResource("1_or50a")
+region_enabled = true
+region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_top" unique_id=1932330188]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_top/StaticBody2D" unique_id=488922181]
+position = Vector2(1.2077026, -0.13043213)
+scale = Vector2(0.9999994, 0.9999999)
+shape = SubResource("RectangleShape2D_awagt")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1019870753]
