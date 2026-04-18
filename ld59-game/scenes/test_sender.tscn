@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bujp2ee8lyfqq" path="res://entities/towers/gravity/gravity_tower.tscn" id="3_awagt"]
 [ext_resource type="PackedScene" uid="uid://bh8f05rppbhib" path="res://entities/towers/anti_gravity/anti_gravity_tower.tscn" id="4_kr4f8"]
 [ext_resource type="PackedScene" uid="uid://oo7hw2v4cf22" path="res://entities/towers/wall/wall_tower.tscn" id="5_nivf7"]
+[ext_resource type="PackedScene" uid="uid://ck4loryblva0u" path="res://entities/towers/payload/payload_tower.tscn" id="6_vvhqw"]
 
 [node name="TestSender" type="Node2D" unique_id=324347188]
 
@@ -33,3 +34,6 @@ position = Vector2(3650, 1056)
 
 [node name="GravityTower2" parent="." unique_id=910219765 instance=ExtResource("3_awagt")]
 position = Vector2(2100, 679)
+
+[node name="PayloadTower" parent="." unique_id=633791007 instance=ExtResource("6_vvhqw")]
+position = Vector2(719, 786)

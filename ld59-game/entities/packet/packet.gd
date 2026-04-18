@@ -15,3 +15,8 @@ func onCollision(body: Node2D):
 	if ttl <= 0:
 		GameState.onPacketLost.emit()
 		queue_free()
+
+func increasePayload():
+	print("kfnsdfnsdfkjn")
+	payload += 1
+	set_scale(Vector2.ONE * payload )
