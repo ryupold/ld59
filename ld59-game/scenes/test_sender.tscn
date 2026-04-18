@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cpqhc4o6gw6nv"]
+
+[ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_74vgp"]
+[ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="2_mv1ug"]
+
+[node name="TestSender" type="Node2D" unique_id=324347188]
+scale = Vector2(0.25937095, 0.25937095)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1677494826]
+scale = Vector2(0.11648584, 0.10750823)
+
+[node name="wall_left" type="Sprite2D" parent="Walls" unique_id=233180119]
+texture_repeat = 2
+position = Vector2(532.93756, 12400.998)
+scale = Vector2(53.244038, 42.931465)
+texture = ExtResource("1_74vgp")
+region_enabled = true
+region_rect = Rect2(0, 0, 21.143677, 569)
+
+[node name="wall_right" type="Sprite2D" parent="Walls" unique_id=1124085888]
+texture_repeat = 2
+position = Vector2(38512.004, 12391.998)
+scale = Vector2(54.297626, 42.899826)
+texture = ExtResource("1_74vgp")
+region_enabled = true
+region_rect = Rect2(0, 0, 21.143677, 569)
+
+[node name="wall_bottom" type="Sprite2D" parent="Walls" unique_id=1059266268]
+texture_repeat = 2
+position = Vector2(19528.004, 23887.5)
+scale = Vector2(48.078327, 42.999935)
+texture = ExtResource("1_74vgp")
+region_enabled = true
+region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
+
+[node name="wall_top" type="Sprite2D" parent="Walls" unique_id=2032520196]
+texture_repeat = 2
+position = Vector2(19528.004, 905.00006)
+scale = Vector2(48.078327, 42.999935)
+texture = ExtResource("1_74vgp")
+region_enabled = true
+region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
+
+[node name="Sender" parent="." unique_id=1211801374 instance=ExtResource("2_mv1ug")]
+position = Vector2(20312, 4495)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=666938385]
+position = Vector2(2286.3008, 1330.1412)
