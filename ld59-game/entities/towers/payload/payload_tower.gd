@@ -1,9 +1,7 @@
 extends Tower
 
 func _ready() -> void:
-	super._ready()
-	usePacketList = false
-	onPacketEnter.connect(func(p:Packet): p.increasePayload())
+	collisionArea.body_entered.connect(addCompute)
 
 	collisionArea.scale = Vector2.ZERO
 	var tween := create_tween().set_loops()
@@ -11,3 +9,10 @@ func _ready() -> void:
 	tween.tween_interval(0.5)
 	tween.tween_property(collisionArea, "scale", Vector2.ZERO, 0)
 	tween.tween_interval(1)
+
+
+func addCompute(body: Node2D) -> void:
+	if body is Packet:
+		var packet := body as Packet
+		packet.increasePayload()
+	return
