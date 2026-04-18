@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bujp2ee8lyfqq"]
+
+[ext_resource type="Script" uid="uid://cdtbgomude17w" path="res://entities/towers/gravity/gravity_tower.gd" id="1_50pgb"]
+[ext_resource type="Texture2D" uid="uid://ddn74ovhrt1hg" path="res://thenounproject.png" id="1_f6cjg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50pgb"]
+radius = 600.0
+
+[node name="GravityTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("collisionArea")]
+script = ExtResource("1_50pgb")
+collisionArea = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328720220]
+modulate = Color(1, 0, 1, 1)
+texture = ExtResource("1_f6cjg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=505660784]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1262524344]
+shape = SubResource("CircleShape2D_50pgb")
