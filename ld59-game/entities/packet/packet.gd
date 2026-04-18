@@ -23,3 +23,6 @@ func increasePayload() -> void:
 	for child in get_children():
 		if child is Node2D:
 			child.scale = newScale
+
+func increaseTtl() -> void:
+	ttl += 1
