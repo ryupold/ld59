@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="2_mv1ug"]
 
 [node name="TestSender" type="Node2D" unique_id=324347188]
-scale = Vector2(0.25937095, 0.25937095)
+position = Vector2(3, 0)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1677494826]
 scale = Vector2(0.11648584, 0.10750823)
@@ -45,4 +45,5 @@ region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
 position = Vector2(277.5947, 400.97012)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=666938385]
-position = Vector2(2286.3008, 1330.1412)
+position = Vector2(2264, 1327)
+zoom = Vector2(0.275, 0.275)
