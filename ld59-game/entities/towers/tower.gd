@@ -2,7 +2,7 @@ class_name Tower extends Node2D
 
 @export var collisionArea: Area2D
 var packetsColliding: Array[Packet]
-var usePackageList: bool = true
+var usePacketList: bool = true
 
 signal onPacketEnter(packet: Packet)
 signal onPacketExit(packet: Packet)
@@ -15,7 +15,7 @@ func addCompute(body: Node2D) -> void:
 	if body is Packet:
 		var packet := body as Packet
 		onPacketEnter.emit(packet)
-		if usePackageList:
+		if usePacketList:
 			packetsColliding.append(packet)
 	return
 
@@ -27,6 +27,6 @@ func removeCompute(body: Node2D) -> void:
 		if pos == -1:
 			return
 		onPacketExit.emit(packet)
-		if usePackageList:
+		if usePacketList:
 			packetsColliding.remove_at(pos);
 	return

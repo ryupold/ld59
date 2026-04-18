@@ -3,7 +3,7 @@ extends Tower
 var tween: Tween
 
 func _ready() -> void:
-	usePackageList = false
+	usePacketList = false
 	onPacketEnter.connect(func(p:Packet): p.increasePayload())
 	onPacketEnter.connect(func(p:Packet): print("enter"))
 	var collsioonshape: CollisionShape2D = collisionArea.get_child(0)
