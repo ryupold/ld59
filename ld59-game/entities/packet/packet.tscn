@@ -14,6 +14,8 @@ radius = 66.0
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_g4aub")
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
 linear_damp_mode = 1
 script = ExtResource("1_2lw8n")
 
