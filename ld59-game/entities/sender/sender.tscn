@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d0cuiwxuevfh"]
 
-[ext_resource type="Texture2D" uid="uid://ddn74ovhrt1hg" path="res://thenounproject.png" id="1_d14f6"]
+[ext_resource type="Texture2D" uid="uid://ddn74ovhrt1hg" path="res://thenounproject.png" id="1_gb42k"]
 
-[node name="CellTower" type="Node2D" unique_id=1211801374]
+[node name="Sender" type="Node2D" unique_id=1211801374]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160610372]
-texture = ExtResource("1_d14f6")
+texture = ExtResource("1_gb42k")
