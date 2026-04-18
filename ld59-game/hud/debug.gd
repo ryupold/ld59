@@ -1,6 +1,4 @@
-extends CanvasLayer
-
-class_name HUD
+extends Control
 
 func _ready():
 	GameState.onPacketLost.connect(updateHUD)
