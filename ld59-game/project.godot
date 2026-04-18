@@ -14,6 +14,14 @@ config/name="LD59"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*uid://yyu8upgdagvb"
+
+[dotnet]
+
+project/assembly_name="LD59"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
