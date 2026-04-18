@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_74vgp"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="2_mv1ug"]
+[ext_resource type="PackedScene" uid="uid://bujp2ee8lyfqq" path="res://entities/towers/gravity/gravity_tower.tscn" id="3_awagt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1ug"]
 size = Vector2(20, 567.0043)
@@ -84,4 +85,4 @@ position = Vector2(2264, 1327)
 zoom = Vector2(0.275, 0.275)
 
 [node name="GravityTower" parent="." unique_id=1233834996 instance=ExtResource("3_awagt")]
-position = Vector2(596, 954)
+position = Vector2(449, 1048)
