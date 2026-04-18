@@ -10,15 +10,9 @@ class_name Packet
 
 func _ready():
 	body_entered.connect(onCollision)
-	pass
-	
-#func _physics_process(delta):
-	#var x := move_and_collide(Vector2(0,0))
-	#if x:
-		#print(x.get_position())
 
 func onCollision(body: Node2D):
 	ttl -= 1
 	if ttl <= 0:
-		GameState.packetsLost += 1
+		GameState.onPacketLost.emit()
 		queue_free()

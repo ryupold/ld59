@@ -86,16 +86,13 @@ position = Vector2(2264, 1327)
 zoom = Vector2(0.275, 0.275)
 
 [node name="AntiGravityTower" parent="." unique_id=2014474127 instance=ExtResource("4_kr4f8")]
-position = Vector2(1374, 1891)
+position = Vector2(828, 1524)
 
 [node name="GravityTower" parent="." unique_id=1233834996 instance=ExtResource("3_awagt")]
-position = Vector2(566, 1133)
+position = Vector2(2588, 1901)
 
-[node name="GravityTower" parent="GravityTower" unique_id=1194277531 instance=ExtResource("3_awagt")]
-position = Vector2(1456, -147)
+[node name="AntiGravityTower2" parent="." unique_id=742290115 instance=ExtResource("4_kr4f8")]
+position = Vector2(3650, 1056)
 
-[node name="GravityTower" parent="GravityTower/GravityTower" unique_id=1259367884 instance=ExtResource("3_awagt")]
-position = Vector2(1669, -54)
-
-[node name="GravityTower" parent="GravityTower/GravityTower/GravityTower" unique_id=1743565665 instance=ExtResource("3_awagt")]
-position = Vector2(-676, 984)
+[node name="GravityTower2" parent="." unique_id=910219765 instance=ExtResource("3_awagt")]
+position = Vector2(2100, 679)

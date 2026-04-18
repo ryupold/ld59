@@ -11,5 +11,3 @@ texture = ExtResource("1_gb42k")
 
 [node name="PacketCreationTimer" type="Timer" parent="." unique_id=1597540509]
 autostart = true
-
-[connection signal="timeout" from="PacketCreationTimer" to="." method="_on_packet_creation_timer_timeout"]
