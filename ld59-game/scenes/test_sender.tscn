@@ -42,7 +42,7 @@ region_enabled = true
 region_rect = Rect2(0, 535.0687, 766.81177, 33.931274)
 
 [node name="Sender" parent="." unique_id=1211801374 instance=ExtResource("2_mv1ug")]
-position = Vector2(20312, 4495)
+position = Vector2(277.5947, 400.97012)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=666938385]
 position = Vector2(2286.3008, 1330.1412)
