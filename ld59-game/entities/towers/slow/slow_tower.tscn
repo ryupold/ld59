@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cv0dyuglhhbwd"]
+
+[ext_resource type="Script" uid="uid://bqvcl6bx88sip" path="res://entities/towers/slow/slow_tower.gd" id="1_aefpk"]
+[ext_resource type="Texture2D" uid="uid://bj2a6qbehyyj2" path="res://concepts/relay-tower2.png" id="2_aefpk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50pgb"]
+radius = 600.0
+
+[node name="SlowTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("collisionArea")]
+script = ExtResource("1_aefpk")
+collisionArea = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328720220]
+texture = ExtResource("2_aefpk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=505660784]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1262524344]
+shape = SubResource("CircleShape2D_50pgb")
