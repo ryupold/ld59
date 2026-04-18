@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cett1m8m3l8gn"]
+
+[ext_resource type="Script" uid="uid://dh0obqnt32g2y" path="res://hud/tower_picker/tower_canvas_item/tower_canvas_item.gd" id="1_6cimu"]
+[ext_resource type="Texture2D" uid="uid://350qv4qrqaji" path="res://concepts/packet.png" id="2_njyx8"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_wmwfi"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://hud/tower_picker/tower_resource.gd" id="3_feqxd"]
+[ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="4_feqxd"]
+
+[sub_resource type="Resource" id="Resource_fynk8"]
+script = ExtResource("3_feqxd")
+previewImage = ExtResource("2_njyx8")
+towerScene = ExtResource("4_feqxd")
+metadata/_custom_type_script = "uid://bjemchx618kvp"
+
+[node name="TowerCanvasItem" type="PanelContainer" unique_id=871496032 node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(150, 150)
+mouse_default_cursor_shape = 2
+script = ExtResource("1_6cimu")
+tower = SubResource("Resource_fynk8")
+button = NodePath("MarginContainer/Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1593872442]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1595520864]
+layout_mode = 2
+icon = ExtResource("2_wmwfi")
+icon_alignment = 1
+expand_icon = true

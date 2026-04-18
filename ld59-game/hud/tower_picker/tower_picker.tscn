@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmoygirrjplv2"]
+
+[ext_resource type="Script" uid="uid://dbuhil80h1yx8" path="res://hud/tower_picker/tower_picker.gd" id="1_k4fev"]
+[ext_resource type="PackedScene" uid="uid://cett1m8m3l8gn" path="res://hud/tower_picker/tower_canvas_item/tower_canvas_item.tscn" id="2_ih87c"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://hud/tower_picker/tower_resource.gd" id="2_nq4c7"]
+[ext_resource type="Texture2D" uid="uid://bj2a6qbehyyj2" path="res://concepts/relay-tower2.png" id="3_a5so6"]
+[ext_resource type="PackedScene" uid="uid://cv0dyuglhhbwd" path="res://entities/towers/slow/slow_tower.tscn" id="4_p3fov"]
+
+[sub_resource type="Resource" id="Resource_nq4c7"]
+script = ExtResource("2_nq4c7")
+previewImage = ExtResource("3_a5so6")
+towerScene = ExtResource("4_p3fov")
+metadata/_custom_type_script = "uid://bjemchx618kvp"
+
+[node name="TowerPicker" type="HFlowContainer" unique_id=810922384]
+custom_minimum_size = Vector2(100, 100)
+size_flags_vertical = 8
+script = ExtResource("1_k4fev")
+towers = Array[ExtResource("2_nq4c7")]([SubResource("Resource_nq4c7")])
+
+[node name="TowerCanvasItem" parent="." unique_id=871496032 instance=ExtResource("2_ih87c")]
+layout_mode = 2
