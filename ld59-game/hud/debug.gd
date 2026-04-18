@@ -7,4 +7,4 @@ func _ready():
 func updateHUD():
 	$PacketsLostLabel.text = str(GameState._packetsLost) + " packets lost"
 	$PayloadReceivedLabel.text = str(GameState._payloadReceived) + " payload received"
-	$PayloadPerSecondLabel.text = str(GameState._payloadPerSecond) + " payload/s"
+	$PayloadPerSecondLabel.text = ("%.2f" % GameState._payloadPerSecond) + " payload/s"

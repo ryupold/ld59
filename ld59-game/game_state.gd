@@ -25,5 +25,5 @@ func _process(delta):
 	_currentPayloadBufferTime += delta
 	if _currentPayloadBufferTime >= 1:
 		_currentPayloadBufferTime -= 1
-		_payloadPerSecond = _currentPayloadBuffer
+		_payloadPerSecond = (_payloadPerSecond + _currentPayloadBuffer) / 2
 		_currentPayloadBuffer = 0
