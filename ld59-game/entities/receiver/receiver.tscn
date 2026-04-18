@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://sc317p0yslvi"]
 
 [ext_resource type="Texture2D" uid="uid://d2f028d7tnpke" path="res://concepts/receiver.png" id="1_ooahl"]
+[ext_resource type="Script" uid="uid://stivelja4v6f" path="res://entities/receiver/receiver.gd" id="2_iliiv"]
 
-[node name="Receiver" type="Node2D" unique_id=1476249835]
+[sub_resource type="CircleShape2D" id="CircleShape2D_iliiv"]
+radius = 176.81912
+
+[node name="Receiver" type="StaticBody2D" unique_id=2106263029]
+script = ExtResource("2_iliiv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=336344477]
 texture = ExtResource("1_ooahl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218089614]
+shape = SubResource("CircleShape2D_iliiv")

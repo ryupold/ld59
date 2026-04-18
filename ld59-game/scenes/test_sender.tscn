@@ -17,6 +17,7 @@
 position = Vector2(277.5947, 400.97012)
 packetParent = NodePath("..")
 spawnDistance = 200.0
+spawnInterval = 0.1
 
 [node name="Receiver" parent="." unique_id=1476249835 instance=ExtResource("3_nivf7")]
 position = Vector2(4211, 2175)

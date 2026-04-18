@@ -11,7 +11,6 @@ script = ExtResource("1_dleeo")
 collisionArea = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328720220]
-modulate = Color(1, 0.38734543, 0.42409912, 1)
 texture = ExtResource("2_dleeo")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=505660784]

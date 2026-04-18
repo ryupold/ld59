@@ -6,23 +6,32 @@ class_name Packet
 @export var ttl: int = 5
 @export var payload: int = 1
 @export var degradation: int
-@export var growthModifier := 0.1
+@export var growthModifier := 0.3
+var originalSpriteScale: float
+var originalColliderScale: float
 
 func _ready() -> void:
 	body_entered.connect(onCollision)
+	originalSpriteScale = $Sprite.scale.x
+	originalColliderScale = $CollisionShape2D.scale.x
 
 func onCollision(body: Node2D) -> void:
-	ttl -= 1
-	if ttl <= 0:
-		GameState.onPacketLost.emit()
+	if body is Receiver:
+		GameState.onPacketLost.emit(payload)
 		queue_free()
+	else: # its a wall (probably)
+		ttl -= 1
+		if ttl == 0:
+			GameState.onPacketLost.emit()
+			queue_free()
 
 func increasePayload() -> void:
 	payload += 1
-	var newScale := Vector2.ONE * (1 + (payload-1) * growthModifier)
-	for child in get_children():
-		if child is Node2D:
-			child.scale = newScale
+	var newSpriteScale := originalSpriteScale * (1 + (payload-1) * growthModifier)
+	$Sprite.scale = Vector2(newSpriteScale, newSpriteScale)
+	#($CollisionShape2D.shape as CircleShape2D).radius = originalColliderRadius * (1 + (payload-1) * growthModifier)
+	var newColliderScale = originalColliderScale * (1 + (payload-1) * growthModifier)
+	$CollisionShape2D.scale = Vector2(newColliderScale, newColliderScale)
 
 func increaseTtl() -> void:
 	ttl += 1

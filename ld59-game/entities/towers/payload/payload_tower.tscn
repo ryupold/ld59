@@ -11,7 +11,6 @@ script = ExtResource("1_hk4hf")
 collisionArea = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328720220]
-modulate = Color(0.8648721, 0.5381588, 0, 1)
 texture = ExtResource("2_hk4hf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=505660784]

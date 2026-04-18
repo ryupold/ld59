@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://crxtta1ilaygc"]
 
 [ext_resource type="Script" uid="uid://cat60h8kd57yu" path="res://entities/packet/packet.gd" id="1_2lw8n"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_aocyf"]
+[ext_resource type="Texture2D" uid="uid://350qv4qrqaji" path="res://concepts/packet.png" id="2_g4aub"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4aub"]
 friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4aub"]
-radius = 66.0
+radius = 30.0
 
 [node name="Packet" type="RigidBody2D" unique_id=488777420]
 collision_layer = 2
@@ -20,7 +20,9 @@ linear_damp_mode = 1
 script = ExtResource("1_2lw8n")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1339289041]
-texture = ExtResource("2_aocyf")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_g4aub")
+region_rect = Rect2(0, 0, 264.42572, 294.21487)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1903941625]
 shape = SubResource("CircleShape2D_g4aub")
