@@ -28,6 +28,10 @@ window/size/viewport_height=768
 
 project/assembly_name="LD59"
 
+[layer_names]
+
+2d_physics/layer_2="Packets"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

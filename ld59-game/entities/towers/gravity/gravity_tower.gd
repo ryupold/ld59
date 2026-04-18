@@ -11,8 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for packet in packetsColliding:
 		var offset := global_position - packet.global_position
-		packet.apply_impulse(offset.normalized() *3)
-
+		packet.apply_impulse(offset.normalized() * 10)
 	return
 
 func addCompute(body: Node2D) -> void:
