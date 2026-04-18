@@ -2,9 +2,40 @@ extends Tower
 
 @export var collisionArea: Area2D;
 
-func _ready() -> void:
-	collisionArea.body_entered.connect(_on_area_2d_body_entered)
+var packetsColliding: Array[Packet];
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body.name + "entered")
-	pass # Replace with function body.
+func _ready() -> void:
+	collisionArea.body_entered.connect(addCompute)
+	collisionArea.body_exited.connect(removeCompute)
+
+func _process(delta: float) -> void:
+	print("Packets controlling " + str(packetsColliding.size()))
+
+	for packet in packetsColliding:
+		var offset := global_position - packet.global_position
+		packet.apply_impulse(offset.normalized() *3)
+
+	return
+
+func addCompute(body: Node2D) -> void:
+	print(body.name + " entered")
+
+	if body is Packet:
+		var packet := body as Packet
+		packetsColliding.append(packet)
+
+	return
+
+
+func removeCompute(body: Node2D) -> void:
+	print(body.name + " left")
+
+	if body is Packet:
+		var packet := body as Packet
+		var pos := packetsColliding.find(packet)
+		if pos == -1:
+			return
+		packetsColliding.remove_at(pos);
+		print("removed: " + str(pos))
+		print(packetsColliding.size())
+	return
