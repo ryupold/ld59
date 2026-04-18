@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func onCollision(body: Node2D) -> void:
 	if body is Receiver:
-		GameState.onPacketLost.emit(payload)
+		GameState.onPacketReceived.emit(payload)
 		queue_free()
 	else: # its a wall (probably)
 		ttl -= 1
@@ -29,7 +29,6 @@ func increasePayload() -> void:
 	payload += 1
 	var newSpriteScale := originalSpriteScale * (1 + (payload-1) * growthModifier)
 	$Sprite.scale = Vector2(newSpriteScale, newSpriteScale)
-	#($CollisionShape2D.shape as CircleShape2D).radius = originalColliderRadius * (1 + (payload-1) * growthModifier)
 	var newColliderScale = originalColliderScale * (1 + (payload-1) * growthModifier)
 	$CollisionShape2D.scale = Vector2(newColliderScale, newColliderScale)
 

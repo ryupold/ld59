@@ -1,7 +1,3 @@
 extends Node2D
-
 class_name Receiver
-
-func _ready():
-	#$StaticBody2D
-	pass
+# just here so we can check that Packet has collided with it by type

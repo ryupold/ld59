@@ -1,0 +1,12 @@
+extends CanvasLayer
+
+class_name HUD
+
+func _ready():
+	GameState.onPacketLost.connect(updateHUD)
+	GameState.onPacketReceived.connect(updateHUD)
+
+func updateHUD():
+	$PacketsLostLabel.text = str(GameState._packetsLost) + " packets lost"
+	$PayloadReceivedLabel.text = str(GameState._payloadReceived) + " payload received"
+	$PayloadPerSecondLabel.text = str(GameState._payloadPerSecond) + " payload/s"

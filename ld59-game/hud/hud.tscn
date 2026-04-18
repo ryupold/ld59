@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dyn3kjroqyl50"]
+
+[ext_resource type="Script" uid="uid://cibt7y28amhj5" path="res://hud/hud.gd" id="1_6ca3a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
+font_size = 50
+
+[node name="HUD" type="CanvasLayer" unique_id=114495]
+follow_viewport_enabled = true
+script = ExtResource("1_6ca3a")
+
+[node name="PacketsLostLabel" type="Label" parent="." unique_id=1300933531]
+offset_left = 3775.0
+offset_top = 222.0
+offset_right = 4380.0
+offset_bottom = 291.0
+text = "packets lost"
+label_settings = SubResource("LabelSettings_6ca3a")
+horizontal_alignment = 2
+
+[node name="PayloadReceivedLabel" type="Label" parent="." unique_id=2063424629]
+offset_left = 3775.0
+offset_top = 294.0
+offset_right = 4383.0
+offset_bottom = 363.0
+text = "payload received"
+label_settings = SubResource("LabelSettings_6ca3a")
+horizontal_alignment = 2
+
+[node name="PayloadPerSecondLabel" type="Label" parent="." unique_id=2034626969]
+offset_left = 3775.0
+offset_top = 363.0
+offset_right = 4380.0
+offset_bottom = 432.0
+text = "payload/s"
+label_settings = SubResource("LabelSettings_6ca3a")
+horizontal_alignment = 2
