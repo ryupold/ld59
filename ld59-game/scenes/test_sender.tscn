@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bh8f05rppbhib" path="res://entities/towers/anti_gravity/anti_gravity_tower.tscn" id="4_kr4f8"]
 [ext_resource type="PackedScene" uid="uid://ck4loryblva0u" path="res://entities/towers/payload/payload_tower.tscn" id="6_vvhqw"]
 [ext_resource type="PackedScene" uid="uid://b51vbaiptx4g7" path="res://entities/towers/relay/relay_tower.tscn" id="7_6djag"]
+[ext_resource type="PackedScene" uid="uid://brtqthc0p3i8m" path="res://entities/towers/speed/speed_tower.tscn" id="8_p2e67"]
 
 [node name="TestSender" type="Node2D" unique_id=324347188]
 
@@ -41,3 +42,6 @@ position = Vector2(719, 786)
 
 [node name="RelayTower" parent="." unique_id=439358955 instance=ExtResource("7_6djag")]
 position = Vector2(489, 552)
+
+[node name="SpeedTower" parent="." unique_id=249907336 instance=ExtResource("8_p2e67")]
+position = Vector2(1586, 1498)
