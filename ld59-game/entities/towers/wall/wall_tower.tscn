@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://oo7hw2v4cf22"]
 
-[ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_j117e"]
+[ext_resource type="Texture2D" uid="uid://dn0d61m21bn0y" path="res://concepts/wall-tower.png" id="1_j117e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjav5"]
 size = Vector2(128, 20)
@@ -9,9 +9,10 @@ size = Vector2(128, 20)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1470504276]
+scale = Vector2(1, 0.125)
 texture = ExtResource("1_j117e")
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 19)
+region_rect = Rect2(0, 0, 128, 152)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145747203]
 shape = SubResource("RectangleShape2D_jjav5")
