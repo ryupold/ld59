@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cpqhc4o6gw6nv"]
 
-[ext_resource type="PackedScene" path="res://entities/walls/walls.tscn" id="1_kr4f8"]
+[ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="1_kr4f8"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="2_mv1ug"]
 [ext_resource type="PackedScene" uid="uid://bujp2ee8lyfqq" path="res://entities/towers/gravity/gravity_tower.tscn" id="3_awagt"]
+[ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="3_nivf7"]
 [ext_resource type="PackedScene" uid="uid://bh8f05rppbhib" path="res://entities/towers/anti_gravity/anti_gravity_tower.tscn" id="4_kr4f8"]
-[ext_resource type="PackedScene" uid="uid://oo7hw2v4cf22" path="res://entities/towers/wall/wall_tower.tscn" id="5_nivf7"]
 [ext_resource type="PackedScene" uid="uid://ck4loryblva0u" path="res://entities/towers/payload/payload_tower.tscn" id="6_vvhqw"]
 
 [node name="TestSender" type="Node2D" unique_id=324347188]
@@ -16,12 +16,12 @@ position = Vector2(277.5947, 400.97012)
 packetParent = NodePath("..")
 spawnDistance = 200.0
 
+[node name="Receiver" parent="." unique_id=1476249835 instance=ExtResource("3_nivf7")]
+position = Vector2(4211, 2175)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=666938385]
 position = Vector2(2264, 1327)
 zoom = Vector2(0.275, 0.275)
-
-[node name="WallTower" parent="Camera2D" unique_id=1813750863 instance=ExtResource("5_nivf7")]
-position = Vector2(-1371.9999, -179.99998)
 
 [node name="AntiGravityTower" parent="." unique_id=2014474127 instance=ExtResource("4_kr4f8")]
 position = Vector2(828, 1524)

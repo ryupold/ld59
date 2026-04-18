@@ -15,7 +15,7 @@ func _ready() -> void:
 	tween.tween_interval(1)
 
 
-#func _process(delta: float) -> void:
-#	for packet in packetsColliding:
-#		packet.increasePayload()
-#	return
+func _physics_process(delta):
+	var overlapping := collisionArea.get_overlapping_bodies()
+	if overlapping.size() > 0:
+		(overlapping[0] as Packet).increasePayload()

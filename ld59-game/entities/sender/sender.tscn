@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d0cuiwxuevfh"]
 
 [ext_resource type="Script" uid="uid://c3bncaxlpwi7c" path="res://entities/sender/sender.gd" id="1_347e5"]
-[ext_resource type="Texture2D" uid="uid://ddn74ovhrt1hg" path="res://thenounproject.png" id="1_gb42k"]
+[ext_resource type="Texture2D" uid="uid://djg1mlumtqwou" path="res://concepts/sender.png" id="2_347e5"]
 
 [node name="Sender" type="Node2D" unique_id=1211801374]
 script = ExtResource("1_347e5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160610372]
-texture = ExtResource("1_gb42k")
+texture = ExtResource("2_347e5")
 
 [node name="PacketCreationTimer" type="Timer" parent="." unique_id=1597540509]
 autostart = true

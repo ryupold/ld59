@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://sc317p0yslvi"]
+
+[ext_resource type="Texture2D" uid="uid://d2f028d7tnpke" path="res://concepts/receiver.png" id="1_ooahl"]
+
+[node name="Receiver" type="Node2D" unique_id=1476249835]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=336344477]
+texture = ExtResource("1_ooahl")
