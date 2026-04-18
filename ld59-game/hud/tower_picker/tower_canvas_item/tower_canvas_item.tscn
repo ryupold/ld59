@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_fynk8"]
 script = ExtResource("3_feqxd")
 previewImage = ExtResource("2_njyx8")
-towerScene = ExtResource("4_feqxd")
+scene = ExtResource("4_feqxd")
 metadata/_custom_type_script = "uid://bjemchx618kvp"
 
 [node name="TowerCanvasItem" type="PanelContainer" unique_id=871496032 node_paths=PackedStringArray("button")]

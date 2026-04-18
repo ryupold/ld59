@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_nq4c7"]
 script = ExtResource("2_nq4c7")
 previewImage = ExtResource("3_a5so6")
-towerScene = ExtResource("4_p3fov")
+scene = ExtResource("4_p3fov")
 metadata/_custom_type_script = "uid://bjemchx618kvp"
 
 [node name="TowerPicker" type="HFlowContainer" unique_id=810922384]
