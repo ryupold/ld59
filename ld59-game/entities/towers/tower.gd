@@ -8,8 +8,6 @@ func _ready() -> void:
 	collisionArea.body_exited.connect(removeCompute)
 
 func addCompute(body: Node2D) -> void:
-	print(body.name + " entered " + name)
-
 	if body is Packet:
 		var packet := body as Packet
 		packetsColliding.append(packet)
@@ -18,14 +16,10 @@ func addCompute(body: Node2D) -> void:
 
 
 func removeCompute(body: Node2D) -> void:
-	print(body.name + " left " + name)
-
 	if body is Packet:
 		var packet := body as Packet
 		var pos := packetsColliding.find(packet)
 		if pos == -1:
 			return
 		packetsColliding.remove_at(pos);
-		print("removed: " + str(pos))
-		print(packetsColliding.size())
 	return
