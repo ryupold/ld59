@@ -9,8 +9,6 @@ func _ready() -> void:
 	collisionArea.body_exited.connect(removeCompute)
 
 func _process(delta: float) -> void:
-	print("Packets controlling " + str(packetsColliding.size()))
-
 	for packet in packetsColliding:
 		var offset := global_position - packet.global_position
 		packet.apply_impulse(offset.normalized() *3)
