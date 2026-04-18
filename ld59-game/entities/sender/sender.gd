@@ -7,4 +7,5 @@ extends Node2D
 func _on_packet_creation_timer_timeout():
 	var packet : Packet = packetScene.instantiate()
 	packet.global_position = global_position + spawnDistance * Vector2.from_angle(randf() * 2 * PI)
+	packet.apply_impulse((packet.global_position - global_position).normalized() * 1000)
 	packetParent.add_child(packet)
