@@ -5,8 +5,12 @@
 [ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/towers/slow_tower.tres" id="3_hpmw0"]
 [ext_resource type="Resource" uid="uid://d4dmqi8oho8ks" path="res://resources/towers/gravity_tower.tres" id="4_v7j8b"]
 [ext_resource type="Resource" uid="uid://bdj1kktprk6dp" path="res://resources/towers/antigravity_tower.tres" id="5_g5peo"]
+[ext_resource type="Resource" uid="uid://bimdjdlr4f4h4" path="res://resources/towers/speed_tower.tres" id="5_w5hlg"]
+[ext_resource type="Resource" uid="uid://de0jh0n3y1bua" path="res://resources/towers/payload_tower.tres" id="7_c26ln"]
+[ext_resource type="Resource" uid="uid://di20lga8tfrf1" path="res://resources/towers/relay_tower.tres" id="8_ie0ql"]
+[ext_resource type="Resource" uid="uid://dm8lmthi47gny" path="res://resources/towers/wall_tower.tres" id="9_830xy"]
 
 [resource]
 script = ExtResource("1_ugfgi")
-towers = Array[ExtResource("2_hpmw0")]([ExtResource("3_hpmw0"), ExtResource("4_v7j8b"), ExtResource("5_g5peo")])
+towers = Array[ExtResource("2_hpmw0")]([ExtResource("4_v7j8b"), ExtResource("5_g5peo"), ExtResource("5_w5hlg"), ExtResource("3_hpmw0"), ExtResource("7_c26ln"), ExtResource("8_ie0ql"), ExtResource("9_830xy")])
 metadata/_custom_type_script = "uid://j8gggyuglixk"

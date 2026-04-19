@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://di20lga8tfrf1"]
+
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="1_2j5b8"]
+[ext_resource type="Texture2D" uid="uid://c68l2lbnn1jpj" path="res://entities/towers/relay/tower_relay.png" id="1_hvo2a"]
+[ext_resource type="PackedScene" uid="uid://b51vbaiptx4g7" path="res://entities/towers/relay/relay_tower.tscn" id="2_oyik1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyik1"]
+atlas = ExtResource("1_hvo2a")
+region = Rect2(0, 0, 175, 330)
+
+[resource]
+script = ExtResource("1_2j5b8")
+Title = "Relay Tower"
+previewImage = SubResource("AtlasTexture_oyik1")
+scene = ExtResource("2_oyik1")
+metadata/_custom_type_script = "uid://bjemchx618kvp"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://dm8lmthi47gny"]
+
+[ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_i18td"]
+[ext_resource type="PackedScene" uid="uid://oo7hw2v4cf22" path="res://entities/towers/wall/wall_tower.tscn" id="2_i18td"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="3_fn61p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyik1"]
+atlas = ExtResource("1_i18td")
+region = Rect2(0, 0, 175, 330)
+
+[resource]
+script = ExtResource("3_fn61p")
+Title = "Wall"
+previewImage = SubResource("AtlasTexture_oyik1")
+scene = ExtResource("2_i18td")
+metadata/_custom_type_script = "uid://bjemchx618kvp"

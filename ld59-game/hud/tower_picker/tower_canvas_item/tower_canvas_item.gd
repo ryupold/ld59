@@ -6,6 +6,7 @@ class_name TowerCanvasItem extends PanelContainer
 func _ready() -> void:
 	button.icon = towerResource.previewImage
 	button.pressed.connect(spawnTower)
+	button.tooltip_text = towerResource.Title
 	GameState.onDragEvent.connect(func(n, state: bool): button.disabled = state)
 
 func spawnTower():

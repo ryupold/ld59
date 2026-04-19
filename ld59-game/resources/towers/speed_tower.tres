@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://bimdjdlr4f4h4"]
+
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="1_jdqkj"]
+[ext_resource type="Texture2D" uid="uid://dbubp7pf67741" path="res://entities/towers/speed/tower_speed.png" id="1_njr76"]
+[ext_resource type="PackedScene" uid="uid://brtqthc0p3i8m" path="res://entities/towers/speed/speed_tower.tscn" id="2_a5kju"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njr76"]
+atlas = ExtResource("1_njr76")
+region = Rect2(0, 0, 175, 245)
+
+[resource]
+script = ExtResource("1_jdqkj")
+Title = "Speed Tower"
+previewImage = SubResource("AtlasTexture_njr76")
+scene = ExtResource("2_a5kju")
+metadata/_custom_type_script = "uid://bjemchx618kvp"

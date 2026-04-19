@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://de0jh0n3y1bua"]
+
+[ext_resource type="Texture2D" uid="uid://b7fr64yqejok7" path="res://entities/towers/payload/tower_payload.png" id="1_6lrn1"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="1_l78y8"]
+[ext_resource type="PackedScene" uid="uid://ck4loryblva0u" path="res://entities/towers/payload/payload_tower.tscn" id="2_0qu76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l78y8"]
+atlas = ExtResource("1_6lrn1")
+region = Rect2(0, 0, 175, 340)
+
+[resource]
+script = ExtResource("1_l78y8")
+Title = "Payload Tower"
+previewImage = SubResource("AtlasTexture_l78y8")
+scene = ExtResource("2_0qu76")
+metadata/_custom_type_script = "uid://bjemchx618kvp"

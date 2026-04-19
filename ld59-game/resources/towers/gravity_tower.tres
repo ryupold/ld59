@@ -10,6 +10,7 @@ region = Rect2(0, 0, 175, 336)
 
 [resource]
 script = ExtResource("1_4rhmy")
+Title = "Gravity Tower"
 previewImage = SubResource("AtlasTexture_2eb1e")
 scene = ExtResource("2_2eb1e")
 metadata/_custom_type_script = "uid://bjemchx618kvp"
