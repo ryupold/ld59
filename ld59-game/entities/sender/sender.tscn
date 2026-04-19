@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://c3bncaxlpwi7c" path="res://entities/sender/sender.gd" id="1_347e5"]
 [ext_resource type="Texture2D" uid="uid://djg1mlumtqwou" path="res://concepts/sender.png" id="2_347e5"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_347e5"]
+radius = 91.197586
+
 [node name="Sender" type="Node2D" unique_id=1211801374]
 script = ExtResource("1_347e5")
 spawnAngleMin = 1.047
@@ -13,3 +16,10 @@ texture = ExtResource("2_347e5")
 
 [node name="PacketCreationTimer" type="Timer" parent="." unique_id=1597540509]
 autostart = true
+
+[node name="TowerCollider" type="Area2D" parent="." unique_id=1755820681]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerCollider" unique_id=1005478787]
+shape = SubResource("CircleShape2D_347e5")

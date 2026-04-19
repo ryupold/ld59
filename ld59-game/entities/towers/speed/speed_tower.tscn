@@ -43,32 +43,47 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_50pgb"]
 radius = 600.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a477d"]
-radius = 61.0
-height = 240.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_y05ey"]
+radius = 50.01
 
-[node name="SpeedTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("effectArea", "towerboundary")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y05ey"]
+radius = 55.0
+height = 260.0
+
+[node name="SpeedTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("effectArea", "overlapBoundary", "interactBoundary")]
 script = ExtResource("1_a477d")
 effectArea = NodePath("EffectArea")
-towerboundary = NodePath("TowerBoundary")
+overlapBoundary = NodePath("OverlapBoundary")
+interactBoundary = NodePath("InteractBoundary")
 
 [node name="TowerShadow" parent="." unique_id=1963121006 instance=ExtResource("2_y05ey")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1499476336]
+position = Vector2(9, 0)
 sprite_frames = SubResource("SpriteFrames_d7tpe")
 autoplay = "default"
 frame = 3
 frame_progress = 0.9574308
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=505660784]
+position = Vector2(9, -111)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea" unique_id=1262524344]
 shape = SubResource("CircleShape2D_50pgb")
 
-[node name="TowerBoundary" type="Area2D" parent="." unique_id=391322065]
+[node name="OverlapBoundary" type="Area2D" parent="." unique_id=391322065]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBoundary" unique_id=387860515]
-shape = SubResource("CapsuleShape2D_a477d")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapBoundary" unique_id=387860515]
+position = Vector2(0, 113)
+shape = SubResource("CircleShape2D_y05ey")
+
+[node name="InteractBoundary" type="Area2D" parent="." unique_id=191775213]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractBoundary" unique_id=701310035]
+position = Vector2(0, 31)
+shape = SubResource("CapsuleShape2D_y05ey")

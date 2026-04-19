@@ -57,4 +57,5 @@ scale = Vector2(0.74066716, 1.4569749)
 
 [node name="Towers" type="Node2D" parent="." unique_id=1245803590]
 unique_name_in_owner = true
+y_sort_enabled = true
 position = Vector2(2274, 1504)

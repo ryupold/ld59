@@ -6,6 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_iliiv"]
 radius = 176.81912
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iyevf"]
+radius = 91.197586
+
 [node name="Receiver" type="StaticBody2D" unique_id=2106263029]
 script = ExtResource("2_iliiv")
 
@@ -14,3 +17,10 @@ texture = ExtResource("1_ooahl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218089614]
 shape = SubResource("CircleShape2D_iliiv")
+
+[node name="TowerCollider" type="Area2D" parent="." unique_id=1357016361]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerCollider" unique_id=569368532]
+shape = SubResource("CircleShape2D_iyevf")

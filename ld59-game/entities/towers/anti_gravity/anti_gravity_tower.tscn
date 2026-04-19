@@ -44,17 +44,23 @@ animations = [{
 radius = 600.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dleeo"]
-radius = 61.0
-height = 240.0
+radius = 52.0
+height = 116.0
 
-[node name="AntiGravityTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("effectArea", "towerboundary")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oek4k"]
+radius = 55.0
+height = 260.0
+
+[node name="AntiGravityTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("effectArea", "overlapBoundary", "interactBoundary")]
 script = ExtResource("1_dleeo")
 effectArea = NodePath("EffectArea")
-towerboundary = NodePath("TowerBoundary")
+overlapBoundary = NodePath("OverlapBoundary")
+interactBoundary = NodePath("InteractBoundary")
 
 [node name="TowerShadow" parent="." unique_id=1963121006 instance=ExtResource("2_oek4k")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=201005178]
+position = Vector2(6, 0)
 sprite_frames = SubResource("SpriteFrames_vlehc")
 autoplay = "default"
 frame = 3
@@ -66,9 +72,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea" unique_id=1262524344]
 shape = SubResource("CircleShape2D_50pgb")
 
-[node name="TowerBoundary" type="Area2D" parent="." unique_id=736693036]
+[node name="OverlapBoundary" type="Area2D" parent="." unique_id=736693036]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBoundary" unique_id=2112978413]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapBoundary" unique_id=2112978413]
+position = Vector2(0, 103)
 shape = SubResource("CapsuleShape2D_dleeo")
+
+[node name="InteractBoundary" type="Area2D" parent="." unique_id=1337310094]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractBoundary" unique_id=845811309]
+position = Vector2(0, 14)
+shape = SubResource("CapsuleShape2D_oek4k")

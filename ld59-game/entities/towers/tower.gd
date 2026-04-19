@@ -1,7 +1,8 @@
 @abstract class_name Tower extends Node2D
 
 @export var effectArea: CollisionObject2D
-@export var towerboundary: Area2D
+@export var overlapBoundary: Area2D
+@export var interactBoundary: Area2D
 var packetsColliding: Array[Packet]
 var _followsMouse := false
 @export var followsMouse : bool :
@@ -31,9 +32,7 @@ func _ready() -> void:
 		effectArea.body_entered.connect(enterCollision)
 		effectArea.body_exited.connect(exitCollision)
 
-	towerboundary.body_entered.connect(enterCollision)
-	towerboundary.body_exited.connect(exitCollision)
-	towerboundary.input_event.connect(handleClick)
+	interactBoundary.input_event.connect(handleClick)
 
 func _physics_process(delta: float) -> void:
 	handleFollowMouse()
@@ -64,7 +63,7 @@ func handleFollowMouse() -> void:
 		global_position = get_global_mouse_position()
 
 func canPlace() -> bool:
-	return towerboundary.get_overlapping_areas().is_empty() and towerboundary.get_overlapping_bodies().is_empty()
+	return overlapBoundary.get_overlapping_areas().is_empty() and overlapBoundary.get_overlapping_bodies().is_empty()
 
 func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
