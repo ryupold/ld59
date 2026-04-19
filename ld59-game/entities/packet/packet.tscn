@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://crxtta1ilaygc"]
 
 [ext_resource type="Script" uid="uid://cat60h8kd57yu" path="res://entities/packet/packet.gd" id="1_2lw8n"]
-[ext_resource type="Texture2D" uid="uid://350qv4qrqaji" path="res://concepts/packet.png" id="2_g4aub"]
+[ext_resource type="Texture2D" uid="uid://bkf7prdmnldp6" path="res://entities/packet/sprites/large_package_3.webp" id="2_g4aub"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4aub"]
 friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4aub"]
-radius = 30.0
+radius = 17.15
 
 [node name="Packet" type="RigidBody2D" unique_id=488777420]
 collision_layer = 2
