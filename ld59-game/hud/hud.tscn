@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://dyn3kjroqyl50"]
 
 [ext_resource type="Script" uid="uid://cibt7y28amhj5" path="res://hud/debug.gd" id="1_6ca3a"]
+[ext_resource type="Script" uid="uid://dobvu0txxlu5l" path="res://hud/hud.gd" id="1_318vg"]
 [ext_resource type="PackedScene" uid="uid://dmoygirrjplv2" path="res://hud/tower_picker/tower_picker.tscn" id="2_2gk58"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button")]
+script = ExtResource("1_318vg")
+button = NodePath("Button")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
 anchors_preset = 15
@@ -47,3 +50,8 @@ alignment = 2
 
 [node name="TowerPicker" parent="AspectRatioContainer/VBoxContainer" unique_id=810922384 instance=ExtResource("2_2gk58")]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=540476503]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart"

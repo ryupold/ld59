@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_5srby")
 Title = "The Beginnings"
+scene = ExtResource("1_hhog7")
 retries = 500
 packagesSent = 500
-scene = ExtResource("1_hhog7")
+winAmountPackages = 500
 metadata/_custom_type_script = "uid://edonykvu0lt8"
