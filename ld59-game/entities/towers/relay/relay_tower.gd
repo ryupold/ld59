@@ -3,7 +3,7 @@ extends Tower
 @export var ttlIncrease: int = 5
 
 func _ready() -> void:
-	collisionArea.body_entered.connect(addCompute)
+	super._ready()
 
 	collisionArea.scale = Vector2.ZERO
 	var tween := create_tween().set_loops()
