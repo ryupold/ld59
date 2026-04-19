@@ -1,6 +1,6 @@
 extends Tower
 
-@export var gravity: float = 9.81
+@export var gravity: float = 15
 
 func doEffect(delta: float) -> void:
 	for packet in packetsColliding:
