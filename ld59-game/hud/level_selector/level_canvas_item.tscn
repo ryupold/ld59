@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3njoblir4qc8"]
+
+[ext_resource type="Script" uid="uid://b5qdc5clkfx6k" path="res://hud/level_selector/level_canvas_item.gd" id="1_int0h"]
+
+[node name="LevelItem" type="MarginContainer" unique_id=1007656823 node_paths=PackedStringArray("button")]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+script = ExtResource("1_int0h")
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=1690605595]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "Lewvel Name"

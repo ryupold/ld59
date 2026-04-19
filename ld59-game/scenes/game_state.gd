@@ -16,7 +16,7 @@ var _currentLevel : LevelResource
 signal onDragEvent(node: Node2D, state: bool)
 signal onPacketLost()
 signal onPacketReceived()
-signal onLevelCreated(level: LevelResource)
+signal onLevelCreated()
 
 func _ready():
 	onDragEvent.connect(func(n, state): _isDragging = state)
@@ -28,7 +28,11 @@ func _ready():
 func restartLevel() -> void:
 	get_tree().change_scene_to_packed(_currentLevel.scene)
 
-func setupLevel(resource: LevelResource) -> void:
+func loadLevel(resource: LevelResource) -> void:
+	_currentLevel = resource
+	get_tree().change_scene_to_packed(_currentLevel.scene)
+
+func setupLevel() -> void:
 	var scene := get_tree().current_scene
 	if scene is not Level: return
 	var level := scene as Level
@@ -37,11 +41,11 @@ func setupLevel(resource: LevelResource) -> void:
 	_payloadReceived = 0
 	_payloadPerSecond = 0
 
-	level.sender.spawnInterval = resource.spawnInterval
-	level.sender.spawnImpulse = resource.spawnImpulse
-	level.sender.spawnAngleMin = resource.spawnAngleMin
-	level.sender.spawnAngleMax = resource.spawnAngleMax
-	level.sender.spawnAngleRotationSpeed = resource.spawnAngleRotationSpeed
+	level.sender.spawnInterval = _currentLevel.spawnInterval
+	level.sender.spawnImpulse = _currentLevel.spawnImpulse
+	level.sender.spawnAngleMin = _currentLevel.spawnAngleMin
+	level.sender.spawnAngleMax = _currentLevel.spawnAngleMax
+	level.sender.spawnAngleRotationSpeed = _currentLevel.spawnAngleRotationSpeed
 
 
 func increasePacketLossCounter():
