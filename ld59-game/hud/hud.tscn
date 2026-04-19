@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cibt7y28amhj5" path="res://hud/debug.gd" id="1_6ca3a"]
 [ext_resource type="Script" uid="uid://dobvu0txxlu5l" path="res://hud/hud.gd" id="1_318vg"]
 [ext_resource type="PackedScene" uid="uid://dmoygirrjplv2" path="res://hud/tower_picker/tower_picker.tscn" id="2_2gk58"]
-[ext_resource type="PackedScene" uid="uid://b0blgpnq2do5u" path="res://hud/level_selector/LevelSelector.tscn" id="4_w8tcp"]
+[ext_resource type="PackedScene" uid="uid://b0blgpnq2do5u" path="res://hud/level_selector/level_selector.tscn" id="4_w8tcp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
@@ -15,11 +15,12 @@ buttonSelector = NodePath("MenuBar/ButtonSelector")
 levelSelector = NodePath("LevelSelector")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -246.0
+offset_bottom = 134.0
+grow_horizontal = 0
 script = ExtResource("1_6ca3a")
 
 [node name="PacketsLostLabel" type="Label" parent="debug" unique_id=1300933531]
@@ -40,7 +41,7 @@ text = "payload/s"
 label_settings = SubResource("LabelSettings_6ca3a")
 horizontal_alignment = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1356284223]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=113010109]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,7 +66,7 @@ grow_vertical = 1
 
 [node name="MenuBar" type="HBoxContainer" parent="." unique_id=1458396715]
 offset_right = 125.0
-offset_bottom = 40.0
+offset_bottom = 31.0
 
 [node name="Button" type="Button" parent="MenuBar" unique_id=540476503]
 layout_mode = 2

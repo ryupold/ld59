@@ -24,6 +24,7 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer" unique_id=1595520864]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 icon = ExtResource("2_wmwfi")
 icon_alignment = 1
 expand_icon = true
