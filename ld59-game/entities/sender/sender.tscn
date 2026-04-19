@@ -1,18 +1,58 @@
 [gd_scene format=3 uid="uid://d0cuiwxuevfh"]
 
 [ext_resource type="Script" uid="uid://c3bncaxlpwi7c" path="res://entities/sender/sender.gd" id="1_347e5"]
-[ext_resource type="Texture2D" uid="uid://djg1mlumtqwou" path="res://concepts/sender.png" id="2_347e5"]
+[ext_resource type="Texture2D" uid="uid://c10l4hs3irmwn" path="res://entities/sender/sender.webp" id="2_347e5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3yud"]
+atlas = ExtResource("2_347e5")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfcds"]
+atlas = ExtResource("2_347e5")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt4da"]
+atlas = ExtResource("2_347e5")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqfb7"]
+atlas = ExtResource("2_347e5")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gb42k"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3yud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfcds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt4da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqfb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_347e5"]
-radius = 91.197586
+radius = 191.00262
 
 [node name="Sender" type="Node2D" unique_id=1211801374]
 script = ExtResource("1_347e5")
 spawnAngleMin = 1.047
 spawnAngleMax = 1.047
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160610372]
-texture = ExtResource("2_347e5")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2132045876]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gb42k")
+autoplay = "default"
+frame_progress = 0.12814857
 
 [node name="PacketCreationTimer" type="Timer" parent="." unique_id=1597540509]
 autostart = true

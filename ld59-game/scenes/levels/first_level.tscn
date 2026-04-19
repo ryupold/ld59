@@ -47,7 +47,8 @@ offset_left = 1199.958
 offset_top = 93.86853
 offset_right = 2018.7798
 offset_bottom = 903.8685
-pivot_offset = Vector2(409.4109, 405)
+rotation = -0.98570305
+pivot_offset = Vector2(409.4109, 404.93427)
 
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_xbibw")]
 position = Vector2(-2273, -1115)

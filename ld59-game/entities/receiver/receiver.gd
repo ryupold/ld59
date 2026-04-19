@@ -1,3 +1,13 @@
 extends Node2D
 class_name Receiver
-# just here so we can check that Packet has collided with it by type
+
+
+func _ready():
+	GameState.onGameTick.connect(updateAnimation)
+	
+
+func updateAnimation():
+	if GameState.isConnectionGood:
+		$AnimatedSprite2D.animation = "good"
+	else:
+		$AnimatedSprite2D.animation = "bad"
