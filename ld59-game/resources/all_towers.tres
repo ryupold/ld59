@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TowersResource" format=3 uid="uid://dxtvevgp0r8jk"]
+
+[ext_resource type="Script" uid="uid://j8gggyuglixk" path="res://resources/towers_resource.gd" id="1_ugfgi"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="2_hpmw0"]
+[ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/towers/slow_tower.tres" id="3_hpmw0"]
+
+[resource]
+script = ExtResource("1_ugfgi")
+towers = Array[ExtResource("2_hpmw0")]([ExtResource("3_hpmw0")])
+metadata/_custom_type_script = "uid://j8gggyuglixk"

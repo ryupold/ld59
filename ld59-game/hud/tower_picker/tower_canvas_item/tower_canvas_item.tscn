@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dh0obqnt32g2y" path="res://hud/tower_picker/tower_canvas_item/tower_canvas_item.gd" id="1_6cimu"]
 [ext_resource type="Texture2D" uid="uid://350qv4qrqaji" path="res://concepts/packet.png" id="2_njyx8"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_wmwfi"]
-[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://hud/tower_picker/tower_resource.gd" id="3_feqxd"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="3_feqxd"]
 [ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="4_feqxd"]
 
 [sub_resource type="Resource" id="Resource_fynk8"]

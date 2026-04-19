@@ -8,6 +8,9 @@ var _currentPayloadBuffer: float
 var _currentPayloadBufferTime: float
 var _isDragging: bool = false
 
+@export var allTowers: TowersResource
+@export var unlockedTowers: TowersResource
+
 signal onDragEvent(node: Node2D, state: bool)
 signal onPacketLost()
 signal onPacketReceived()

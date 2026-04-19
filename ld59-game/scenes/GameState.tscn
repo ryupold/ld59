@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://nyliqrdb6dkp"]
+
+[ext_resource type="Script" uid="uid://yyu8upgdagvb" path="res://scenes/game_state.gd" id="1_si82d"]
+[ext_resource type="Resource" uid="uid://dxtvevgp0r8jk" path="res://resources/all_towers.tres" id="2_4k0ew"]
+
+[node name="GameState" type="Node" unique_id=132192571]
+script = ExtResource("1_si82d")
+allTowers = ExtResource("2_4k0ew")
+unlockedTowers = ExtResource("2_4k0ew")

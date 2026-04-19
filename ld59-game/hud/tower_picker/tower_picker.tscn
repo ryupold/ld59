@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dbuhil80h1yx8" path="res://hud/tower_picker/tower_picker.gd" id="1_k4fev"]
 [ext_resource type="PackedScene" uid="uid://cett1m8m3l8gn" path="res://hud/tower_picker/tower_canvas_item/tower_canvas_item.tscn" id="2_ih87c"]
-[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://hud/tower_picker/tower_resource.gd" id="2_nq4c7"]
-[ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/slow_tower.tres" id="3_gi732"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="2_nq4c7"]
+[ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/towers/slow_tower.tres" id="3_gi732"]
 
 [node name="TowerPicker" type="HFlowContainer" unique_id=810922384]
 custom_minimum_size = Vector2(100, 100)
