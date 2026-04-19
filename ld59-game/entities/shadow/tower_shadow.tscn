@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://vqw0ywocyngv"]
+
+[ext_resource type="Texture2D" uid="uid://bnhadsvkoaroh" path="res://entities/shadow/tower_shadow.png" id="1_y4j63"]
+
+[node name="TowerShadow" type="Node2D" unique_id=1963121006]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=246374685]
+position = Vector2(0, 28.999987)
+scale = Vector2(1, 1.6466666)
+texture = ExtResource("1_y4j63")

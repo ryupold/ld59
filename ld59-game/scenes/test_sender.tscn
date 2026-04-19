@@ -46,8 +46,8 @@ scale = Vector2(0.59383804, 3.6685872)
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("2_mv1ug")]
 position = Vector2(277.5947, 400.97012)
 packetParent = NodePath("..")
-spawnDistance = 200.0
-spawnInterval = 0.1
+spawnInterval = 0.01
+spawnAngleRotationSpeed = 0.3
 
 [node name="Receiver" parent="." unique_id=1476249835 instance=ExtResource("3_nivf7")]
 position = Vector2(4211, 2175)

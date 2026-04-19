@@ -1,6 +1,6 @@
 extends Tower
 
-@export var ttlIncrease: int = 5
+@export var ttlIncrease: int = 1
 
 func _ready() -> void:
 	super._ready()

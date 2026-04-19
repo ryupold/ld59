@@ -1,7 +1,44 @@
 [gd_scene format=3 uid="uid://b51vbaiptx4g7"]
 
 [ext_resource type="Script" uid="uid://mmjuduoyh0o2" path="res://entities/towers/relay/relay_tower.gd" id="1_7cs4r"]
-[ext_resource type="Texture2D" uid="uid://bji1jovwnbfcp" path="res://concepts/payload-heal-tower.png" id="2_7cs4r"]
+[ext_resource type="Texture2D" uid="uid://c68l2lbnn1jpj" path="res://entities/towers/relay/tower_relay.png" id="2_kjvva"]
+[ext_resource type="PackedScene" uid="uid://vqw0ywocyngv" path="res://entities/shadow/tower_shadow.tscn" id="2_qq05j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq05j"]
+atlas = ExtResource("2_kjvva")
+region = Rect2(0, 0, 173, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpbb3"]
+atlas = ExtResource("2_kjvva")
+region = Rect2(173, 0, 173, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwnqs"]
+atlas = ExtResource("2_kjvva")
+region = Rect2(346, 0, 173, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmyv8"]
+atlas = ExtResource("2_kjvva")
+region = Rect2(519, 0, 173, 245)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ie4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq05j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpbb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwnqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmyv8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50pgb"]
 radius = 600.0
@@ -10,8 +47,12 @@ radius = 600.0
 script = ExtResource("1_7cs4r")
 collisionArea = NodePath("Area2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328720220]
-texture = ExtResource("2_7cs4r")
+[node name="TowerShadow" parent="." unique_id=1963121006 instance=ExtResource("2_qq05j")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1963792567]
+sprite_frames = SubResource("SpriteFrames_8ie4d")
+autoplay = "default"
+frame_progress = 0.5622138
 
 [node name="Area2D" type="Area2D" parent="." unique_id=505660784]
 collision_mask = 2

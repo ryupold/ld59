@@ -1,7 +1,44 @@
 [gd_scene format=3 uid="uid://bujp2ee8lyfqq"]
 
 [ext_resource type="Script" uid="uid://cdtbgomude17w" path="res://entities/towers/gravity/gravity_tower.gd" id="1_50pgb"]
-[ext_resource type="Texture2D" uid="uid://dc61oeo74ws6l" path="res://concepts/gravity-tower.png" id="2_50pgb"]
+[ext_resource type="Texture2D" uid="uid://cpkbt5j4d3v11" path="res://entities/towers/gravity/tower_gravity.png" id="2_50pgb"]
+[ext_resource type="PackedScene" uid="uid://vqw0ywocyngv" path="res://entities/shadow/tower_shadow.tscn" id="2_rh6a2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50pgb"]
+atlas = ExtResource("2_50pgb")
+region = Rect2(0, 0, 172, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh6a2"]
+atlas = ExtResource("2_50pgb")
+region = Rect2(172, 0, 172, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjs5k"]
+atlas = ExtResource("2_50pgb")
+region = Rect2(344, 0, 172, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo5gw"]
+atlas = ExtResource("2_50pgb")
+region = Rect2(516, 0, 172, 291)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slrr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50pgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh6a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjs5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo5gw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50pgb"]
 radius = 600.0
@@ -10,11 +47,16 @@ radius = 600.0
 script = ExtResource("1_50pgb")
 collisionArea = NodePath("Area2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328720220]
-texture = ExtResource("2_50pgb")
+[node name="TowerShadow" parent="." unique_id=1963121006 instance=ExtResource("2_rh6a2")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=377437865]
+sprite_frames = SubResource("SpriteFrames_slrr6")
+autoplay = "default"
+frame_progress = 0.30296046
 
 [node name="Area2D" type="Area2D" parent="." unique_id=505660784]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1262524344]
+visible = false
 shape = SubResource("CircleShape2D_50pgb")
