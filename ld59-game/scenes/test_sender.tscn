@@ -46,7 +46,7 @@ scale = Vector2(0.59383804, 3.6685872)
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("2_mv1ug")]
 position = Vector2(277.5947, 400.97012)
 packetParent = NodePath("..")
-spawnInterval = 0.01
+spawnInterval = 0.2
 spawnAngleRotationSpeed = 0.3
 
 [node name="Receiver" parent="." unique_id=1476249835 instance=ExtResource("3_nivf7")]
@@ -78,7 +78,7 @@ position = Vector2(1822, 1187)
 position = Vector2(3307, 1287)
 
 [node name="GravityTower" parent="Towers" unique_id=1604658526 instance=ExtResource("3_awagt")]
-position = Vector2(3483, 2452)
+position = Vector2(1803, 766)
 
 [node name="GravityTower2" parent="Towers" unique_id=1863822030 instance=ExtResource("3_awagt")]
 position = Vector2(827, 1812)
