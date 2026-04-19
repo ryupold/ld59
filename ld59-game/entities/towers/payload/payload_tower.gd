@@ -13,7 +13,7 @@ func _ready() -> void:
 	tween.tween_interval(1)
 
 
-func addCompute(body: Node2D) -> void:
+func enterCollision(body: Node2D) -> void:
 	if disableEffect and body is not Packet:
 		return
 	var packet := body as Packet
