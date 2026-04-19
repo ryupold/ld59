@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://bvn7uqcpj5lo1"]
+
+[ext_resource type="Texture2D" uid="uid://dbubp7pf67741" path="res://entities/towers/speed/tower_speed.png" id="1_yx6rq"]
+[ext_resource type="PackedScene" uid="uid://cv0dyuglhhbwd" path="res://entities/towers/slow/slow_tower.tscn" id="2_tewu1"]
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://hud/tower_picker/tower_resource.gd" id="3_otkgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx6rq"]
+atlas = ExtResource("1_yx6rq")
+region = Rect2(0, 0, 175, 245)
+
+[resource]
+script = ExtResource("3_otkgy")
+previewImage = SubResource("AtlasTexture_yx6rq")
+scene = ExtResource("2_tewu1")
+metadata/_custom_type_script = "uid://bjemchx618kvp"
