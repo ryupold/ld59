@@ -1,7 +1,8 @@
 extends Tower
 
+@export var speedUpFactor: float = 0.5
+
 func _physics_process(delta: float) -> void:
 	for packet in packetsColliding:
-		var velocity := packet.linear_velocity + (packet.linear_velocity * 2 * delta)
-		packet.set_axis_velocity(velocity)
-	return
+		var velocity := packet.linear_velocity + (packet.linear_velocity * speedUpFactor * delta)
+		packet.setVelocity(velocity)

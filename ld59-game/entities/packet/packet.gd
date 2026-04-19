@@ -27,15 +27,16 @@ func onCollision(body: Node2D) -> void:
 			GameState.onPacketLost.emit()
 			queue_free()
 
-func increasePayload() -> void:
-	payload += 1
+func increasePayload(by: int) -> void:
+	payload += by
 	var newSpriteScale := originalSpriteScale * (1 + (payload-1) * growthModifier)
 	$Sprite.scale = Vector2(newSpriteScale, newSpriteScale)
 	var newColliderScale = originalColliderScale * (1 + (payload-1) * growthModifier)
 	$CollisionShape2D.scale = Vector2(newColliderScale, newColliderScale)
 
-func increaseTtl() -> void:
-	ttl += 1
+func increaseTtl(by: int) -> void:
+	ttl += by
+	
 func setVelocity(v: Vector2):
 	if v.length_squared() < minSpeed * minSpeed:
 		v = v.normalized() * minSpeed

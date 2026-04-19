@@ -1,5 +1,7 @@
 extends Tower
 
+@export var ttlIncrease: int = 5
+
 func _ready() -> void:
 	collisionArea.body_entered.connect(addCompute)
 
@@ -14,5 +16,5 @@ func _ready() -> void:
 func addCompute(body: Node2D) -> void:
 	if body is Packet:
 		var packet := body as Packet
-		packet.increaseTtl()
+		packet.increaseTtl(ttlIncrease)
 	return
