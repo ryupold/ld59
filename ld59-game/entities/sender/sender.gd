@@ -13,10 +13,9 @@ extends Node2D
 @export var spawnAngleMin: float = 0
 @export var spawnAngleMax: float = PI/2
 @export var spawnAngleRotationSpeed: float = 1
-var _spawnAngle: float
+@onready var _spawnAngle: float = (spawnAngleMin + spawnAngleMax) / 2
 
 func _ready():
-	_spawnAngle = spawnAngleMin
 	$PacketCreationTimer.timeout.connect(createPacket)
 
 func _physics_process(delta):

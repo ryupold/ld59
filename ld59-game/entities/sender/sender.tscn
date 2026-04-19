@@ -5,6 +5,8 @@
 
 [node name="Sender" type="Node2D" unique_id=1211801374]
 script = ExtResource("1_347e5")
+spawnAngleMin = 1.047
+spawnAngleMax = 1.047
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160610372]
 texture = ExtResource("2_347e5")
