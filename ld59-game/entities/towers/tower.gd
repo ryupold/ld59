@@ -54,10 +54,10 @@ func canPlace() -> bool:
 func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and canPlace():
-			followsMouse = false
+			place()
 		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and debug and not GameState._isDragging:
 			print("Right mouse button clicked at:", event.position)
-			followsMouse = true
+			pickup()
 
 func handleDisableEffect() -> void:
 	if disableEffect:
@@ -67,3 +67,11 @@ func handleDisableEffect() -> void:
 
 func doEffect(delta: float) -> void:
 	pass
+
+func place():
+	followsMouse = false
+	disableEffect = false
+
+func pickup():
+	followsMouse = true
+	disableEffect = true

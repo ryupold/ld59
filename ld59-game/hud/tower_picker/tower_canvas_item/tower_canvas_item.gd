@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func spawnTower():
 	var newTower: Tower = towerResource.scene.instantiate()
-	newTower.followsMouse = true
-	newTower.disableEffect = true
+	newTower.pickup()
 	get_tree().get_current_scene().get_node("%Towers").add_child(newTower)
 	pass
