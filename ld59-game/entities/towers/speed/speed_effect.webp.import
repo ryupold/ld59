@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d00a3vvn056xe"
-path="res://.godot/imported/tower_antigravity.png-f177213bef44edbcafc56a5489ec0580.ctex"
+uid="uid://dv6jpas4ll5gy"
+path="res://.godot/imported/speed_effect.webp-a25a195bc8b32f48c864255d688cc7bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/towers/anti_gravity/tower_antigravity.png"
-dest_files=["res://.godot/imported/tower_antigravity.png-f177213bef44edbcafc56a5489ec0580.ctex"]
+source_file="res://entities/towers/speed/speed_effect.webp"
+dest_files=["res://.godot/imported/speed_effect.webp-a25a195bc8b32f48c864255d688cc7bd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vqo4ldecbpvy"
-path="res://.godot/imported/tower_slow.png-c9556174ec461cc943f611fe4143327d.ctex"
+uid="uid://b463s414015fu"
+path="res://.godot/imported/packet_healer.webp-e1d2a5ff8bde72e3f0047341631b999b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/towers/slow/tower_slow.png"
-dest_files=["res://.godot/imported/tower_slow.png-c9556174ec461cc943f611fe4143327d.ctex"]
+source_file="res://entities/towers/relay/packet_healer.webp"
+dest_files=["res://.godot/imported/packet_healer.webp-e1d2a5ff8bde72e3f0047341631b999b.ctex"]
 
 [params]
 

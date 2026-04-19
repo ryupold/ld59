@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://bdj1kktprk6dp"]
 
-[ext_resource type="Texture2D" uid="uid://d00a3vvn056xe" path="res://entities/towers/anti_gravity/tower_antigravity.png" id="1_omcxy"]
+[ext_resource type="Texture2D" uid="uid://3qc125w0u08m" path="res://entities/towers/anti_gravity/tower_antigravity.webp" id="1_omcxy"]
 [ext_resource type="PackedScene" uid="uid://bh8f05rppbhib" path="res://entities/towers/anti_gravity/anti_gravity_tower.tscn" id="2_8gmjg"]
 [ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="3_i0arm"]
 

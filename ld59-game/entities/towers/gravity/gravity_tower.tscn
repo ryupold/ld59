@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://bujp2ee8lyfqq"]
 
 [ext_resource type="Script" uid="uid://cdtbgomude17w" path="res://entities/towers/gravity/gravity_tower.gd" id="1_50pgb"]
-[ext_resource type="Texture2D" uid="uid://cpkbt5j4d3v11" path="res://entities/towers/gravity/tower_gravity.png" id="2_50pgb"]
 [ext_resource type="PackedScene" uid="uid://vqw0ywocyngv" path="res://entities/shadow/tower_shadow.tscn" id="2_rh6a2"]
+[ext_resource type="Texture2D" uid="uid://bkcg77v7y7sta" path="res://entities/towers/gravity/tower_gravity.webp" id="3_rh6a2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh6a2"]
-atlas = ExtResource("2_50pgb")
-region = Rect2(0, 0, 175, 336)
+atlas = ExtResource("3_rh6a2")
+region = Rect2(0, 0, 176, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjs5k"]
-atlas = ExtResource("2_50pgb")
-region = Rect2(175, 0, 175, 336)
+atlas = ExtResource("3_rh6a2")
+region = Rect2(176, 0, 176, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vo5gw"]
-atlas = ExtResource("2_50pgb")
-region = Rect2(350, 0, 175, 336)
+atlas = ExtResource("3_rh6a2")
+region = Rect2(352, 0, 176, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_np3kf"]
-atlas = ExtResource("2_50pgb")
-region = Rect2(525, 0, 175, 336)
+atlas = ExtResource("3_rh6a2")
+region = Rect2(528, 0, 176, 336)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slrr6"]
 animations = [{
@@ -57,7 +57,8 @@ towerboundary = NodePath("TowerBoundary")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=377437865]
 sprite_frames = SubResource("SpriteFrames_slrr6")
 autoplay = "default"
-frame_progress = 0.91676724
+frame = 3
+frame_progress = 0.03828095
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=505660784]
 collision_mask = 2

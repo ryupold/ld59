@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7fr64yqejok7"
-path="res://.godot/imported/tower_payload.png-1655ee16388829fa7e140ade8908d151.ctex"
+uid="uid://bkcg77v7y7sta"
+path="res://.godot/imported/tower_gravity.webp-7682da25ed50356a8b131765c95e71f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/towers/payload/tower_payload.png"
-dest_files=["res://.godot/imported/tower_payload.png-1655ee16388829fa7e140ade8908d151.ctex"]
+source_file="res://entities/towers/gravity/tower_gravity.webp"
+dest_files=["res://.godot/imported/tower_gravity.webp-7682da25ed50356a8b131765c95e71f1.ctex"]
 
 [params]
 

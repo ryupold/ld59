@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c68l2lbnn1jpj"
-path="res://.godot/imported/tower_relay.png-64d15ef5c806cb61e810925c2d08e0b8.ctex"
+uid="uid://3qc125w0u08m"
+path="res://.godot/imported/tower_antigravity.webp-1b1a05dffa4f67a6c899f746a41fe69c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/towers/relay/tower_relay.png"
-dest_files=["res://.godot/imported/tower_relay.png-64d15ef5c806cb61e810925c2d08e0b8.ctex"]
+source_file="res://entities/towers/anti_gravity/tower_antigravity.webp"
+dest_files=["res://.godot/imported/tower_antigravity.webp-1b1a05dffa4f67a6c899f746a41fe69c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpkbt5j4d3v11"
-path="res://.godot/imported/tower_gravity.png-ed41c44a1bddf145dff45ea159bc46d0.ctex"
+uid="uid://cy6sa6javbl4v"
+path="res://.godot/imported/heal_effect.webp-a6bd86d68d24de478f7e08629eba59da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/towers/gravity/tower_gravity.png"
-dest_files=["res://.godot/imported/tower_gravity.png-ed41c44a1bddf145dff45ea159bc46d0.ctex"]
+source_file="res://entities/towers/relay/heal_effect.webp"
+dest_files=["res://.godot/imported/heal_effect.webp-a6bd86d68d24de478f7e08629eba59da.ctex"]
 
 [params]
 

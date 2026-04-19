@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://ck4loryblva0u"]
 
 [ext_resource type="Script" uid="uid://n4k51v5m15gx" path="res://entities/towers/payload/payload_tower.gd" id="1_hk4hf"]
-[ext_resource type="Texture2D" uid="uid://b7fr64yqejok7" path="res://entities/towers/payload/tower_payload.png" id="2_hk4hf"]
 [ext_resource type="PackedScene" uid="uid://vqw0ywocyngv" path="res://entities/shadow/tower_shadow.tscn" id="2_jvxy7"]
+[ext_resource type="Texture2D" uid="uid://b5d1bthhcsk1m" path="res://entities/towers/payload/tower_payload.webp" id="3_jvxy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvxy7"]
-atlas = ExtResource("2_hk4hf")
-region = Rect2(0, 0, 166, 340)
+atlas = ExtResource("3_jvxy7")
+region = Rect2(0, 0, 174, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o33i0"]
-atlas = ExtResource("2_hk4hf")
-region = Rect2(166, 0, 166, 340)
+atlas = ExtResource("3_jvxy7")
+region = Rect2(174, 0, 174, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahht3"]
-atlas = ExtResource("2_hk4hf")
-region = Rect2(332, 0, 166, 340)
+atlas = ExtResource("3_jvxy7")
+region = Rect2(348, 0, 174, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f68nb"]
-atlas = ExtResource("2_hk4hf")
-region = Rect2(498, 0, 166, 340)
+atlas = ExtResource("3_jvxy7")
+region = Rect2(522, 0, 174, 336)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jynls"]
 animations = [{
@@ -57,6 +57,7 @@ towerboundary = NodePath("TowerBoundary")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837089707]
 sprite_frames = SubResource("SpriteFrames_jynls")
 autoplay = "default"
+frame_progress = 0.76283485
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=505660784]
 collision_mask = 2
