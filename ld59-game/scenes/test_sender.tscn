@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://brtqthc0p3i8m" path="res://entities/towers/speed/speed_tower.tscn" id="8_p2e67"]
 [ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="9_e8af8"]
 [ext_resource type="PackedScene" uid="uid://cv0dyuglhhbwd" path="res://entities/towers/slow/slow_tower.tscn" id="10_7aqdj"]
-[ext_resource type="PackedScene" uid="uid://chplpkdrkqygp" path="res://entities/walls/circle_wall.tscn" id="12_01axi"]
-[ext_resource type="PackedScene" uid="uid://djohxpgt54hod" path="res://entities/walls/rectanlge_wall.tscn" id="13_7vrsr"]
+[ext_resource type="PackedScene" uid="uid://chplpkdrkqygp" path="res://entities/walls/old_circle_wall.tscn" id="12_01axi"]
+[ext_resource type="PackedScene" uid="uid://cj1fd2gew8dxg" path="res://entities/walls/cicle_wall.tscn" id="13_01axi"]
 
 [node name="TestSender" type="Node2D" unique_id=324347188]
 
@@ -34,14 +34,6 @@ position = Vector2(3774, 1865)
 
 [node name="CircleWall5" parent="." unique_id=202961288 instance=ExtResource("12_01axi")]
 position = Vector2(3176, 1333)
-
-[node name="RectangleWall" parent="." unique_id=369208461 instance=ExtResource("13_7vrsr")]
-position = Vector2(830.99994, 1082)
-scale = Vector2(0.59383804, 3.6685872)
-
-[node name="RectangleWall2" parent="." unique_id=2035977692 instance=ExtResource("13_7vrsr")]
-position = Vector2(1799, 1568)
-scale = Vector2(0.59383804, 3.6685872)
 
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("2_mv1ug")]
 position = Vector2(277.5947, 400.97012)
@@ -88,3 +80,9 @@ position = Vector2(3772, 725)
 
 [node name="WallTower" parent="Towers" unique_id=1813750863 instance=ExtResource("5_nivf7")]
 position = Vector2(907.0001, -206.99994)
+
+[node name="CircleWall6" parent="." unique_id=2117046853 instance=ExtResource("13_01axi")]
+offset_left = 501.0
+offset_top = 346.0
+offset_right = 1563.0
+offset_bottom = 732.0

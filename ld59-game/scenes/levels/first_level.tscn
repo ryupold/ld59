@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://byxtxjd27x2eb" path="res://scenes/levels/level.gd" id="1_xbibw"]
 [ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="3_hkalp"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_xbibw"]
-[ext_resource type="PackedScene" uid="uid://djohxpgt54hod" path="res://entities/walls/rectanlge_wall.tscn" id="6_3kh8m"]
-[ext_resource type="PackedScene" uid="uid://chplpkdrkqygp" path="res://entities/walls/circle_wall.tscn" id="7_fqprn"]
+[ext_resource type="PackedScene" uid="uid://djohxpgt54hod" path="res://entities/walls/rectangle_wall.tscn" id="6_3kh8m"]
+[ext_resource type="PackedScene" uid="uid://cj1fd2gew8dxg" path="res://entities/walls/cicle_wall.tscn" id="8_fqprn"]
 
 [node name="FirstLevel" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers", "packets")]
 script = ExtResource("1_xbibw")
@@ -32,24 +32,31 @@ spawnAngleMin = 0.0
 position = Vector2(4244, 2307)
 
 [node name="RectangleWall" parent="." unique_id=369208461 instance=ExtResource("6_3kh8m")]
-position = Vector2(1058, 1736)
+offset_left = 1058.0
+offset_top = 1736.0
+offset_right = 1558.0
+offset_bottom = 2236.0
 scale = Vector2(0.405, 3.5)
 
 [node name="RectangleWall2" parent="." unique_id=496078732 instance=ExtResource("6_3kh8m")]
-position = Vector2(2836.9993, 1486.0001)
+offset_left = 2744.723
+offset_top = 1517.4841
+offset_right = 3102.3584
+offset_bottom = 2953.1775
 rotation = 2.2557116
-scale = Vector2(0.405, 3.5)
 
 [node name="RectangleWall3" parent="." unique_id=121758671 instance=ExtResource("6_3kh8m")]
-position = Vector2(2952, 1343.9999)
-rotation = 2.0992906
-scale = Vector2(0.405, 3.5)
-
-[node name="CircleWall" parent="." unique_id=1578220329 instance=ExtResource("7_fqprn")]
-position = Vector2(3595, 1899)
+offset_left = 3120.5288
+offset_top = 1525.4741
+offset_right = 3393.4963
+offset_bottom = 3237.8887
+rotation = 2.1334991
 
 [node name="RectangleWall4" parent="." unique_id=485338014 instance=ExtResource("6_3kh8m")]
-position = Vector2(3257.9998, 1669)
+offset_left = 3257.9998
+offset_top = 1669.0
+offset_right = 3757.9998
+offset_bottom = 2169.0
 rotation = 2.1885486
 scale = Vector2(0.74066716, 1.4569749)
 
@@ -59,3 +66,9 @@ scale = Vector2(0.74066716, 1.4569749)
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(2274, 1504)
+
+[node name="CircleWall2" parent="." unique_id=2117046853 instance=ExtResource("8_fqprn")]
+offset_left = 2477.0
+offset_top = 1331.0
+offset_right = 3295.8218
+offset_bottom = 2141.0
