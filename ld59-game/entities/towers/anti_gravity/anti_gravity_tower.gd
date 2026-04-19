@@ -2,7 +2,7 @@ extends Tower
 
 @export var antiGravity: float = 9.81
 
-func _physics_process(delta: float) -> void:
+func doEffect(delta: float) -> void:
 	for packet in packetsColliding:
 		var offset := global_position.direction_to(packet.global_position)
 		packet.apply_impulse(offset * antiGravity)

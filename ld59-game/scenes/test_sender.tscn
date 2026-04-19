@@ -56,32 +56,35 @@ position = Vector2(4211, 2175)
 position = Vector2(2264, 1327)
 zoom = Vector2(0.275, 0.275)
 
-[node name="PayloadTower" parent="." unique_id=633791007 instance=ExtResource("6_vvhqw")]
+[node name="Towers" type="Node2D" parent="." unique_id=346553868]
+unique_name_in_owner = true
+
+[node name="PayloadTower" parent="Towers" unique_id=633791007 instance=ExtResource("6_vvhqw")]
 position = Vector2(5093, -175)
 
-[node name="RelayTower" parent="." unique_id=439358955 instance=ExtResource("7_6djag")]
+[node name="RelayTower" parent="Towers" unique_id=439358955 instance=ExtResource("7_6djag")]
 position = Vector2(1331, 2137)
 
-[node name="RelayTower2" parent="." unique_id=1233834996 instance=ExtResource("7_6djag")]
+[node name="RelayTower2" parent="Towers" unique_id=1233834996 instance=ExtResource("7_6djag")]
 position = Vector2(1800, 403)
 
-[node name="RelayTower3" parent="." unique_id=1360433302 instance=ExtResource("7_6djag")]
+[node name="RelayTower3" parent="Towers" unique_id=1360433302 instance=ExtResource("7_6djag")]
 position = Vector2(3177, 627)
 
-[node name="SpeedTower" parent="." unique_id=249907336 instance=ExtResource("8_p2e67")]
+[node name="SpeedTower" parent="Towers" unique_id=249907336 instance=ExtResource("8_p2e67")]
 position = Vector2(822, 2232)
 
-[node name="AntiGravityTower" parent="." unique_id=1491066619 instance=ExtResource("4_kr4f8")]
+[node name="AntiGravityTower" parent="Towers" unique_id=1491066619 instance=ExtResource("4_kr4f8")]
 position = Vector2(166, 3380)
 
-[node name="GravityTower" parent="." unique_id=1604658526 instance=ExtResource("3_awagt")]
+[node name="GravityTower" parent="Towers" unique_id=1604658526 instance=ExtResource("3_awagt")]
 position = Vector2(5248, 1977)
 
-[node name="GravityTower2" parent="." unique_id=1863822030 instance=ExtResource("3_awagt")]
+[node name="GravityTower2" parent="Towers" unique_id=1863822030 instance=ExtResource("3_awagt")]
 position = Vector2(827, 1812)
 
-[node name="SlowTower" parent="." unique_id=1106743518 instance=ExtResource("10_7aqdj")]
+[node name="SlowTower" parent="Towers" unique_id=1106743518 instance=ExtResource("10_7aqdj")]
 position = Vector2(-1012, 1364)
 
-[node name="WallTower" parent="." unique_id=1813750863 instance=ExtResource("5_nivf7")]
+[node name="WallTower" parent="Towers" unique_id=1813750863 instance=ExtResource("5_nivf7")]
 position = Vector2(907.0001, -206.99994)

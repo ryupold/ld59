@@ -10,5 +10,5 @@ func _ready() -> void:
 
 	for tower in towers:
 		var canvasItem: TowerCanvasItem = towerCanvasItem.instantiate()
-		canvasItem.tower = tower
+		canvasItem.towerResource = tower
 		add_child(canvasItem)

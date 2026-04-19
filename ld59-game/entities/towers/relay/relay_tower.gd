@@ -14,7 +14,8 @@ func _ready() -> void:
 
 
 func addCompute(body: Node2D) -> void:
-	if body is Packet:
-		var packet := body as Packet
-		packet.increaseTtl(ttlIncrease)
+	if disableEffect and body is not Packet:
+		return
+	var packet := body as Packet
+	packet.increaseTtl(ttlIncrease)
 	return

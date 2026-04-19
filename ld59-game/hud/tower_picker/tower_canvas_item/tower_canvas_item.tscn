@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://bjemchx618kvp"
 custom_minimum_size = Vector2(150, 150)
 mouse_default_cursor_shape = 2
 script = ExtResource("1_6cimu")
-tower = SubResource("Resource_fynk8")
+towerResource = SubResource("Resource_fynk8")
 button = NodePath("MarginContainer/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1593872442]
