@@ -1,6 +1,6 @@
 class_name LevelResource extends Resource
 
-@export var Title: String
+@export var title: String
 
 @export var scene: PackedScene
 @export var completed := false

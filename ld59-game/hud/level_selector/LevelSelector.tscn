@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://b0blgpnq2do5u"]
 
 [ext_resource type="PackedScene" uid="uid://3njoblir4qc8" path="res://hud/level_selector/level_canvas_item.tscn" id="1_308xf"]
+[ext_resource type="Script" uid="uid://chaebjg00fb4j" path="res://hud/level_selector/level_selector.gd" id="1_q4fjr"]
 
-[node name="LevelSelector" type="VBoxContainer" unique_id=615078967]
+[node name="LevelSelector" type="VBoxContainer" unique_id=615078967 node_paths=PackedStringArray("buttonParent")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_q4fjr")
+buttonParent = NodePath("MarginContainer/GridContainer")
 
 [node name="HSeparator" type="HSeparator" parent="." unique_id=1549279738]
 layout_mode = 2

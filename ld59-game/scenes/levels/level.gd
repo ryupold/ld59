@@ -6,4 +6,4 @@ class_name Level extends Node2D
 @export var packets: Node2D
 
 func _ready() -> void:
-	GameState.onLevelCreated.emit(GameState._currentLevel)
+	GameState.onLevelCreated.emit()

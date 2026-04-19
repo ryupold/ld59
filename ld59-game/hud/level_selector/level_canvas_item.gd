@@ -1,7 +1,7 @@
 class_name LevelCanvasItem extends MarginContainer
 
 @export var resource: LevelResource
-@export var disabled:bool:
+@export var disabled: bool :
 	get:
 		return button.disabled
 	set(value):
@@ -9,7 +9,7 @@ class_name LevelCanvasItem extends MarginContainer
 @export var button: Button
 
 func _ready() -> void:
-	button.text = resource.Title
+	button.text = resource.title
 	button.pressed.connect(loadLevel)
 
 func loadLevel():
