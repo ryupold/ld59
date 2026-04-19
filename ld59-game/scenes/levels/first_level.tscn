@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://3gly81brpmpc"]
 
+[ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="1_1bbdw"]
+[ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="1_gy01a"]
+
 [node name="FirstLevel" type="Node2D" unique_id=1669637617]
+
+[node name="HUD" parent="." unique_id=114495 instance=ExtResource("1_gy01a")]
+
+[node name="Walls" parent="." unique_id=903204524 instance=ExtResource("1_1bbdw")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1504361380]
+position = Vector2(2274, 1504)
+zoom = Vector2(0.351, 0.351)
+
+[node name="Towers" type="Node2D" parent="." unique_id=1245803590]
+unique_name_in_owner = true
+position = Vector2(2274, 1504)
