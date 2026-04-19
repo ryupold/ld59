@@ -43,9 +43,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_50pgb"]
 radius = 600.0
 
-[node name="SpeedTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("collisionArea")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a477d"]
+radius = 61.0
+height = 240.0
+
+[node name="SpeedTower" type="Node2D" unique_id=1233834996 node_paths=PackedStringArray("effectArea", "towerboundary")]
 script = ExtResource("1_a477d")
-collisionArea = NodePath("Area2D")
+effectArea = NodePath("EffectArea")
+towerboundary = NodePath("TowerBoundary")
 
 [node name="TowerShadow" parent="." unique_id=1963121006 instance=ExtResource("2_y05ey")]
 
@@ -53,8 +58,15 @@ collisionArea = NodePath("Area2D")
 sprite_frames = SubResource("SpriteFrames_d7tpe")
 autoplay = "default"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=505660784]
+[node name="EffectArea" type="Area2D" parent="." unique_id=505660784]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1262524344]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea" unique_id=1262524344]
 shape = SubResource("CircleShape2D_50pgb")
+
+[node name="TowerBoundary" type="Area2D" parent="." unique_id=391322065]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBoundary" unique_id=387860515]
+shape = SubResource("CapsuleShape2D_a477d")

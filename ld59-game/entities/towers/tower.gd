@@ -1,28 +1,33 @@
 @abstract class_name Tower extends Node2D
 
-@export var collisionArea: Area2D
+@export var effectArea: Area2D
+@export var towerboundary: Area2D
 var packetsColliding: Array[Packet]
 @export var followsMouse := false
 @export var disableEffect := false
 @export var debug := true
 
 func _ready() -> void:
-	collisionArea.body_entered.connect(addCompute)
-	collisionArea.body_exited.connect(removeCompute)
-	collisionArea.input_event.connect(handleClick)
+	if effectArea != null:
+		effectArea.body_entered.connect(enterCollision)
+		effectArea.body_exited.connect(exitCollision)
+
+	towerboundary.body_entered.connect(enterCollision)
+	towerboundary.body_exited.connect(exitCollision)
+	towerboundary.input_event.connect(handleClick)
 
 func _physics_process(delta: float) -> void:
 	handleFollowMouse()
 	if not disableEffect:
 		doEffect(delta)
 
-func addCompute(body: Node2D) -> void:
+func enterCollision(body: Node2D) -> void:
 	if body is Packet:
 		var packet := body as Packet
 		packetsColliding.append(packet)
 	return
 
-func removeCompute(body: Node2D) -> void:
+func exitCollision(body: Node2D) -> void:
 	if body is Packet:
 		var packet := body as Packet
 		var pos := packetsColliding.find(packet)
@@ -33,11 +38,16 @@ func removeCompute(body: Node2D) -> void:
 
 func handleFollowMouse() -> void:
 	if followsMouse:
+		modulate =  Color.WHITE if canPlace() else Color.RED
 		global_position = get_global_mouse_position()
+
+func canPlace() -> bool:
+	return towerboundary.get_overlapping_areas().is_empty() and towerboundary.get_overlapping_bodies().is_empty()
+
 
 func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and canPlace():
 			followsMouse = false
 		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and debug:
 			print("Right mouse button clicked at:", event.position)
@@ -45,8 +55,8 @@ func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 
 func handleDisableEffect() -> void:
 	if disableEffect:
-		collisionArea.body_entered.disconnect(addCompute)
-		var shape: CollisionShape2D = collisionArea.get_child(0)
+		effectArea.body_entered.disconnect(enterCollision)
+		var shape: CollisionShape2D = effectArea.get_child(0)
 		shape.disabled = true
 
 func doEffect(delta: float) -> void:

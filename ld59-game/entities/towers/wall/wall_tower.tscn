@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://oo7hw2v4cf22"]
 
 [ext_resource type="Texture2D" uid="uid://dn0d61m21bn0y" path="res://concepts/wall-tower.png" id="1_j117e"]
+[ext_resource type="Script" uid="uid://djd2cjyqbdiws" path="res://entities/towers/wall/wall_tower.gd" id="1_vbyka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjav5"]
 size = Vector2(128, 20)
 
-[node name="WallTower" type="StaticBody2D" unique_id=1813750863]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyka"]
+size = Vector2(128, 20)
+
+[node name="WallTower" type="Node2D" unique_id=943450675 node_paths=PackedStringArray("towerboundary")]
 scale = Vector2(5, 5)
+script = ExtResource("1_vbyka")
+towerboundary = NodePath("TowerBoundary")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1470504276]
 scale = Vector2(1, 0.125)
@@ -14,5 +20,16 @@ texture = ExtResource("1_j117e")
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 152)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145747203]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=641059385]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=145747203]
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_jjav5")
+
+[node name="TowerBoundary" type="Area2D" parent="." unique_id=865943843]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBoundary" unique_id=1381100892]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_vbyka")
