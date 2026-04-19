@@ -7,6 +7,8 @@ class_name Packet
 @export var payload: int = 1
 @export var degradation: int
 @export var growthModifier := 0.3
+@export var minSpeed: float = 100
+@export var maxSpeed: float = 5000
 var originalSpriteScale: float
 var originalColliderScale: float
 
@@ -34,3 +36,9 @@ func increasePayload() -> void:
 
 func increaseTtl() -> void:
 	ttl += 1
+func setVelocity(v: Vector2):
+	if v.length_squared() < minSpeed * minSpeed:
+		v = v.normalized() * minSpeed
+	elif v.length_squared() > maxSpeed * maxSpeed:
+		v = v.normalized() * maxSpeed
+	set_axis_velocity(v)
