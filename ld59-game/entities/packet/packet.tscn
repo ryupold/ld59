@@ -33,6 +33,12 @@
 [ext_resource type="Texture2D" uid="uid://dvq7w5t0rfx5p" path="res://entities/packet/sprites/large_package_7.webp" id="31_6c4b0"]
 [ext_resource type="Texture2D" uid="uid://c1eb0p2n70i3s" path="res://entities/packet/sprites/large_package_8.webp" id="32_3mgt8"]
 [ext_resource type="Texture2D" uid="uid://wavrtnlmyb16" path="res://entities/packet/sprites/large_package_9.webp" id="33_4nup1"]
+[ext_resource type="PackedScene" uid="uid://b1f6u37tehugn" path="res://entities/packet/effects/gravity_effect.tscn" id="34_b5gl4"]
+[ext_resource type="PackedScene" uid="uid://cml8hc5qk3xyx" path="res://entities/packet/effects/speed_effect.tscn" id="35_b5gl4"]
+[ext_resource type="PackedScene" uid="uid://dryxjak7b2fn8" path="res://entities/packet/effects/ttl_effect.tscn" id="36_s2q10"]
+[ext_resource type="PackedScene" uid="uid://hiyyldm5f64f" path="res://entities/packet/effects/payload_effect.tscn" id="37_iot14"]
+[ext_resource type="PackedScene" uid="uid://bx5cctw1itt2w" path="res://entities/packet/effects/slow_effect.tscn" id="37_weadl"]
+[ext_resource type="PackedScene" uid="uid://smkhmyw5q2gs" path="res://entities/packet/effects/antigravity_effect.tscn" id="38_iot14"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4aub"]
 friction = 0.0
@@ -50,6 +56,30 @@ max_contacts_reported = 1
 linear_damp_mode = 1
 script = ExtResource("1_2lw8n")
 sprites = Array[Texture2D]([ExtResource("2_g4aub"), ExtResource("3_sjlld"), ExtResource("4_2sgni"), ExtResource("5_b5gl4"), ExtResource("6_s2q10"), ExtResource("7_hsluj"), ExtResource("8_iot14"), ExtResource("3_inkb4"), ExtResource("10_weadl"), ExtResource("11_0ubnr"), ExtResource("12_erwux"), ExtResource("13_oxd7k"), ExtResource("14_1kpe5"), ExtResource("15_qrdlp"), ExtResource("16_o764s"), ExtResource("17_g43t1"), ExtResource("18_5tfje"), ExtResource("19_5dfmp"), ExtResource("20_ndi20"), ExtResource("21_hhecy"), ExtResource("22_hid8s"), ExtResource("23_5yr7d"), ExtResource("24_qxj03"), ExtResource("25_kas8n"), ExtResource("26_xweio"), ExtResource("27_5ajfk"), ExtResource("28_mydh4"), ExtResource("2_inkb4"), ExtResource("30_lamr3"), ExtResource("31_6c4b0"), ExtResource("32_3mgt8"), ExtResource("33_4nup1")])
+
+[node name="Effects" type="Node2D" parent="." unique_id=952901511]
+
+[node name="GravityEffect" parent="Effects" unique_id=2060544096 instance=ExtResource("34_b5gl4")]
+visible = false
+
+[node name="AntigravityEffect" parent="Effects" unique_id=1217895463 instance=ExtResource("38_iot14")]
+visible = false
+position = Vector2(0, -27)
+
+[node name="SpeedEffect" parent="Effects" unique_id=1517888039 instance=ExtResource("35_b5gl4")]
+visible = false
+position = Vector2(0, -10.999999)
+
+[node name="SlowEffect" parent="Effects" unique_id=1708781191 instance=ExtResource("37_weadl")]
+visible = false
+position = Vector2(0, -14)
+
+[node name="TTLEffect" parent="Effects" unique_id=381591898 instance=ExtResource("36_s2q10")]
+visible = false
+
+[node name="PayloadEffect" parent="Effects" unique_id=1618592650 instance=ExtResource("37_iot14")]
+visible = false
+position = Vector2(-4, -16)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=917722006]
 anchors_preset = 8

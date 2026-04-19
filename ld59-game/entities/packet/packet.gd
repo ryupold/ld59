@@ -9,12 +9,29 @@ class_name Packet
 @export var minSpeed: float = 100
 @export var maxSpeed: float = 5000
 @export var payload: int = 1
+@export var sprites: Array[Texture2D] = []
 var originalScales: Array[Vector2] = []
 
-@export var sprites: Array[Texture2D] = []
+@onready var effectMap: Dictionary = {
+	Tower.Effect.GRAVITY: $Effects/GravityEffect,
+	Tower.Effect.ANTIGRAVITY: $Effects/AntigravityEffect,
+	Tower.Effect.SPEED: $Effects/SpeedEffect,
+	Tower.Effect.SLOW: $Effects/SlowEffect,
+	Tower.Effect.TTL: $Effects/TTLEffect,
+	Tower.Effect.PAYLOAD: $Effects/PayloadEffect,
+}
+
+var activeEffects: Dictionary = {
+	Tower.Effect.GRAVITY: 0,
+	Tower.Effect.ANTIGRAVITY: 0,
+	Tower.Effect.SPEED: 0,
+	Tower.Effect.SLOW: 0,
+	Tower.Effect.TTL: 0,
+	Tower.Effect.PAYLOAD: 0,
+}
 
 func _ready() -> void:
-	for c in get_children()	:
+	for c in get_children():
 		if c is CanvasItem:
 			originalScales.append(c.scale)
 			
@@ -48,3 +65,14 @@ func setVelocity(v: Vector2):
 	elif v.length_squared() > maxSpeed * maxSpeed:
 		v = v.normalized() * maxSpeed
 	set_axis_velocity(v)
+
+func setEffect(effectType: Tower.Effect, enabled: bool):
+	var effectAnimation : AnimatedSprite2D = effectMap[effectType]
+	if effectAnimation:
+		if enabled:
+			activeEffects[effectType] += 1
+		else:
+			activeEffects[effectType] = max(activeEffects[effectType] - 1, 0)
+		effectAnimation.visible = activeEffects[effectType] > 0;
+	else:
+		print("unknown effect: " + str(effectType))

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://smkhmyw5q2gs"]
+
+[ext_resource type="Texture2D" uid="uid://b0lxl0x4ehx4n" path="res://entities/towers/anti_gravity/antigravity_effect.webp" id="1_qab2j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ubnr"]
+atlas = ExtResource("1_qab2j")
+region = Rect2(0, 0, 90, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erwux"]
+atlas = ExtResource("1_qab2j")
+region = Rect2(155, 0, 130, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxd7k"]
+atlas = ExtResource("1_qab2j")
+region = Rect2(319, 0, 158, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kpe5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ubnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erwux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxd7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AntigravityEffect" type="AnimatedSprite2D" unique_id=1217895463]
+sprite_frames = SubResource("SpriteFrames_1kpe5")
+autoplay = "default"
+frame_progress = 0.35188255

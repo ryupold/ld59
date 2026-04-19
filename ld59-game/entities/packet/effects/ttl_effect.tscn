@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dryxjak7b2fn8"]
+
+[ext_resource type="Texture2D" uid="uid://cy6sa6javbl4v" path="res://entities/towers/relay/heal_effect.webp" id="1_iny7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ett8"]
+atlas = ExtResource("1_iny7l")
+region = Rect2(0, 0, 113, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y34o2"]
+atlas = ExtResource("1_iny7l")
+region = Rect2(113, 0, 113, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rixo7"]
+atlas = ExtResource("1_iny7l")
+region = Rect2(226, 0, 113, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mfvy"]
+atlas = ExtResource("1_iny7l")
+region = Rect2(339, 0, 113, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysj3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ett8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y34o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rixo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mfvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TTLEffect" type="AnimatedSprite2D" unique_id=381591898]
+sprite_frames = SubResource("SpriteFrames_ysj3w")
+autoplay = "default"
+frame_progress = 0.09027628

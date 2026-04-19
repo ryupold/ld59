@@ -14,6 +14,18 @@ var _followsMouse := false
 @export var disableEffect := false
 @export var debug := true
 
+@abstract func towerEffect() -> Effect
+
+enum Effect {
+	NONE,
+	GRAVITY,
+	ANTIGRAVITY,
+	SPEED,
+	SLOW,
+	TTL,
+	PAYLOAD,
+}
+
 func _ready() -> void:
 	if effectArea != null and effectArea is Area2D:
 		effectArea.body_entered.connect(enterCollision)
@@ -33,11 +45,13 @@ func enterCollision(body: Node2D) -> void:
 	if body is Packet:
 		var packet := body as Packet
 		packetsColliding.append(packet)
+		packet.setEffect(towerEffect(), true)
 	return
 
 func exitCollision(body: Node2D) -> void:
 	if body is Packet:
 		var packet := body as Packet
+		packet.setEffect(towerEffect(), false)
 		var pos := packetsColliding.find(packet)
 		if pos == -1:
 			return

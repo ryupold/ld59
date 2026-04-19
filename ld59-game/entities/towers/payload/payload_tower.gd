@@ -2,6 +2,8 @@ extends Tower
 
 @export var payloadIncrease: int = 1
 
+func towerEffect(): return Effect.PAYLOAD
+
 func _ready() -> void:
 	super._ready()
 
@@ -12,10 +14,10 @@ func _ready() -> void:
 	tween.tween_property(effectArea, "scale", Vector2.ZERO, 0)
 	tween.tween_interval(1)
 
-
 func enterCollision(body: Node2D) -> void:
 	if disableEffect and body is not Packet:
 		return
 	var packet := body as Packet
 	packet.increasePayload(payloadIncrease)
+	packet.setEffect(towerEffect(), true)
 	return

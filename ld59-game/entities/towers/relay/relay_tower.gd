@@ -2,6 +2,8 @@ extends Tower
 
 @export var ttlIncrease: int = 1
 
+func towerEffect(): return Effect.TTL
+
 func _ready() -> void:
 	super._ready()
 
@@ -18,4 +20,5 @@ func enterCollision(body: Node2D) -> void:
 		return
 	var packet := body as Packet
 	packet.increaseTtl(ttlIncrease)
+	packet.setEffect(towerEffect(), true)
 	return

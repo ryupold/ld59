@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://hiyyldm5f64f"]
+
+[ext_resource type="Texture2D" uid="uid://desewxcfacstg" path="res://entities/towers/payload/payload_effect.webp" id="1_8gtax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iot14"]
+atlas = ExtResource("1_8gtax")
+region = Rect2(0, 0, 91, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weadl"]
+atlas = ExtResource("1_8gtax")
+region = Rect2(159, 0, 120, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ubnr"]
+atlas = ExtResource("1_8gtax")
+region = Rect2(344, 0, 100, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_erwux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iot14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weadl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ubnr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PayloadEffect" type="AnimatedSprite2D" unique_id=1618592650]
+sprite_frames = SubResource("SpriteFrames_erwux")
+autoplay = "default"
+frame = 2
+frame_progress = 0.60730404

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bx5cctw1itt2w"]
+
+[ext_resource type="Texture2D" uid="uid://dv6jpas4ll5gy" path="res://entities/towers/speed/speed_effect.webp" id="1_anj6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weadl"]
+atlas = ExtResource("1_anj6b")
+region = Rect2(0, 0, 76, 141)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ubnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weadl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SlowEffect" type="AnimatedSprite2D" unique_id=1708781191]
+modulate = Color(1, 0.27058825, 1, 1)
+sprite_frames = SubResource("SpriteFrames_0ubnr")

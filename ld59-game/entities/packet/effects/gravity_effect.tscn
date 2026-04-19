@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b1f6u37tehugn"]
+
+[ext_resource type="Texture2D" uid="uid://by4rm6dyv514w" path="res://entities/towers/gravity/gravity_effect.webp" id="1_5tl7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5gl4"]
+atlas = ExtResource("1_5tl7s")
+region = Rect2(0, 0, 174, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2q10"]
+atlas = ExtResource("1_5tl7s")
+region = Rect2(174, 0, 174, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsluj"]
+atlas = ExtResource("1_5tl7s")
+region = Rect2(348, 0, 174, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iot14"]
+atlas = ExtResource("1_5tl7s")
+region = Rect2(522, 0, 174, 171)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_weadl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5gl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2q10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsluj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iot14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GravityEffect" type="AnimatedSprite2D" unique_id=2060544096]
+scale = Vector2(0.5263158, 0.5263158)
+sprite_frames = SubResource("SpriteFrames_weadl")
+autoplay = "default"

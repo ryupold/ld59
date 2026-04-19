@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cml8hc5qk3xyx"]
+
+[ext_resource type="Texture2D" uid="uid://dv6jpas4ll5gy" path="res://entities/towers/speed/speed_effect.webp" id="1_6jfad"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsluj"]
+atlas = ExtResource("1_6jfad")
+region = Rect2(0, 0, 77, 141)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ubnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsluj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpeedEffect" type="AnimatedSprite2D" unique_id=1517888039]
+scale = Vector2(0.96103895, 0.867553)
+sprite_frames = SubResource("SpriteFrames_0ubnr")
+autoplay = "default"
+frame_progress = 0.51102114
