@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="2_hpmw0"]
 [ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/towers/slow_tower.tres" id="3_hpmw0"]
 [ext_resource type="Resource" uid="uid://d4dmqi8oho8ks" path="res://resources/towers/gravity_tower.tres" id="4_v7j8b"]
+[ext_resource type="Resource" uid="uid://bdj1kktprk6dp" path="res://resources/towers/antigravity_tower.tres" id="5_g5peo"]
 
 [resource]
 script = ExtResource("1_ugfgi")
-towers = Array[ExtResource("2_hpmw0")]([ExtResource("3_hpmw0"), ExtResource("4_v7j8b")])
+towers = Array[ExtResource("2_hpmw0")]([ExtResource("3_hpmw0"), ExtResource("4_v7j8b"), ExtResource("5_g5peo")])
 metadata/_custom_type_script = "uid://j8gggyuglixk"
