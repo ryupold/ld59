@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3i1vgtrekd1x"]
 
-[ext_resource type="PackedScene" uid="uid://djohxpgt54hod" path="res://entities/walls/rectangle_wall.tscn" id="2_ew4hc"]
+[ext_resource type="PackedScene" uid="uid://cjubf2uowpulv" path="res://entities/walls/rectangle_wall.tscn" id="2_ew4hc"]
 
 [node name="Walls" type="Node2D" unique_id=903204524]
 scale = Vector2(0.11648584, 0.10750823)
