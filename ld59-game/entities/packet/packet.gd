@@ -5,7 +5,7 @@ class_name Packet
 @export_category("Properties")
 @export var ttl: int = 5
 @export var degradation: int
-@export var growthModifier := 2.3
+@export var growthModifier := 0.3
 @export var minSpeed: float = 100
 @export var maxSpeed: float = 5000
 @export var payload: int = 1
