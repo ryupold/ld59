@@ -1,6 +1,6 @@
 @abstract class_name Tower extends Node2D
 
-@export var effectArea: Area2D
+@export var effectArea: CollisionObject2D
 @export var towerboundary: Area2D
 var packetsColliding: Array[Packet]
 var _followsMouse := false
@@ -15,7 +15,7 @@ var _followsMouse := false
 @export var debug := true
 
 func _ready() -> void:
-	if effectArea != null:
+	if effectArea != null and effectArea is Area2D:
 		effectArea.body_entered.connect(enterCollision)
 		effectArea.body_exited.connect(exitCollision)
 
@@ -25,6 +25,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	handleFollowMouse()
+	handleDisableEffect()
 	if not disableEffect:
 		doEffect(delta)
 
@@ -58,12 +59,17 @@ func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and debug and not GameState._isDragging:
 			print("Right mouse button clicked at:", event.position)
 			pickup()
+		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and GameState._isDragging:
+			followsMouse = false
+			queue_free()
 
 func handleDisableEffect() -> void:
+	if effectArea == null: return
+	var shape: CollisionShape2D = effectArea.get_child(0)
 	if disableEffect:
-		effectArea.body_entered.disconnect(enterCollision)
-		var shape: CollisionShape2D = effectArea.get_child(0)
 		shape.disabled = true
+	else:
+		shape.disabled = false
 
 func doEffect(delta: float) -> void:
 	pass
