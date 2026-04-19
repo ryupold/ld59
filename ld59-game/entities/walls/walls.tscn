@@ -3,28 +3,34 @@
 [ext_resource type="PackedScene" uid="uid://cjubf2uowpulv" path="res://entities/walls/rectangle_wall.tscn" id="2_ew4hc"]
 
 [node name="Walls" type="Node2D" unique_id=903204524]
-scale = Vector2(0.11648584, 0.10750823)
 
 [node name="Left" parent="." unique_id=369208461 instance=ExtResource("2_ew4hc")]
-offset_left = -4017.6555
-offset_top = 186.03227
-offset_right = 982.3445
-offset_bottom = 24586.033
+offset_left = -3040.0
+offset_top = -1834.0
+offset_right = -2445.3445
+offset_bottom = 1854.0
+pivot_offset = Vector2(297.32776, 1844)
 
-[node name="Top" parent="." unique_id=2117046853 instance=ExtResource("2_ew4hc")]
-offset_left = -4017.6555
-offset_top = -3460.2002
-offset_right = 42940.84
-offset_bottom = 1539.7998
+[node name="Right" parent="." unique_id=2117046853 instance=ExtResource("2_ew4hc")]
+offset_left = 2452.0
+offset_top = -1825.0
+offset_right = 3046.6553
+offset_bottom = 1863.0
+pivot_offset = Vector2(297.32764, 1844)
 
-[node name="Bottom" parent="." unique_id=529863937 instance=ExtResource("2_ew4hc")]
-offset_left = -4017.6555
-offset_top = 22491.3
-offset_right = 42940.84
-offset_bottom = 27491.3
+[node name="Top" parent="." unique_id=956855345 instance=ExtResource("2_ew4hc")]
+offset_left = -3017.0
+offset_top = -1825.0
+offset_right = 3047.0
+offset_bottom = -1252.0
+pivot_offset = Vector2(3032, 286.5)
 
-[node name="Right" parent="." unique_id=978464735 instance=ExtResource("2_ew4hc")]
-offset_left = 37944.52
-offset_top = 186.03227
-offset_right = 42944.52
-offset_bottom = 24586.033
+[node name="Bottom" parent="." unique_id=1764706543 instance=ExtResource("2_ew4hc")]
+offset_left = -3027.0
+offset_top = 1290.0
+offset_right = 3047.0
+offset_bottom = 1863.0
+pivot_offset = Vector2(3037, 286.5)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=731923604]
+zoom = Vector2(0.351, 0.351)

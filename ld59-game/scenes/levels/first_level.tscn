@@ -19,60 +19,57 @@ packets = NodePath("Packets")
 
 [node name="Walls" parent="." unique_id=903204524 instance=ExtResource("1_1bbdw")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1504361380]
-position = Vector2(2274, 1504)
-zoom = Vector2(0.351, 0.351)
+[node name="RectangleWall" parent="Walls" unique_id=369208461 instance=ExtResource("6_3kh8m")]
+offset_left = -1212.0
+offset_top = -1073.0
+offset_right = -333.27734
+offset_bottom = -797.14307
+pivot_offset = Vector2(439.36133, 137.92847)
 
-[node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_xbibw")]
-position = Vector2(233, 296)
-packetParent = NodePath("../Packets")
-spawnAngleMin = 0.0
-
-[node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("3_hkalp")]
-position = Vector2(4244, 2307)
-
-[node name="RectangleWall" parent="." unique_id=369208461 instance=ExtResource("6_3kh8m")]
-offset_left = 1023.6973
-offset_top = 569.32153
-offset_right = 1902.4199
-offset_bottom = 845.1786
-scale = Vector2(0.405, 3.5)
-pivot_offset = Vector2(439.3613, 137.92853)
-
-[node name="RectangleWall2" parent="." unique_id=496078732 instance=ExtResource("6_3kh8m")]
-offset_left = 2744.723
-offset_top = 1517.4841
-offset_right = 3102.3584
-offset_bottom = 2953.1775
+[node name="RectangleWall2" parent="Walls" unique_id=496078732 instance=ExtResource("6_3kh8m")]
+offset_left = 509.0257
+offset_top = -124.8374
+offset_right = 866.6612
+offset_bottom = 1310.856
 rotation = 2.2557116
 pivot_offset = Vector2(178.81775, 717.8467)
+metadata/_edit_use_anchors_ = true
 
-[node name="RectangleWall3" parent="." unique_id=121758671 instance=ExtResource("6_3kh8m")]
-offset_left = 3120.5288
-offset_top = 1525.4741
-offset_right = 3393.4963
-offset_bottom = 3237.8887
+[node name="RectangleWall3" parent="Walls" unique_id=121758671 instance=ExtResource("6_3kh8m")]
+offset_left = 491.00012
+offset_top = -699.99976
+offset_right = 763.96765
+offset_bottom = 1012.4148
 rotation = 2.1334991
 pivot_offset = Vector2(136.48376, 856.2073)
+metadata/_edit_use_anchors_ = true
 
-[node name="RectangleWall4" parent="." unique_id=485338014 instance=ExtResource("6_3kh8m")]
-offset_left = 3257.9998
-offset_top = 1669.0
-offset_right = 3757.9998
-offset_bottom = 2169.0
+[node name="RectangleWall4" parent="Walls" unique_id=485338014 instance=ExtResource("6_3kh8m")]
+offset_left = 1022.30255
+offset_top = 26.678528
+offset_right = 1522.3025
+offset_bottom = 526.6785
 rotation = 2.1885486
 scale = Vector2(0.74066716, 1.4569749)
+pivot_offset = Vector2(250, 250)
+metadata/_edit_use_anchors_ = true
+
+[node name="CircleWall2" parent="Walls" unique_id=2117046853 instance=ExtResource("8_fqprn")]
+offset_left = -1038.0
+offset_top = -240.0
+offset_right = -219.17822
+offset_bottom = 570.0
+pivot_offset = Vector2(409.4109, 405)
+
+[node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_xbibw")]
+position = Vector2(-2273, -1115)
+packetParent = NodePath("../Packets")
+
+[node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("3_hkalp")]
+position = Vector2(2211, 1042)
 
 [node name="Packets" type="Node2D" parent="." unique_id=2121823717]
 
 [node name="Towers" type="Node2D" parent="." unique_id=1245803590]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(2274, 1504)
-
-[node name="CircleWall2" parent="." unique_id=2117046853 instance=ExtResource("8_fqprn")]
-offset_left = 2477.0
-offset_top = 1331.0
-offset_right = 3295.8218
-offset_bottom = 2141.0
-pivot_offset = Vector2(409.4109, 405)
