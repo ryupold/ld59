@@ -3,7 +3,14 @@
 @export var effectArea: Area2D
 @export var towerboundary: Area2D
 var packetsColliding: Array[Packet]
-@export var followsMouse := false
+var _followsMouse := false
+@export var followsMouse : bool :
+	get:
+		return _followsMouse
+	set(value):
+		_followsMouse = value
+		GameState.onDragEvent.emit(self, _followsMouse)
+
 @export var disableEffect := false
 @export var debug := true
 
@@ -44,12 +51,11 @@ func handleFollowMouse() -> void:
 func canPlace() -> bool:
 	return towerboundary.get_overlapping_areas().is_empty() and towerboundary.get_overlapping_bodies().is_empty()
 
-
 func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and canPlace():
 			followsMouse = false
-		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and debug:
+		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and debug and not GameState._isDragging:
 			print("Right mouse button clicked at:", event.position)
 			followsMouse = true
 

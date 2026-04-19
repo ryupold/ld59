@@ -6,17 +6,20 @@ var _payloadReceived: int
 var _payloadPerSecond: float
 var _currentPayloadBuffer: float
 var _currentPayloadBufferTime: float
+var _isDragging: bool = false
 
+signal onDragEvent(node: Node2D, state: bool)
 signal onPacketLost()
 signal onPacketReceived()
 
 func _ready():
+	onDragEvent.connect(func(n, state): _isDragging = state)
 	onPacketLost.connect(increasePacketLossCounter)
 	onPacketReceived.connect(receivePacket)
-	
+
 func increasePacketLossCounter():
 	_packetsLost += 1
-	
+
 func receivePacket(payload: int):
 	_payloadReceived += payload
 	_currentPayloadBuffer += payload
