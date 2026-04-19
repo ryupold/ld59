@@ -1,4 +1,4 @@
-extends Node2D
+class_name Sender extends Node2D
 
 @export var packetScene: PackedScene = preload("res://entities/packet/packet.tscn")
 @export var packetParent: Node2D
@@ -8,7 +8,7 @@ extends Node2D
 		return $PacketCreationTimer.wait_time
 	set(value):
 		$PacketCreationTimer.wait_time = value
-		
+
 @export var spawnImpulse: float = 1000
 @export var spawnAngleMin: float = 0
 @export var spawnAngleMax: float = PI/2

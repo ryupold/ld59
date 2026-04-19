@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://cn5yhdh0xrnpp"]
 
+[ext_resource type="Script" uid="uid://byxtxjd27x2eb" path="res://scenes/levels/level.gd" id="1_1yjxl"]
 [ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="1_tlv51"]
 [ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="2_1yjxl"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="3_8bdtt"]
 [ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="4_4xtod"]
 
-[node name="FirstLevel" type="Node2D" unique_id=1669637617]
+[node name="FirstLevel" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers", "packets")]
+script = ExtResource("1_1yjxl")
+sender = NodePath("Sender")
+reciever = NodePath("Receiver")
+towers = NodePath("Towers")
+packets = NodePath("Packets")
 
 [node name="HUD" parent="." unique_id=114495 instance=ExtResource("1_tlv51")]
 
