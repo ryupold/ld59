@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://bumsythby7dly"]
+
+[ext_resource type="Script" uid="uid://edonykvu0lt8" path="res://resources/levels/level_resource.gd" id="1_5srby"]
+
+[resource]
+script = ExtResource("1_5srby")
+Title = "The Beginnings"
+retries = 500
+packagesSent = 500
+metadata/_custom_type_script = "uid://edonykvu0lt8"

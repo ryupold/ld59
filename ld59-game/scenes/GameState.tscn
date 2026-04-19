@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://yyu8upgdagvb" path="res://scenes/game_state.gd" id="1_si82d"]
 [ext_resource type="Resource" uid="uid://dxtvevgp0r8jk" path="res://resources/all_towers.tres" id="2_4k0ew"]
+[ext_resource type="Script" uid="uid://edonykvu0lt8" path="res://resources/levels/level_resource.gd" id="3_an17e"]
+[ext_resource type="Resource" uid="uid://bumsythby7dly" path="res://resources/levels/first_level.tres" id="4_dscq2"]
 
 [node name="GameState" type="Node" unique_id=132192571]
 script = ExtResource("1_si82d")
 allTowers = ExtResource("2_4k0ew")
 unlockedTowers = ExtResource("2_4k0ew")
+levels = Array[ExtResource("3_an17e")]([ExtResource("4_dscq2")])

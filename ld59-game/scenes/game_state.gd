@@ -10,6 +10,7 @@ var _isDragging: bool = false
 
 @export var allTowers: TowersResource
 @export var unlockedTowers: TowersResource
+@export var levels: Array[LevelResource]
 
 signal onDragEvent(node: Node2D, state: bool)
 signal onPacketLost()
