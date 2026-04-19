@@ -2,7 +2,7 @@ extends Tower
 
 @export var gravity: float = 1500
 
-func towerEffect(): return Effect.GRAVITY
+func towerEffect() -> Tower.Effect: return Effect.GRAVITY
 
 func doEffect(delta: float) -> void:
 	for packet in packetsColliding:

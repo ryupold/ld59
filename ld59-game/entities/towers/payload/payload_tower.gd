@@ -2,7 +2,7 @@ extends Tower
 
 @export var payloadIncrease: int = 1
 
-func towerEffect(): return Effect.PAYLOAD
+func towerEffect() -> Tower.Effect: return Effect.PAYLOAD
 
 func _ready() -> void:
 	super._ready()
