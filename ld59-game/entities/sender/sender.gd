@@ -3,7 +3,12 @@ extends Node2D
 @export var packetScene: PackedScene = preload("res://entities/packet/packet.tscn")
 @export var packetParent: Node2D
 @export var spawnDistance: float
-@export var spawnInterval: float = 1.0
+@export var spawnInterval: float = 1:
+	get:
+		return $PacketCreationTimer.wait_time
+	set(value):
+		$PacketCreationTimer.wait_time = value
+		
 @export var spawnImpulse: float = 1000
 @export var spawnAngleMin: float = 0
 @export var spawnAngleMax: float = PI/2
@@ -12,7 +17,6 @@ var _spawnAngle: float
 
 func _ready():
 	_spawnAngle = spawnAngleMin
-	$PacketCreationTimer.wait_time = spawnInterval
 	$PacketCreationTimer.timeout.connect(createPacket)
 
 func _physics_process(delta):
