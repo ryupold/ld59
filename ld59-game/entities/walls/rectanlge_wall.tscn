@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_lcjmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcjmo"]
-size = Vector2(494, 492)
+size = Vector2(500, 500)
 
 [node name="RectangleWall" type="StaticBody2D" unique_id=369208461]
 
