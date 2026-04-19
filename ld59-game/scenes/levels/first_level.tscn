@@ -20,45 +20,33 @@ packets = NodePath("Packets")
 [node name="Walls" parent="." unique_id=903204524 instance=ExtResource("1_1bbdw")]
 
 [node name="RectangleWall" parent="Walls" unique_id=369208461 instance=ExtResource("6_3kh8m")]
-offset_left = -1212.0
-offset_top = -1073.0
-offset_right = -333.27734
-offset_bottom = -797.14307
-pivot_offset = Vector2(439.36133, 137.92847)
+offset_left = -1654.0
+offset_top = -393.0
+offset_right = -1092.0
+offset_bottom = 1077.853
+pivot_offset = Vector2(281, 735.4265)
 
 [node name="RectangleWall2" parent="Walls" unique_id=496078732 instance=ExtResource("6_3kh8m")]
-offset_left = 509.0257
-offset_top = -124.8374
-offset_right = 866.6612
-offset_bottom = 1310.856
+offset_left = 688.0835
+offset_top = -619.3456
+offset_right = 1186.8269
+offset_bottom = 908.66394
 rotation = 2.2557116
-pivot_offset = Vector2(178.81775, 717.8467)
-metadata/_edit_use_anchors_ = true
+pivot_offset = Vector2(249.3717, 764.00476)
 
 [node name="RectangleWall3" parent="Walls" unique_id=121758671 instance=ExtResource("6_3kh8m")]
-offset_left = 491.00012
-offset_top = -699.99976
-offset_right = 763.96765
-offset_bottom = 1012.4148
+offset_left = 789.9973
+offset_top = -763.84766
+offset_right = 1341.0007
+offset_bottom = 787.49866
 rotation = 2.1334991
-pivot_offset = Vector2(136.48376, 856.2073)
-metadata/_edit_use_anchors_ = true
-
-[node name="RectangleWall4" parent="Walls" unique_id=485338014 instance=ExtResource("6_3kh8m")]
-offset_left = 1022.30255
-offset_top = 26.678528
-offset_right = 1522.3025
-offset_bottom = 526.6785
-rotation = 2.1885486
-scale = Vector2(0.74066716, 1.4569749)
-pivot_offset = Vector2(250, 250)
-metadata/_edit_use_anchors_ = true
+pivot_offset = Vector2(275.5017, 775.67316)
 
 [node name="CircleWall2" parent="Walls" unique_id=2117046853 instance=ExtResource("8_fqprn")]
-offset_left = -1038.0
-offset_top = -240.0
-offset_right = -219.17822
-offset_bottom = 570.0
+offset_left = 1199.958
+offset_top = 93.86853
+offset_right = 2018.7798
+offset_bottom = 903.8685
 pivot_offset = Vector2(409.4109, 405)
 
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_xbibw")]
@@ -66,10 +54,11 @@ position = Vector2(-2273, -1115)
 packetParent = NodePath("../Packets")
 
 [node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("3_hkalp")]
-position = Vector2(2211, 1042)
+position = Vector2(2268, 905)
 
 [node name="Packets" type="Node2D" parent="." unique_id=2121823717]
 
 [node name="Towers" type="Node2D" parent="." unique_id=1245803590]
 unique_name_in_owner = true
 y_sort_enabled = true
+position = Vector2(2274, 1504)

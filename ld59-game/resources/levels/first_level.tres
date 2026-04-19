@@ -11,4 +11,5 @@ retries = 500
 packagesSent = 500
 winAmountPackages = 500
 spawnImpulse = 1000.0
+spawnAngleMin = 1.571
 metadata/_custom_type_script = "uid://edonykvu0lt8"
