@@ -7,6 +7,7 @@ var _payloadPerSecond: float
 var _currentPayloadBuffer: float
 var _currentPayloadBufferTime: float
 var _isDragging: bool = false
+var _currentLevel : LevelResource
 
 @export var allTowers: TowersResource
 @export var unlockedTowers: TowersResource
