@@ -4,18 +4,19 @@ class_name Packet
 
 @export_category("Properties")
 @export var ttl: int = 5
-@export var payload: int = 1
 @export var degradation: int
-@export var growthModifier := 0.3
+@export var growthModifier := 2.3
 @export var minSpeed: float = 100
 @export var maxSpeed: float = 5000
-var originalSpriteScale: float
-var originalColliderScale: float
+@export var payload: int = 1
+var originalScales: Array[Vector2] = []
 
 func _ready() -> void:
+	for c in get_children()	:
+		if c is Node2D:
+			originalScales.append(c.scale)
+			
 	body_entered.connect(onCollision)
-	originalSpriteScale = $Sprite.scale.x
-	originalColliderScale = $CollisionShape2D.scale.x
 
 func onCollision(body: Node2D) -> void:
 	if body is Receiver:
@@ -29,10 +30,11 @@ func onCollision(body: Node2D) -> void:
 
 func increasePayload(by: int) -> void:
 	payload += by
-	var newSpriteScale := originalSpriteScale * (1 + (payload-1) * growthModifier)
-	$Sprite.scale = Vector2(newSpriteScale, newSpriteScale)
-	var newColliderScale = originalColliderScale * (1 + (payload-1) * growthModifier)
-	$CollisionShape2D.scale = Vector2(newColliderScale, newColliderScale)
+	for i in get_child_count():
+		var child := get_child(i)
+		if child is Node2D:
+			var newScale := originalScales[i] * (1 + (payload-1) * growthModifier)
+			child.scale = newScale
 
 func increaseTtl(by: int) -> void:
 	ttl += by
