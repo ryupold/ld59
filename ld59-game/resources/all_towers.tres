@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://j8gggyuglixk" path="res://resources/towers_resource.gd" id="1_ugfgi"]
 [ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="2_hpmw0"]
 [ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/towers/slow_tower.tres" id="3_hpmw0"]
+[ext_resource type="Resource" uid="uid://d4dmqi8oho8ks" path="res://resources/towers/gravity_tower.tres" id="4_v7j8b"]
 
 [resource]
 script = ExtResource("1_ugfgi")
-towers = Array[ExtResource("2_hpmw0")]([ExtResource("3_hpmw0")])
+towers = Array[ExtResource("2_hpmw0")]([ExtResource("3_hpmw0"), ExtResource("4_v7j8b")])
 metadata/_custom_type_script = "uid://j8gggyuglixk"

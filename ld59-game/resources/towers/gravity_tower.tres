@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TowerResource" format=3 uid="uid://d4dmqi8oho8ks"]
+
+[ext_resource type="Script" uid="uid://bjemchx618kvp" path="res://resources/tower_resource.gd" id="1_4rhmy"]
+[ext_resource type="Texture2D" uid="uid://cpkbt5j4d3v11" path="res://entities/towers/gravity/tower_gravity.png" id="1_v7qcx"]
+[ext_resource type="PackedScene" uid="uid://bujp2ee8lyfqq" path="res://entities/towers/gravity/gravity_tower.tscn" id="2_2eb1e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eb1e"]
+atlas = ExtResource("1_v7qcx")
+region = Rect2(0, 0, 175, 336)
+
+[resource]
+script = ExtResource("1_4rhmy")
+previewImage = SubResource("AtlasTexture_2eb1e")
+scene = ExtResource("2_2eb1e")
+metadata/_custom_type_script = "uid://bjemchx618kvp"
