@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://ru7u2urulhji" path="res://entities/walls/wall_texture_round.png" id="1_ietbt"]
 [ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_n7i81"]
-[ext_resource type="Script" path="res://entities/walls/cicle_wall.gd" id="2_n7i81"]
+[ext_resource type="Script" uid="uid://8570h0ya37kh" path="res://entities/walls/cicle_wall.gd" id="2_n7i81"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n7i81"]
-radius = 250.0
+radius = 409.4109
 
 [node name="CircleWall" type="TextureRect" unique_id=2117046853]
 clip_children = 1

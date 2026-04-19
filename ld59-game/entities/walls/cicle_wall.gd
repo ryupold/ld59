@@ -11,3 +11,4 @@ func onResize():
 	$TextureRect.size = size
 	($StaticBody2D/CollisionShape2D.shape as CircleShape2D).radius = size.x / 2
 	$StaticBody2D/CollisionShape2D.position = size / 2
+	pivot_offset = size / 2

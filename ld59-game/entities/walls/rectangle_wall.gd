@@ -8,5 +8,6 @@ func _ready():
 	resized.connect(onResize)
 
 func onResize():
-	($TextureRect/CollisionShape2D.shape as RectangleShape2D).size = size
-	$TextureRect/CollisionShape2D.position = size / 2
+	($StaticBody2D/CollisionShape2D.shape as RectangleShape2D).size = size
+	$StaticBody2D/CollisionShape2D.position = size / 2
+	pivot_offset = size / 2
