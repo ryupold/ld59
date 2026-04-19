@@ -8,9 +8,11 @@
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button")]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "levelSelector")]
 script = ExtResource("1_318vg")
-button = NodePath("Button")
+button = NodePath("MenuBar/Button")
+buttonSelector = NodePath("MenuBar/ButtonSelector")
+levelSelector = NodePath("LevelSelector")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
 anchors_preset = 15
@@ -61,7 +63,14 @@ offset_bottom = 625.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Button" type="Button" parent="." unique_id=540476503]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="MenuBar" type="HBoxContainer" parent="." unique_id=1458396715]
+offset_right = 125.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="MenuBar" unique_id=540476503]
+layout_mode = 2
 text = "Restart"
+
+[node name="ButtonSelector" type="Button" parent="MenuBar" unique_id=1787972677]
+layout_mode = 2
+text = "Levels"
