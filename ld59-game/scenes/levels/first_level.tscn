@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="3_hkalp"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_xbibw"]
 [ext_resource type="PackedScene" uid="uid://djohxpgt54hod" path="res://entities/walls/rectangle_wall.tscn" id="6_3kh8m"]
-[ext_resource type="PackedScene" uid="uid://cj1fd2gew8dxg" path="res://entities/walls/cicle_wall.tscn" id="8_fqprn"]
+[ext_resource type="PackedScene" uid="uid://1jkoj7nk1gi3" path="res://entities/walls/cicle_wall.tscn" id="8_fqprn"]
 
 [node name="FirstLevel" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers", "packets")]
 script = ExtResource("1_xbibw")
