@@ -1,6 +1,6 @@
 extends Tower
 
-@export var antiGravity: float = -1500
+@export var antiGravity: float = 1500
 
 func doEffect(delta: float) -> void:
 	for packet in packetsColliding:
