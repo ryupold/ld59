@@ -9,11 +9,12 @@ size = Vector2(128, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyka"]
 size = Vector2(128, 20)
 
-[node name="WallTower" type="Node2D" unique_id=943450675 node_paths=PackedStringArray("effectArea", "towerboundary")]
+[node name="WallTower" type="Node2D" unique_id=943450675 node_paths=PackedStringArray("effectArea", "overlapBoundary", "interactBoundary")]
 scale = Vector2(5, 5)
 script = ExtResource("1_vbyka")
 effectArea = NodePath("StaticBody2D")
-towerboundary = NodePath("TowerBoundary")
+overlapBoundary = NodePath("TowerBoundary")
+interactBoundary = NodePath("TowerBoundary")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1470504276]
 scale = Vector2(1, 0.125)
