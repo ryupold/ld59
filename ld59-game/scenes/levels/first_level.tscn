@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="1_1bbdw"]
 [ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="1_gy01a"]
+[ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="3_hkalp"]
+[ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_xbibw"]
 
 [node name="FirstLevel" type="Node2D" unique_id=1669637617]
 
@@ -12,6 +14,15 @@
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1504361380]
 position = Vector2(2274, 1504)
 zoom = Vector2(0.351, 0.351)
+
+[node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_xbibw")]
+position = Vector2(233, 296)
+packetParent = NodePath("../Packets")
+
+[node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("3_hkalp")]
+position = Vector2(4244, 2307)
+
+[node name="Packets" type="Node2D" parent="." unique_id=2121823717]
 
 [node name="Towers" type="Node2D" parent="." unique_id=1245803590]
 unique_name_in_owner = true
