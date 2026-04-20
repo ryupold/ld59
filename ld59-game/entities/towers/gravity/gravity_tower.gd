@@ -1,6 +1,6 @@
 extends Tower
 
-@export var gravity: float = 500000
+@export var gravity: float = 1000000
 
 const EPSILON: float = 0.01
 
