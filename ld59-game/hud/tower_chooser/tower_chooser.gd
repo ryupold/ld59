@@ -15,3 +15,4 @@ func showSelector(towers: Array[TowerResource]) -> void:
 		canvasItem.hideParent = hide
 		buttonParent.add_child(canvasItem)
 	show()
+	get_tree().paused= true

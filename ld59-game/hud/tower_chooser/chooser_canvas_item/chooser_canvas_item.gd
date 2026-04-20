@@ -16,4 +16,5 @@ func handleSelect():
 	var value = GameState.inventory.get_or_add(resource, 0)
 	GameState.setInventory(resource, value + 1)
 	hideParent.call()
+	get_tree().paused = false
 	pass

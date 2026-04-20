@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://donbnyhv7bjk8" path="res://hud/tower_chooser/chooser_canvas_item/chooser_canvas_item.tscn" id="2_ysjly"]
 
 [node name="TowerChooser" type="VBoxContainer" unique_id=1730327705 node_paths=PackedStringArray("buttonParent")]
+process_mode = 3
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
