@@ -6,14 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="3_hkalp"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_xbibw"]
 [ext_resource type="PackedScene" uid="uid://cjubf2uowpulv" path="res://entities/walls/rectangle_wall.tscn" id="6_3kh8m"]
+[ext_resource type="PackedScene" uid="uid://cjgp2nvp5027k" path="res://entities/sender/packets.tscn" id="8_4ooow"]
 [ext_resource type="PackedScene" uid="uid://1jkoj7nk1gi3" path="res://entities/walls/cicle_wall.tscn" id="8_fqprn"]
 
-[node name="FirstLevel" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers", "packets")]
+[node name="FirstLevel" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers")]
 script = ExtResource("1_xbibw")
 sender = NodePath("Sender")
 reciever = NodePath("Receiver")
 towers = NodePath("Towers")
-packets = NodePath("Packets")
 
 [node name="HUD" parent="." unique_id=114495 instance=ExtResource("1_gy01a")]
 
@@ -57,7 +57,7 @@ packetParent = NodePath("../Packets")
 [node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("3_hkalp")]
 position = Vector2(2293, 883)
 
-[node name="Packets" type="Node2D" parent="." unique_id=2121823717]
+[node name="Packets" parent="." unique_id=546403375 instance=ExtResource("8_4ooow")]
 
 [node name="Towers" type="Node2D" parent="." unique_id=1245803590]
 unique_name_in_owner = true

@@ -44,6 +44,7 @@ signal onNextWave(wave: int)
 signal onPlaceInventory(tower: Tower)
 signal onInventoryChanged()
 signal onLevelUp(towers: Array[TowerResource])
+signal onGameOver
 
 func _ready():
 	onDragEvent.connect(func(n, state): _isDragging = state)
@@ -63,6 +64,7 @@ func _ready():
 
 func restartLevel() -> void:
 	get_tree().change_scene_to_packed(_currentLevel.scene)
+	get_tree().paused = false
 
 func loadLevel(resource: LevelResource) -> void:
 	_currentLevel = resource
@@ -108,7 +110,8 @@ func receivePacket(payload: int):
 		onNextWave.emit(_wave + 1)
 
 func startWave(nr: int):
-	if nr != 1:	triggerLevelUp()
+	get_tree().paused = false
+	if nr != 1 && _wave != nr: triggerLevelUp()
 	print("starting wave " + str(nr) + "...")
 	if nr > 1:
 		await get_tree().create_timer(10).timeout

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bg1c1647o38wh" path="res://hud/game_over.gd" id="1_6815q"]
 
 [node name="GameOver" type="VBoxContainer" unique_id=2006229539 node_paths=PackedStringArray("restartLevel", "restartWave")]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

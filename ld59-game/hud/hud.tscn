@@ -9,12 +9,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "buttonChooser", "levelSelector")]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector")]
 script = ExtResource("1_318vg")
 button = NodePath("MenuBar/Button")
 buttonSelector = NodePath("MenuBar/ButtonSelector")
-buttonChooser = NodePath("")
-levelSelector = NodePath("LevelSelector")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
 visible = false

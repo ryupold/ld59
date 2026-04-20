@@ -20,10 +20,10 @@ func _ready():
 	prepareForNextWave(1)
 	GameState.onNextWave.connect(prepareForNextWave)
 	GameState.onGameTick.connect(onGameTick)
-	
+
 	GameState.onPacketLost.connect(func(): startOrEndCall())
 	GameState.onPacketReceived.connect(func(payload): startOrEndCall())
-	
+
 func prepareForNextWave(wave: int):
 	currentState = State.CallIncoming
 	patience = 100
@@ -48,7 +48,7 @@ func updateAnimation():
 		$AnimatedSprite2D.animation = "bad"
 		patienceProgressBar.visible = true
 		$RequiredSignalLabel.visible = true
-	
+
 	if GameState.isConnectionGood:
 		patienceProgressBar.tint_progress = Color.DIM_GRAY
 	elif patience < 25:
@@ -62,15 +62,16 @@ func updateAnimation():
 
 func updatePatience():
 	if currentState == State.CallIncoming: return
-	
+
 	if not GameState.isConnectionGood:
 		patience -= GameState.minSignal - GameState._signal
 	if patience <= 0:
 		print("AAAARRGGHHH!!!")
+		GameState.onGameOver.emit()
 
 func updateRequiredSignal():
 	$RequiredSignalLabel.text = "signal: " + ("%.2f" % GameState._signal) + "\n" + "required: " + ("%.2f" % GameState.minSignal)
-	
+
 func startOrEndCall():
 	if GameState.packetsToSend > 0:
 		currentState = State.InCall
