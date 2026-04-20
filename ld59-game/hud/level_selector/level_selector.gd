@@ -9,13 +9,6 @@ func _ready() -> void:
 	close.pressed.connect(onClose)
 	updateLevelSelect()
 
-func toggleSelector() -> void:
-	updateLevelSelect()
-	if visible:
-		hide()
-	else:
-		show()
-
 func onClose():
 	get_tree().paused = true
 	queue_free()
