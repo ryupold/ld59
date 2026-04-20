@@ -5,7 +5,8 @@ class_name LevelSelectorCanvasItem extends VBoxContainer
 @export var close: Button
 
 func _ready() -> void:
-	close.pressed.connect(queue_free)
+	get_tree().paused = true
+	close.pressed.connect(onClose)
 	updateLevelSelect()
 
 func toggleSelector() -> void:
@@ -14,6 +15,10 @@ func toggleSelector() -> void:
 		hide()
 	else:
 		show()
+
+func onClose():
+	get_tree().paused = true
+	queue_free()
 
 func updateLevelSelect() -> void:
 	for child in buttonParent.get_children():
