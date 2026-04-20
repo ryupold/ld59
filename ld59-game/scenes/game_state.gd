@@ -148,7 +148,7 @@ func triggerLevelCompleted():
 			nextLvl = lvl + 1
 			break
 	if nextLvl < levels.size():
-		_currentLevel = levels[nextLvl]
+		loadLevel(levels[nextLvl])
 	else:
 		onGameFinished.emit()
 		print("you finished the game!")
