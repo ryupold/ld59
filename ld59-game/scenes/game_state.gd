@@ -43,6 +43,7 @@ signal onGameTick()
 signal onNextWave(wave: int)
 signal onPlaceInventory(tower: Tower)
 signal onInventoryChanged()
+signal onLevelUp(towers: Array[TowerResource])
 
 func _ready():
 	onDragEvent.connect(func(n, state): _isDragging = state)
@@ -107,6 +108,7 @@ func receivePacket(payload: int):
 		onNextWave.emit(_wave + 1)
 
 func startWave(nr: int):
+	if nr != 1:	triggerLevelUp()
 	print("starting wave " + str(nr) + "...")
 	if nr > 1:
 		await get_tree().create_timer(10).timeout
@@ -116,6 +118,15 @@ func startWave(nr: int):
 	_timePassed = 0
 	_packetsReceived = 0
 	_payloadBuffer = 0
+
+func triggerLevelUp() -> void:
+	var list: Array[TowerResource] = []
+	for i in range(0,3):
+		var randomTower = allTowers.towers.get((randf() * (allTowers.towers.size() - 1)))
+		while list.has(randomTower):
+			randomTower = allTowers.towers.get((randf() * (allTowers.towers.size() - 1)))
+		list.append(randomTower)
+	onLevelUp.emit(list)
 
 func _physics_process(delta):
 	_timePassed += delta

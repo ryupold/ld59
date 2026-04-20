@@ -9,15 +9,15 @@
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "buttonChooser", "levelSelector", "towerChooser")]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "buttonChooser", "levelSelector")]
 script = ExtResource("1_318vg")
 button = NodePath("MenuBar/Button")
 buttonSelector = NodePath("MenuBar/ButtonSelector")
-buttonChooser = NodePath("MenuBar/ButtonChooser")
+buttonChooser = NodePath("")
 levelSelector = NodePath("LevelSelector")
-towerChooser = NodePath("TowerChooser")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -81,7 +81,3 @@ text = "Restart"
 [node name="ButtonSelector" type="Button" parent="MenuBar" unique_id=1787972677]
 layout_mode = 2
 text = "Levels"
-
-[node name="ButtonChooser" type="Button" parent="MenuBar" unique_id=1748944340]
-layout_mode = 2
-text = "TowerChooser"
