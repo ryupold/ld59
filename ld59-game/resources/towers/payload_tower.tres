@@ -11,6 +11,7 @@ region = Rect2(0, 57, 175, 285)
 [resource]
 script = ExtResource("1_l78y8")
 title = "Payload Tower"
+description = "Increases the payload of packets periodically"
 previewImage = SubResource("AtlasTexture_l78y8")
 scene = ExtResource("2_0qu76")
 metadata/_custom_type_script = "uid://bjemchx618kvp"

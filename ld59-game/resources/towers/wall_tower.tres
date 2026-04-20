@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("3_fn61p")
 title = "Wall"
+description = "Its a Wall what did you expect?"
 previewImage = ExtResource("1_i18td")
 scene = ExtResource("2_i18td")
 metadata/_custom_type_script = "uid://bjemchx618kvp"

@@ -11,6 +11,7 @@ region = Rect2(0, 133, 175, 197)
 [resource]
 script = ExtResource("1_2j5b8")
 title = "Relay Tower"
+description = "Increases the TTL of packets (wall bounces)"
 previewImage = SubResource("AtlasTexture_oyik1")
 scene = ExtResource("2_oyik1")
 metadata/_custom_type_script = "uid://bjemchx618kvp"

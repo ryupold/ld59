@@ -11,6 +11,7 @@ region = Rect2(0, 95, 175, 241)
 [resource]
 script = ExtResource("3_i0arm")
 title = "Antigravity Tower"
+description = "Pushes Packets away"
 previewImage = SubResource("AtlasTexture_2eb1e")
 scene = ExtResource("2_8gmjg")
 metadata/_custom_type_script = "uid://bjemchx618kvp"
