@@ -27,6 +27,10 @@ var inventory: Dictionary[TowerResource, int] :
 		_inventory = value
 		onInventoryChanged.emit()
 
+func setInventory(key: TowerResource, value: int):
+	inventory[key] = value
+	onInventoryChanged.emit()
+
 @export var allTowers: TowersResource
 @export var levels: Array[LevelResource]
 @onready var _gameTickTimer: Timer = Timer.new()

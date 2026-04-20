@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://donbnyhv7bjk8"]
 
 [ext_resource type="Script" uid="uid://bxhsij8nslbop" path="res://hud/tower_chooser/chooser_canvas_item/chooser_canvas_item.gd" id="1_xbmby"]
+[ext_resource type="Resource" uid="uid://bvn7uqcpj5lo1" path="res://resources/towers/slow_tower.tres" id="2_tktpc"]
 [ext_resource type="Texture2D" uid="uid://cd5g4nwj3kgu6" path="res://concepts/antigravity-tower.png" id="2_ya6it"]
 
 [node name="ChooserCanvasItem" type="Button" unique_id=996011013 node_paths=PackedStringArray("nameLabel", "texture", "descriptionLabel")]
@@ -12,6 +13,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_xbmby")
+resource = ExtResource("2_tktpc")
 nameLabel = NodePath("HBoxContainer/Name")
 texture = NodePath("HBoxContainer/TextureRect")
 descriptionLabel = NodePath("HBoxContainer/Description")

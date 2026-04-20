@@ -17,13 +17,13 @@ var _maxAmount: int = 0
 		return _maxAmount
 	set(value):
 		amount += value - _maxAmount
-		_maxAmount = _maxAmount
+		_maxAmount = value
 
-var towerType: String
+var towerType: Object
 
 func _ready() -> void:
-	var tempTower := towerResource.scene.instantiate()
-	towerType = tempTower.get_class()
+	var tempTower: Tower = towerResource.scene.instantiate()
+	towerType = tempTower.get_script()
 	tempTower.queue_free()
 
 	button.icon = towerResource.previewImage
@@ -41,14 +41,14 @@ func spawnTower():
 	pass
 
 func determineDisabled() -> void:
-	if amount <= 0 || GameState._isDragging:
+	if _amount <= 0 || GameState._isDragging:
 		button.disabled = true
 	elif !GameState._isDragging:
 		button.disabled = false
 
 func setAmountText():
-	amountLabel.text = "" + str(amount)
+	amountLabel.text = "" + str(_amount)
 
 func onPlaceInInventory(tower: Tower):
-	if tower.get_class() == towerType:
+	if tower.get_script() == towerType:
 		amount += 1

@@ -19,4 +19,5 @@ func updateTowers() -> void:
 	for resource in GameState.allTowers.towers:
 		var canvasItem: ChooserCanvasItem = chooserCanvasItem.instantiate()
 		canvasItem.resource = resource
+		canvasItem.hideParent = hide
 		buttonParent.add_child(canvasItem)

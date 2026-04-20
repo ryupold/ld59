@@ -13,7 +13,7 @@ func _ready() -> void:
 	GameState.onInventoryChanged.connect(updateInventoryDisplay)
 
 func updateInventoryDisplay() -> void:
-	var proccesedTowers: Array[TowersResource] = []
+	var proccesedTowers: Array[TowerResource] = []
 	for node: Node in get_children():
 		if node is TowerCanvasItem:
 			var tower := node as TowerCanvasItem
