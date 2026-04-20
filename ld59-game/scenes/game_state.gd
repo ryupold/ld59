@@ -29,6 +29,8 @@ var inventory: Dictionary[TowerResource, int] :
 func setInventory(key: TowerResource, value: int):
 	inventory[key] = value
 	onInventoryChanged.emit()
+	
+var maxWaves : int = 5
 
 @export var allTowers: TowersResource
 @export var levels: Array[LevelResource]
@@ -45,6 +47,7 @@ signal onPlaceInventory(tower: Tower)
 signal onInventoryChanged()
 signal onLevelUp(towers: Array[TowerResource])
 signal onGameOver
+signal onGameFinished
 
 func _ready():
 	onDragEvent.connect(func(n, state): _isDragging = state)
@@ -111,7 +114,10 @@ func receivePacket(payload: int):
 	_packetsReceived += 1
 	if packetsToSend == 0:
 		onWaveFinished.emit(_wave)
-		triggerLevelUp()
+		if _wave < maxWaves:
+			triggerLevelUp()
+		else:
+			triggerLevelCompleted()
 
 func startWave(nr: int):
 	get_tree().paused = false
@@ -131,6 +137,19 @@ func triggerLevelUp() -> void:
 			randomTower = allTowers.towers.get((randf() * (allTowers.towers.size() - 1)))
 		list.append(randomTower)
 	onLevelUp.emit(list)
+	
+func triggerLevelCompleted():
+	_currentLevel.completed = true
+	var nextLvl := 0
+	for lvl in levels.size():
+		if levels[lvl] == _currentLevel:
+			nextLvl = lvl + 1
+			break
+	if nextLvl < levels.size():
+		_currentLevel = levels[nextLvl]
+	else:
+		onGameFinished.emit()
+		print("you finished the game!")
 
 func _physics_process(delta):
 	_timePassed += delta

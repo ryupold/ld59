@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmoygirrjplv2" path="res://hud/inventory/inventory.tscn" id="2_2gk58"]
 [ext_resource type="PackedScene" uid="uid://b0blgpnq2do5u" path="res://hud/level_selector/level_selector.tscn" id="4_w8tcp"]
 [ext_resource type="PackedScene" uid="uid://bfitb4kywy6li" path="res://hud/tower_chooser/tower_chooser.tscn" id="5_svhta"]
+[ext_resource type="PackedScene" uid="uid://bu6y0hte4d5vx" path="res://hud/game_finished.tscn" id="6_fjv1a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_svhta"]
 line_spacing = 0.0
@@ -113,3 +114,8 @@ text = "Restart"
 [node name="ButtonSelector" type="Button" parent="MenuBar" unique_id=1787972677]
 layout_mode = 2
 text = "Levels"
+
+[node name="GameFinished" parent="." unique_id=2138712979 instance=ExtResource("6_fjv1a")]
+visible = false
+offset_right = 0.0
+offset_bottom = 0.0

@@ -12,6 +12,7 @@ func _ready() -> void:
 	buttonSelector.pressed.connect(showLevelSelector)
 	GameState.onGameOver.connect(showGameOver)
 	GameState.onNextWave.connect(func(nr:int): waveNumber.text = str(nr))
+	GameState.onGameFinished.connect(showGameFinished)
 
 func showLevelSelector():
 	var selector := levelSelector.instantiate() as LevelSelectorCanvasItem
@@ -21,3 +22,7 @@ func showLevelSelector():
 func showGameOver():
 	var selector := gameOver.instantiate()
 	add_child(selector)
+
+func showGameFinished():
+	$GameFinished.visible = true
+	get_tree().paused = true
