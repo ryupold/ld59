@@ -50,6 +50,7 @@ signal onGameOver
 signal onGameFinished
 
 func _ready():
+	loadGame()
 	onDragEvent.connect(func(n, state): _isDragging = state)
 	onPacketReceived.connect(receivePacket)
 	onLevelCreated.connect(setupLevel)
@@ -140,6 +141,7 @@ func triggerLevelUp() -> void:
 	
 func triggerLevelCompleted():
 	_currentLevel.completed = true
+	saveGame()
 	var nextLvl := 0
 	for lvl in levels.size():
 		if levels[lvl] == _currentLevel:
@@ -162,3 +164,21 @@ enum GameState {
 	IngameLevelUpChooser,
 	GameOverScreen,
 }
+
+func saveGame():
+	var config := ConfigFile.new()
+	for lvl in levels:
+		config.set_value("completed-levels", lvl.title, lvl.completed)
+	config.save("user://save_game.cfg")
+
+func loadGame():
+	var config := ConfigFile.new()
+	config.load("user://save_game.cfg")
+	if not config.has_section("completed-levels"): return
+	
+	var keys := config.get_section_keys("completed-levels")
+	for key in keys:
+		for lvl in levels:
+			if lvl.title == key:
+				lvl.completed = config.get_value("completed-levels", key)
+				break
