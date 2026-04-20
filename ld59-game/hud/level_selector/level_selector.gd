@@ -10,7 +10,7 @@ func _ready() -> void:
 	updateLevelSelect()
 
 func onClose():
-	get_tree().paused = true
+	get_tree().paused = false
 	queue_free()
 
 func updateLevelSelect() -> void:
