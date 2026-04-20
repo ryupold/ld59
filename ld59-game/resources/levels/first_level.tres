@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_5srby")
+title = "Level 1"
 scene = ExtResource("1_hhog7")
 spawnAngleMin = 1.571
 metadata/_custom_type_script = "uid://edonykvu0lt8"
