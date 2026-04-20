@@ -113,8 +113,6 @@ func startWave(nr: int):
 	get_tree().paused = false
 	if nr != 1 && _wave != nr: triggerLevelUp()
 	print("starting wave " + str(nr) + "...")
-	if nr > 1:
-		await get_tree().create_timer(10).timeout
 	_wave = nr
 	_signal = 0
 	_payloadReceived = 0
