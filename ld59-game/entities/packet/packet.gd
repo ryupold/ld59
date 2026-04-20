@@ -37,25 +37,22 @@ func _ready() -> void:
 	for c in get_children():
 		if c is CanvasItem:
 			_originalScales.append(c.scale)
-			
+
 	body_entered.connect(onCollision)
-	
+
 func _physics_process(delta):
 	_travelTime += delta
 	if _travelTime > maxTravelTime:
-		GameState.onPacketLost.emit()
-		queue_free()
+		loose()
 
 func onCollision(body: Node2D) -> void:
 	if body is Receiver:
-		GameState.onPacketReceived.emit(payload)
-		queue_free()
+		recieve()
 	else: # its a wall (probably)
 		ttl -= 1
 		_travelTime = 0
 		if ttl == 0:
-			GameState.onPacketLost.emit()
-			queue_free()
+			loose()
 
 func increasePayload(by: int) -> void:
 	payload += by
@@ -68,7 +65,7 @@ func increasePayload(by: int) -> void:
 
 func increaseTtl(by: int) -> void:
 	ttl += by
-	
+
 func setVelocity(v: Vector2):
 	if v.length_squared() < minSpeed * minSpeed:
 		v = v.normalized() * minSpeed
@@ -86,3 +83,11 @@ func setEffect(effectType: Tower.Effect, enabled: bool):
 		effectAnimation.visible = activeEffects[effectType] > 0;
 	else:
 		print("unknown effect: " + str(effectType))
+
+func loose():
+	GameState.onPacketLost.emit()
+	queue_free()
+
+func recieve():
+	GameState.onPacketReceived.emit(payload)
+	queue_free()

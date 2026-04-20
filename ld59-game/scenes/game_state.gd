@@ -62,6 +62,10 @@ func _ready():
 	inventory[allTowers.towers[4]] = 1
 
 func restartLevel() -> void:
+	_inventory = {}
+	inventory[allTowers.towers[0]] = 1
+	inventory[allTowers.towers[1]] = 1
+	inventory[allTowers.towers[4]] = 1
 	get_tree().change_scene_to_packed(_currentLevel.scene)
 	get_tree().paused = false
 
@@ -107,7 +111,6 @@ func receivePacket(payload: int):
 
 func startWave(nr: int):
 	get_tree().paused = false
-	#if nr != 1 && _wave != nr: triggerLevelUp()
 	print("starting wave " + str(nr) + "...")
 	_wave = nr
 	_signal = 0
