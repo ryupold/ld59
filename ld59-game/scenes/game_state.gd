@@ -118,9 +118,10 @@ func startWave(nr: int):
 	_wave = nr
 	_signal = 0
 	_payloadReceived = 0
-	_timePassed = 0
+	_packetsLost = 0
 	_packetsReceived = 0
 	_payloadBuffer = 0
+	_timePassed = 0
 
 func triggerLevelUp() -> void:
 	var list: Array[TowerResource] = []
