@@ -12,12 +12,13 @@ previewImage = ExtResource("2_njyx8")
 scene = ExtResource("4_feqxd")
 metadata/_custom_type_script = "uid://bjemchx618kvp"
 
-[node name="TowerCanvasItem" type="PanelContainer" unique_id=871496032 node_paths=PackedStringArray("button")]
+[node name="TowerCanvasItem" type="PanelContainer" unique_id=871496032 node_paths=PackedStringArray("button", "amountLabel")]
 custom_minimum_size = Vector2(150, 150)
 mouse_default_cursor_shape = 2
 script = ExtResource("1_6cimu")
 towerResource = SubResource("Resource_fynk8")
 button = NodePath("MarginContainer/Button")
+amountLabel = NodePath("AmountLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1593872442]
 layout_mode = 2
@@ -28,3 +29,10 @@ mouse_default_cursor_shape = 2
 icon = ExtResource("2_wmwfi")
 icon_alignment = 1
 expand_icon = true
+
+[node name="AmountLabel" type="Label" parent="." unique_id=1546120429]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Amount: 12"
+horizontal_alignment = 2

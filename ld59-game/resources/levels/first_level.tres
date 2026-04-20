@@ -6,8 +6,5 @@
 [resource]
 script = ExtResource("1_5srby")
 scene = ExtResource("1_hhog7")
-retries = 500
-packagesSent = 500
-winAmountPackages = 500
 spawnAngleMin = 1.571
 metadata/_custom_type_script = "uid://edonykvu0lt8"

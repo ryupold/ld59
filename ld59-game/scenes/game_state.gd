@@ -22,8 +22,14 @@ var packetsToSend: int:
 	get:
 		return _currentLevel.packetsToSend * _wave - _packetsReceived
 
+var _inventory: Dictionary[TowerResource, int]
+var inventory: Dictionary[TowerResource, int] :
+	get: return _inventory
+	set(value):
+		_inventory = value
+		onInventoryChanged.emit()
+
 @export var allTowers: TowersResource
-@export var unlockedTowers: TowersResource
 @export var levels: Array[LevelResource]
 @onready var _gameTickTimer: Timer = Timer.new()
 
@@ -33,6 +39,8 @@ signal onPacketReceived()
 signal onLevelCreated()
 signal onGameTick()
 signal onNextWave(wave: int)
+signal onPlaceInventory(tower: Tower)
+signal onInventoryChanged()
 
 func _ready():
 	onDragEvent.connect(func(n, state): _isDragging = state)
@@ -41,11 +49,12 @@ func _ready():
 	onLevelCreated.connect(setupLevel)
 	onGameTick.connect(updateGameState)
 	onNextWave.connect(startWave)
-	_currentLevel = levels[0]	
+	_currentLevel = levels[0]
 	_gameTickTimer.wait_time = 1
 	_gameTickTimer.autostart = true
 	_gameTickTimer.timeout.connect(func(): onGameTick.emit())
 	add_child(_gameTickTimer)
+	inventory[allTowers.towers[0]] = 1
 
 func restartLevel() -> void:
 	get_tree().change_scene_to_packed(_currentLevel.scene)
@@ -71,7 +80,7 @@ func setupLevel() -> void:
 	level.sender.spawnAngleMin = _currentLevel.spawnAngleMin
 	level.sender.spawnAngleMax = _currentLevel.spawnAngleMax
 	level.sender.spawnAngleRotationSpeed = _currentLevel.spawnAngleRotationSpeed
-	
+
 	startWave(1)
 
 func updateGameState():
@@ -94,7 +103,7 @@ func receivePacket(payload: int):
 	_packetsReceived += 1
 	if packetsToSend == 0:
 		onNextWave.emit(_wave + 1)
-	
+
 func startWave(nr: int):
 	print("starting wave " + str(nr) + "...")
 	if nr > 1:

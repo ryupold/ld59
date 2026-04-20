@@ -11,9 +11,7 @@ var _followsMouse := false
 	set(value):
 		_followsMouse = value
 		GameState.onDragEvent.emit(self, _followsMouse)
-
 @export var disableEffect := false
-@export var debug := true
 
 @abstract func towerEffect() -> Effect
 
@@ -69,12 +67,11 @@ func handleClick(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and canPlace():
 			place()
-		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and debug and not GameState._isDragging:
+		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and not GameState._isDragging:
 			print("Right mouse button clicked at:", event.position)
 			pickup()
 		elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and GameState._isDragging:
-			followsMouse = false
-			queue_free()
+			placeInInventory()
 
 func handleDisableEffect() -> void:
 	if effectArea == null: return
@@ -94,3 +91,8 @@ func place():
 func pickup():
 	followsMouse = true
 	disableEffect = true
+
+func placeInInventory():
+	followsMouse = false
+	GameState.onPlaceInventory.emit(self)
+	queue_free()

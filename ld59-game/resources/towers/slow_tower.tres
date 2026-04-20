@@ -10,7 +10,7 @@ region = Rect2(0, 38, 175, 304)
 
 [resource]
 script = ExtResource("3_1oo0a")
-Title = "Slow Tower"
+title = "Slow Tower"
 previewImage = SubResource("AtlasTexture_yx6rq")
 scene = ExtResource("2_8ygvc")
 metadata/_custom_type_script = "uid://bjemchx618kvp"
