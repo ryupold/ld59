@@ -3,7 +3,6 @@ extends Node
 var _currentLevel : LevelResource
 
 var _wave: int = 1
-var _packetsLost: int
 var _packetsReceived: int
 var _payloadReceived: int
 var _payloadBuffer: int
@@ -48,7 +47,6 @@ signal onGameOver
 
 func _ready():
 	onDragEvent.connect(func(n, state): _isDragging = state)
-	onPacketLost.connect(lostPacket)
 	onPacketReceived.connect(receivePacket)
 	onLevelCreated.connect(setupLevel)
 	onGameTick.connect(updateGameState)
@@ -75,10 +73,9 @@ func setupLevel() -> void:
 	if scene is not Level: return
 	var level := scene as Level
 
-	_packetsLost = 0
-	_payloadReceived = 0
 	_signal = 0
 	_packetsReceived = 0
+	_payloadReceived = 0
 	_payloadBuffer = 0
 
 	level.sender.spawnInterval = _currentLevel.spawnInterval
@@ -99,14 +96,12 @@ var isConnectionGood: bool:
 var minSignal: float:
 	get: return _currentLevel.signalThreshold + sqrt(_timePassed * _wave)
 
-func lostPacket():
-	_packetsLost += 1
-
 func receivePacket(payload: int):
 	_payloadReceived += payload
 	_payloadBuffer += payload
 	_packetsReceived += 1
 	if packetsToSend == 0:
+		await get_tree().create_timer(10).timeout
 		onNextWave.emit(_wave + 1)
 
 func startWave(nr: int):
@@ -115,9 +110,9 @@ func startWave(nr: int):
 	print("starting wave " + str(nr) + "...")
 	_wave = nr
 	_signal = 0
-	_payloadReceived = 0
-	_packetsLost = 0
+	#_packetsLost = 0
 	_packetsReceived = 0
+	_payloadReceived = 0
 	_payloadBuffer = 0
 	_timePassed = 0
 
