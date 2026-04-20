@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://6v7rgyiodkyb"]
+
+[ext_resource type="Script" uid="uid://bg1c1647o38wh" path="res://hud/game_over.gd" id="1_6815q"]
+
+[node name="GameOver" type="VBoxContainer" unique_id=2006229539 node_paths=PackedStringArray("restartLevel", "restartWave")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6815q")
+restartLevel = NodePath("MarginContainer2/VBoxContainer/Restart level")
+restartWave = NodePath("MarginContainer2/VBoxContainer/Restart wave")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=677984000]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 150
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=36342855]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1905621918]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=1342216670]
+layout_mode = 2
+
+[node name="Restart level" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=1320032496]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Restart level"
+
+[node name="Restart wave" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=1845829977]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Restart wave"
