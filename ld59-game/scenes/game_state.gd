@@ -57,6 +57,8 @@ func _ready():
 	_gameTickTimer.timeout.connect(func(): onGameTick.emit())
 	add_child(_gameTickTimer)
 	inventory[allTowers.towers[0]] = 1
+	inventory[allTowers.towers[1]] = 1
+	inventory[allTowers.towers[4]] = 1
 
 func restartLevel() -> void:
 	get_tree().change_scene_to_packed(_currentLevel.scene)
@@ -92,7 +94,7 @@ var isConnectionGood: bool:
 	get: return _signal >= minSignal
 
 var minSignal: float:
-	get: return _currentLevel.signalThreshold * _wave * sqrt(_packetsReceived + _packetsLost)
+	get: return _currentLevel.signalThreshold + sqrt(_timePassed * _wave)
 
 func lostPacket():
 	_packetsLost += 1
@@ -117,7 +119,7 @@ func startWave(nr: int):
 
 func _physics_process(delta):
 	_timePassed += delta
-	_signal = (_payloadPerSecond + _signal) / 2
+	_signal = (_payloadPerSecond + _signal * _currentLevel.signalLag) / (_currentLevel.signalLag+1)
 
 enum GameState {
 	MainMenu,

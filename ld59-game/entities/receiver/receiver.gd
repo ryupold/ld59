@@ -1,7 +1,6 @@
 extends Node2D
 class_name Receiver
 
-@export var patienceDecreaseFactor : float = 1
 @onready var patienceProgressBar := $TextureProgressBar
 var currentState: State = State.CallIncoming
 
@@ -15,14 +14,7 @@ var patience : float:
 		return patienceProgressBar.value
 	set(value):
 		patienceProgressBar.value = value
-		if value < 25:
-			patienceProgressBar.tint_progress = Color.RED
-		elif value < 50:
-			patienceProgressBar.tint_progress = Color.ORANGE
-		elif value < 75:
-			patienceProgressBar.tint_progress = Color.YELLOW
-		else:
-			patienceProgressBar.tint_progress = Color.GREEN
+		updateAnimation()
 
 func _ready():
 	prepareForNextWave(1)
@@ -33,10 +25,10 @@ func _ready():
 	GameState.onPacketReceived.connect(func(payload): startOrEndCall())
 	
 func prepareForNextWave(wave: int):
+	currentState = State.CallIncoming
 	patience = 100
 	updateRequiredSignal()
-	currentState = State.CallIncoming
-	patienceDecreaseFactor = wave
+	updateAnimation()
 
 func onGameTick():
 	updateRequiredSignal()
@@ -46,21 +38,38 @@ func onGameTick():
 func updateAnimation():
 	if currentState == State.CallIncoming:
 		$AnimatedSprite2D.animation = "incoming"
+		patienceProgressBar.visible = false
+		$RequiredSignalLabel.visible = false
 	elif GameState.isConnectionGood:
 		$AnimatedSprite2D.animation = "good"
+		patienceProgressBar.visible = true
+		$RequiredSignalLabel.visible = true
 	else:
 		$AnimatedSprite2D.animation = "bad"
+		patienceProgressBar.visible = true
+		$RequiredSignalLabel.visible = true
+	
+	if GameState.isConnectionGood:
+		patienceProgressBar.tint_progress = Color.DIM_GRAY
+	elif patience < 25:
+		patienceProgressBar.tint_progress = Color.RED
+	elif patience < 50:
+		patienceProgressBar.tint_progress = Color.ORANGE
+	elif patience < 75:
+		patienceProgressBar.tint_progress = Color.YELLOW
+	else:
+		patienceProgressBar.tint_progress = Color.GREEN
 
 func updatePatience():
 	if currentState == State.CallIncoming: return
 	
 	if not GameState.isConnectionGood:
-		patience -= patienceDecreaseFactor
+		patience -= GameState.minSignal - GameState._signal
 	if patience <= 0:
 		print("AAAARRGGHHH!!!")
 
 func updateRequiredSignal():
-	$RequiredSignalLabel.text = "required signal\n" + ("%.2f" % GameState.minSignal)
+	$RequiredSignalLabel.text = "signal: " + ("%.2f" % GameState._signal) + "\n" + "required: " + ("%.2f" % GameState.minSignal)
 	
 func startOrEndCall():
 	if GameState.packetsToSend > 0:
