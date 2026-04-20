@@ -70,7 +70,7 @@ func updatePatience():
 	if currentState == State.CallIncoming: return
 
 	if not GameState.isConnectionGood:
-		patience -= GameState.minSignal - GameState._signal
+		patience -= sqrt(max(1, GameState.minSignal - GameState._signal))
 	if patience <= 0:
 		print("AAAARRGGHHH!!!")
 		GameState.onGameOver.emit()
