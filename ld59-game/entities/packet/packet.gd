@@ -8,9 +8,11 @@ class_name Packet
 @export var growthModifier := 0.05
 @export var minSpeed: float = 100
 @export var maxSpeed: float = 5000
+@export var maxTravelTime: float = 25000
 @export var payload: int = 1
 @export var sprites: Array[Texture2D] = []
-var originalScales: Array[Vector2] = []
+var _originalScales: Array[Vector2] = []
+var _travelTime: float
 
 @onready var effectMap: Dictionary = {
 	Tower.Effect.GRAVITY: $Effects/GravityEffect,
@@ -33,7 +35,7 @@ var activeEffects: Dictionary = {
 func _ready() -> void:
 	for c in get_children():
 		if c is CanvasItem:
-			originalScales.append(c.scale)
+			_originalScales.append(c.scale)
 			
 	body_entered.connect(onCollision)
 
@@ -53,7 +55,7 @@ func increasePayload(by: int) -> void:
 	for i in get_child_count():
 		var child := get_child(i)
 		if child is CanvasItem:
-			var newScale := originalScales[i] * (1 + (payload-1) * growthModifier)
+			var newScale := _originalScales[i] * (1 + (payload-1) * growthModifier)
 			child.scale = newScale
 
 func increaseTtl(by: int) -> void:

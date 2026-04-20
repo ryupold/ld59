@@ -20,7 +20,7 @@ var _isDragging: bool = false
 
 var packetsToSend: int:
 	get:
-		return _currentLevel.packetsToSend - _packetsReceived
+		return _currentLevel.packetsToSend * _wave - _packetsReceived
 
 @export var allTowers: TowersResource
 @export var unlockedTowers: TowersResource
@@ -92,7 +92,7 @@ func receivePacket(payload: int):
 	_payloadReceived += payload
 	_payloadBuffer += payload
 	_packetsReceived += 1
-	if _packetsReceived == _currentLevel.packetsToSend:
+	if packetsToSend == 0:
 		onNextWave.emit(_wave + 1)
 	
 func startWave(nr: int):
@@ -108,7 +108,7 @@ func startWave(nr: int):
 
 func _physics_process(delta):
 	_timePassed += delta
-	_signal = _payloadPerSecond * _payloadReceived / _timePassed
+	_signal = (_payloadPerSecond + _signal) / 2
 
 enum GameState {
 	MainMenu,
