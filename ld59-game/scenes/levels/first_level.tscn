@@ -23,8 +23,8 @@ packets = NodePath("Packets")
 offset_left = -1654.0
 offset_top = -393.0
 offset_right = -1092.0
-offset_bottom = 1077.853
-pivot_offset = Vector2(281, 735.4265)
+offset_bottom = 1086.0
+pivot_offset = Vector2(281, 739.5)
 
 [node name="RectangleWall2" parent="Walls" unique_id=496078732 instance=ExtResource("6_3kh8m")]
 offset_left = 688.0835
