@@ -2,8 +2,10 @@ class_name LevelSelectorCanvasItem extends VBoxContainer
 
 @export var levelCanvasItem: PackedScene = preload("res://hud/level_selector/level_canvas_item.tscn")
 @export var buttonParent: Control
+@export var close: Button
 
 func _ready() -> void:
+	close.pressed.connect(queue_free)
 	updateLevelSelect()
 
 func toggleSelector() -> void:
