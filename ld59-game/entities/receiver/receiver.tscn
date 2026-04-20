@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://stivelja4v6f" path="res://entities/receiver/receiver.gd" id="2_iliiv"]
 [ext_resource type="Texture2D" uid="uid://cdtvlhu2kkb5x" path="res://entities/receiver/receiver_bad.webp" id="2_iyevf"]
 [ext_resource type="Texture2D" uid="uid://clauxilcxwbqk" path="res://entities/receiver/receiver_good.webp" id="3_ufwo3"]
+[ext_resource type="Texture2D" uid="uid://k26iix3yodqo" path="res://entities/receiver/receiver_incoming.webp" id="4_hec4t"]
+[ext_resource type="Texture2D" uid="uid://c5fe7ajk8e0mu" path="res://entities/receiver/progress_over.webp" id="4_ufwo3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hec4t"]
 atlas = ExtResource("2_iyevf")
@@ -34,6 +36,22 @@ region = Rect2(288, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1at43"]
 atlas = ExtResource("3_ufwo3")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi4jp"]
+atlas = ExtResource("4_hec4t")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbmdk"]
+atlas = ExtResource("4_hec4t")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7wck"]
+atlas = ExtResource("4_hec4t")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up7vu"]
+atlas = ExtResource("4_hec4t")
 region = Rect2(432, 0, 144, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ooahl"]
@@ -72,6 +90,23 @@ animations = [{
 "loop": true,
 "name": &"good",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi4jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbmdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7wck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up7vu")
+}],
+"loop": true,
+"name": &"incoming",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iliiv"]
@@ -80,15 +115,19 @@ radius = 176.81912
 [sub_resource type="CircleShape2D" id="CircleShape2D_iyevf"]
 radius = 91.197586
 
+[sub_resource type="LabelSettings" id="LabelSettings_ufwo3"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
 [node name="Receiver" type="StaticBody2D" unique_id=2106263029]
 script = ExtResource("2_iliiv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=424022116]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ooahl")
-animation = &"bad"
+animation = &"incoming"
 autoplay = "bad"
-frame_progress = 0.49038893
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218089614]
 shape = SubResource("CircleShape2D_iliiv")
@@ -99,3 +138,26 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerCollider" unique_id=569368532]
 shape = SubResource("CircleShape2D_iyevf")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1235965416]
+offset_left = 204.0
+offset_top = -163.0
+offset_right = 309.0
+offset_bottom = 197.0
+step = 0.1
+value = 100.0
+rounded = true
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("4_ufwo3")
+
+[node name="RequiredSignalLabel" type="Label" parent="." unique_id=32983787]
+offset_left = -193.0
+offset_top = 216.0
+offset_right = 197.0
+offset_bottom = 328.0
+text = "required signal
+3.14"
+label_settings = SubResource("LabelSettings_ufwo3")
+horizontal_alignment = 1
+vertical_alignment = 1

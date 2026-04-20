@@ -2,9 +2,7 @@ extends Node
 
 var _currentLevel : LevelResource
 
-var _wave: int
-var _patience: float
-
+var _wave: int = 1
 var _packetsLost: int
 var _packetsReceived: int
 var _payloadReceived: int
@@ -73,7 +71,6 @@ func setupLevel() -> void:
 	_signal = 0
 	_packetsReceived = 0
 	_payloadBuffer = 0
-	_patience = _currentLevel.patience
 
 	level.sender.spawnInterval = _currentLevel.spawnInterval
 	level.sender.spawnImpulse = _currentLevel.spawnImpulse
@@ -86,13 +83,12 @@ func setupLevel() -> void:
 func updateGameState():
 	_payloadPerSecond = _payloadBuffer
 	_payloadBuffer = 0
-	# reduce patience when signal is bad
-	if not isConnectionGood:
-		_patience -= 1.0
 
 var isConnectionGood: bool:
-	get:
-		return _signal >= _currentLevel.signalThreshold
+	get: return _signal >= minSignal
+
+var minSignal: float:
+	get: return _currentLevel.signalThreshold * _wave * sqrt(_packetsReceived + _packetsLost)
 
 func lostPacket():
 	_packetsLost += 1
