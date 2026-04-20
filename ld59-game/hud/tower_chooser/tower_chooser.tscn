@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bfitb4kywy6li"]
+
+[ext_resource type="Script" uid="uid://cjb8dllsp457l" path="res://hud/tower_chooser/tower_chooser.gd" id="1_lsxog"]
+[ext_resource type="PackedScene" uid="uid://donbnyhv7bjk8" path="res://hud/tower_chooser/chooser_canvas_item/chooser_canvas_item.tscn" id="2_ysjly"]
+
+[node name="TowerChooser" type="VBoxContainer" unique_id=1730327705 node_paths=PackedStringArray("buttonParent")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lsxog")
+buttonParent = NodePath("MarginContainer/HContainer")
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=98998808]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="." unique_id=1365060528]
+layout_mode = 2
+text = "Choose a Tower"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1181068199]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="HContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1945907053]
+layout_mode = 2
+
+[node name="ChooserCanvasItem" parent="MarginContainer/HContainer" unique_id=712901066 instance=ExtResource("2_ysjly")]
+layout_mode = 2
+
+[node name="ChooserCanvasItem2" parent="MarginContainer/HContainer" unique_id=813532095 instance=ExtResource("2_ysjly")]
+layout_mode = 2
+
+[node name="ChooserCanvasItem3" parent="MarginContainer/HContainer" unique_id=1087642821 instance=ExtResource("2_ysjly")]
+layout_mode = 2
+
+[node name="ChooserCanvasItem4" parent="MarginContainer/HContainer" unique_id=1315929955 instance=ExtResource("2_ysjly")]
+layout_mode = 2
+
+[node name="ChooserCanvasItem5" parent="MarginContainer/HContainer" unique_id=142999678 instance=ExtResource("2_ysjly")]
+layout_mode = 2

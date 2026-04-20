@@ -4,16 +4,18 @@
 [ext_resource type="Script" uid="uid://dobvu0txxlu5l" path="res://hud/hud.gd" id="1_318vg"]
 [ext_resource type="PackedScene" uid="uid://dmoygirrjplv2" path="res://hud/inventory/inventory.tscn" id="2_2gk58"]
 [ext_resource type="PackedScene" uid="uid://b0blgpnq2do5u" path="res://hud/level_selector/level_selector.tscn" id="4_w8tcp"]
+[ext_resource type="PackedScene" uid="uid://bfitb4kywy6li" path="res://hud/tower_chooser/tower_chooser.tscn" id="5_svhta"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "buttonChooser", "levelSelector")]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "buttonChooser", "levelSelector", "towerChooser")]
 script = ExtResource("1_318vg")
 button = NodePath("MenuBar/Button")
 buttonSelector = NodePath("MenuBar/ButtonSelector")
 buttonChooser = NodePath("MenuBar/ButtonChooser")
 levelSelector = NodePath("LevelSelector")
+towerChooser = NodePath("TowerChooser")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
 anchors_preset = 1
@@ -65,9 +67,7 @@ offset_bottom = 625.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="TowerChooser" type="VBoxContainer" parent="." unique_id=1591230774]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TowerChooser" parent="." unique_id=1730327705 instance=ExtResource("5_svhta")]
 
 [node name="MenuBar" type="HBoxContainer" parent="." unique_id=1458396715]
 offset_right = 125.0
