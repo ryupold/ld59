@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://stivelja4v6f" path="res://entities/receiver/receiver.gd" id="2_iliiv"]
 [ext_resource type="Texture2D" uid="uid://cdtvlhu2kkb5x" path="res://entities/receiver/receiver_bad.webp" id="2_iyevf"]
 [ext_resource type="Texture2D" uid="uid://clauxilcxwbqk" path="res://entities/receiver/receiver_good.webp" id="3_ufwo3"]
-[ext_resource type="Texture2D" uid="uid://k26iix3yodqo" path="res://entities/receiver/receiver_incoming.webp" id="4_hec4t"]
+[ext_resource type="Texture2D" uid="uid://b1uwarlrwqp5p" path="res://entities/receiver/receiver_incoming.webp" id="4_hec4t"]
 [ext_resource type="Texture2D" uid="uid://c5fe7ajk8e0mu" path="res://entities/receiver/progress_over.webp" id="4_ufwo3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hec4t"]
@@ -116,9 +116,16 @@ radius = 176.81912
 radius = 91.197586
 
 [sub_resource type="LabelSettings" id="LabelSettings_ufwo3"]
+resource_local_to_scene = true
 font_size = 50
-outline_size = 10
+outline_size = 30
 outline_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hec4t"]
+font_size = 30
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Receiver" type="StaticBody2D" unique_id=2106263029]
 script = ExtResource("2_iliiv")
@@ -151,13 +158,44 @@ fill_mode = 3
 nine_patch_stretch = true
 texture_progress = ExtResource("4_ufwo3")
 
-[node name="RequiredSignalLabel" type="Label" parent="." unique_id=32983787]
+[node name="SignalProgressBar" type="TextureProgressBar" parent="." unique_id=44730534]
 offset_left = -193.0
-offset_top = 216.0
-offset_right = 197.0
-offset_bottom = 328.0
-text = "required signal
-3.14"
+offset_top = 254.0
+offset_right = 309.0
+offset_bottom = 327.0
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("4_ufwo3")
+texture_progress = ExtResource("4_ufwo3")
+tint_progress = Color(0, 0.5085073, 0.34064347, 1)
+
+[node name="RequiredLabel" type="Label" parent="." unique_id=32983787]
+visible = false
+offset_left = 309.0
+offset_top = 254.0
+offset_right = 625.0
+offset_bottom = 323.0
+text = "3.14"
 label_settings = SubResource("LabelSettings_ufwo3")
-horizontal_alignment = 3
-vertical_alignment = 3
+vertical_alignment = 1
+
+[node name="SignalLabel" type="Label" parent="." unique_id=727530896]
+offset_left = -193.0
+offset_top = 254.0
+offset_right = 309.0
+offset_bottom = 327.0
+text = "3.14"
+label_settings = SubResource("LabelSettings_ufwo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="SignalLabel" unique_id=1288462782]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 502.0
+offset_bottom = 146.0
+text = "signal strength"
+label_settings = SubResource("LabelSettings_hec4t")
+horizontal_alignment = 1
+vertical_alignment = 1

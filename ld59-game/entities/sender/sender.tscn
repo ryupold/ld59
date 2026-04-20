@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3bncaxlpwi7c" path="res://entities/sender/sender.gd" id="1_347e5"]
 [ext_resource type="Texture2D" uid="uid://c10l4hs3irmwn" path="res://entities/sender/sender.webp" id="2_347e5"]
+[ext_resource type="Texture2D" uid="uid://b3tdtukpsnrn8" path="res://entities/packet/sprites/large_package_4.webp" id="3_b3yud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3yud"]
 atlas = ExtResource("2_347e5")
@@ -71,12 +72,20 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_347e5")
 
 [node name="PacketsToSentLabel" type="Label" parent="." unique_id=1576197016]
-offset_left = 39.0
-offset_top = -60.0
-offset_right = 189.0
-offset_bottom = 36.0
-pivot_offset = Vector2(93, 34)
-text = "100"
+offset_left = -387.0
+offset_top = 35.0
+offset_right = -187.0
+offset_bottom = 131.0
+pivot_offset = Vector2(100, 48)
+text = "10011"
 label_settings = SubResource("LabelSettings_347e5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1189180587]
+offset_left = -354.0
+offset_top = -134.0
+offset_right = -218.0
+offset_bottom = 9.0
+texture = ExtResource("3_b3yud")
+stretch_mode = 4

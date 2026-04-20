@@ -27,11 +27,11 @@ func _ready():
 func prepareForNextWave(wave: int):
 	currentState = State.CallIncoming
 	patience = 100
-	updateRequiredSignal()
+	updateLabels()
 	updateAnimation()
 
 func onGameTick():
-	updateRequiredSignal()
+	updateLabels()
 	updatePatience()
 	updateAnimation()
 
@@ -39,16 +39,22 @@ func updateAnimation():
 	if currentState == State.CallIncoming:
 		$AnimatedSprite2D.animation = "incoming"
 		patienceProgressBar.visible = false
-		$RequiredSignalLabel.visible = false
+		#$RequiredLabel.visible = false
+		$SignalLabel.visible = false
+		$SignalProgressBar.visible = false
 	elif GameState.isConnectionGood:
 		$AnimatedSprite2D.animation = "good"
 		patienceProgressBar.visible = true
-		$RequiredSignalLabel.visible = true
+		#$RequiredLabel.visible = true
+		$SignalLabel.visible = true
+		$SignalProgressBar.visible = true
 	else:
 		$AnimatedSprite2D.animation = "bad"
 		patienceProgressBar.visible = true
-		$RequiredSignalLabel.visible = true
-
+		#$RequiredLabel.visible = true
+		$SignalLabel.visible = true
+		$SignalProgressBar.visible = true
+	
 	if GameState.isConnectionGood:
 		patienceProgressBar.tint_progress = Color.DIM_GRAY
 	elif patience < 25:
@@ -69,9 +75,12 @@ func updatePatience():
 		print("AAAARRGGHHH!!!")
 		GameState.onGameOver.emit()
 
-func updateRequiredSignal():
-	$RequiredSignalLabel.text = "signal: " + ("%.2f" % GameState._signal) + "\n" + "required: " + ("%.2f" % GameState.minSignal)
-
+func updateLabels():
+	$RequiredLabel.text = ("%.2f" % GameState.minSignal)
+	$SignalLabel.text = ("%.2f" % GameState._signal)
+	$SignalProgressBar.max_value = GameState.minSignal
+	$SignalProgressBar.value = GameState._signal
+	
 func startOrEndCall():
 	if GameState.packetsToSend > 0:
 		currentState = State.InCall
