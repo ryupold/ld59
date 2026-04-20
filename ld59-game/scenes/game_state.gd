@@ -40,6 +40,7 @@ signal onPacketReceived()
 signal onLevelCreated()
 signal onGameTick()
 signal onNextWave(wave: int)
+signal onWaveFinished(wave: int)
 signal onPlaceInventory(tower: Tower)
 signal onInventoryChanged()
 signal onLevelUp(towers: Array[TowerResource])
@@ -101,16 +102,15 @@ func receivePacket(payload: int):
 	_payloadBuffer += payload
 	_packetsReceived += 1
 	if packetsToSend == 0:
-		await get_tree().create_timer(10).timeout
-		onNextWave.emit(_wave + 1)
+		onWaveFinished.emit(_wave)
+		triggerLevelUp()
 
 func startWave(nr: int):
 	get_tree().paused = false
-	if nr != 1 && _wave != nr: triggerLevelUp()
+	#if nr != 1 && _wave != nr: triggerLevelUp()
 	print("starting wave " + str(nr) + "...")
 	_wave = nr
 	_signal = 0
-	#_packetsLost = 0
 	_packetsReceived = 0
 	_payloadReceived = 0
 	_payloadBuffer = 0

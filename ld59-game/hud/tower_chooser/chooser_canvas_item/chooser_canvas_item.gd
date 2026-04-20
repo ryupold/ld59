@@ -17,4 +17,5 @@ func handleSelect():
 	GameState.setInventory(resource, value + 1)
 	hideParent.call()
 	get_tree().paused = false
-	pass
+	await get_tree().create_timer(2).timeout
+	GameState.onNextWave.emit(GameState._wave + 1)
