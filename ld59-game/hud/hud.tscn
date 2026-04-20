@@ -69,7 +69,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="TowerChooser" parent="." unique_id=1730327705 instance=ExtResource("5_svhta")]
-chooserCanvasItem = null
 
 [node name="MenuBar" type="HBoxContainer" parent="." unique_id=1458396715]
 offset_right = 125.0
