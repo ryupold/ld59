@@ -14,6 +14,7 @@ class_name Sender extends Node2D
 @export var spawnAngleMax: float = PI/2
 @export var spawnAngleRotationSpeed: float = 1
 @onready var _spawnAngle: float = (spawnAngleMin + spawnAngleMax) / 2
+@onready var packetsToSendLabel : Label = $PacketsToSentLabel
 var inFlightPackets : int = 0
 
 func _ready():
@@ -31,6 +32,8 @@ func _physics_process(delta):
 		_spawnAngle = spawnAngleMin
 	else:
 		_spawnAngle = nextAngle
+	# update packet number
+	packetsToSendLabel.text = str(GameState.packetsToSend)
 
 func sendPacketIfNeeded():
 	if GameState.packetsToSend - inFlightPackets > 0:
