@@ -48,14 +48,14 @@ offset_top = 93.86853
 offset_right = 2018.7798
 offset_bottom = 903.8685
 rotation = -0.98570305
-pivot_offset = Vector2(409.4109, 404.93427)
+pivot_offset = Vector2(409.4109, 405)
 
 [node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_xbibw")]
 position = Vector2(-2273, -1115)
 packetParent = NodePath("../Packets")
 
 [node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("3_hkalp")]
-position = Vector2(2268, 905)
+position = Vector2(2293, 883)
 
 [node name="Packets" type="Node2D" parent="." unique_id=2121823717]
 

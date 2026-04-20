@@ -6,7 +6,7 @@ func towerEffect() -> Tower.Effect: return Effect.PAYLOAD
 
 func _ready() -> void:
 	super._ready()
-
+	
 	effectArea.scale = Vector2.ZERO
 	var tween := create_tween().set_loops()
 	tween.tween_property(effectArea, "scale", Vector2.ONE, 1)

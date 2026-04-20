@@ -55,6 +55,8 @@ autoplay = "default"
 frame_progress = 0.12814857
 
 [node name="PacketCreationTimer" type="Timer" parent="." unique_id=1597540509]
+process_mode = 1
+physics_interpolation_mode = 1
 autostart = true
 
 [node name="TowerCollider" type="Area2D" parent="." unique_id=1755820681]

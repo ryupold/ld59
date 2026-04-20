@@ -63,6 +63,7 @@ position = Vector2(-4, 0)
 sprite_frames = SubResource("SpriteFrames_jynls")
 autoplay = "default"
 frame_progress = 0.76283485
+speed_scale = 0.1
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=505660784]
 position = Vector2(-5, -111)
