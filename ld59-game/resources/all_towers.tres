@@ -12,5 +12,5 @@
 
 [resource]
 script = ExtResource("1_ugfgi")
-towers = Array[ExtResource("2_hpmw0")]([ExtResource("5_g5peo"), ExtResource("4_v7j8b"), ExtResource("7_c26ln"), ExtResource("3_hpmw0"), ExtResource("5_w5hlg"), ExtResource("8_ie0ql"), ExtResource("9_830xy")])
+towers = Array[ExtResource("2_hpmw0")]([ExtResource("5_g5peo"), ExtResource("4_v7j8b"), ExtResource("3_hpmw0"), ExtResource("5_w5hlg"), ExtResource("7_c26ln"), ExtResource("8_ie0ql"), ExtResource("9_830xy")])
 metadata/_custom_type_script = "uid://j8gggyuglixk"
