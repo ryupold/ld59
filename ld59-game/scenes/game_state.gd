@@ -18,7 +18,7 @@ var _isDragging: bool = false
 
 var packetsToSend: int:
 	get:
-		return _currentLevel.packetsToSend * _wave - _packetsReceived
+		return _currentLevel.packetsToSend + sqrt(_currentLevel.packetsToSend * _wave) - _packetsReceived
 
 var _inventory: Dictionary[TowerResource, int]
 var inventory: Dictionary[TowerResource, int] :

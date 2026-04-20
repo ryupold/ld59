@@ -10,10 +10,34 @@ config_version=5
 
 [application]
 
-config/name="LD59"
+config/name="Lost in Transit"
+config/description="Patience is running thin while you watch the buffering screen.​
+
+You waited a long time for this video call. Everything needs to be perfect, but then suddenly the stream is interrupted because the signal strength is really bad. 
+
+You are no network expert but you spend years playing Tower Defence in WC3. Maybe these skills  you made playing can finally help you in real life.
+
+Help \"routing\" the sent packets from the sender (🙋‍♀️) to you (👤​) by placing a variaty of Towers. The packets come in waves. You need to keep the signal strength above an increasing bar. 
+
+If you stare too long into the buffering screen you loose patience and at some point give up.
+
+Can you beat all levels and have a good conversation? :D
+
+## Controls
+
+    The game is fully controlled with mouse
+    Left click to select and place towers
+    Right click to grad a placed tower
+
+## Team
+
+    Helen - art / game design
+    ThunfischEis​ (Ian) - programming​ / game design
+    ryupold (Michi) - programming​ / game design​"
 run/main_scene="uid://bsp00jucjsi55"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://fdptdemoypkx"
+config/icon="uid://cnokh57drdnq1"
 
 [autoload]
 
