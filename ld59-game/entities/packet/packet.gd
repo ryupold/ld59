@@ -8,13 +8,13 @@ class_name Packet
 @export var growthModifier := 0.05
 @export var minSpeed: float = 100
 @export var maxSpeed: float = 5000
-@export var maxTravelTime: float = 25000
+@export var maxTravelTime: float = 30
 @export var payload: int = 1
 @export var sprites: Array[Texture2D] = []
 var _originalScales: Array[Vector2] = []
 var _travelTime: float
 
-@onready var effectMap: Dictionary = {
+@onready var effectMap: Dictionary[Tower.Effect, Node2D]= {
 	Tower.Effect.GRAVITY: $Effects/GravityEffect,
 	Tower.Effect.ANTIGRAVITY: $Effects/AntigravityEffect,
 	Tower.Effect.SPEED: $Effects/SpeedEffect,
@@ -23,7 +23,7 @@ var _travelTime: float
 	Tower.Effect.PAYLOAD: $Effects/PayloadEffect,
 }
 
-var activeEffects: Dictionary = {
+var activeEffects: Dictionary[Tower.Effect, int] = {
 	Tower.Effect.GRAVITY: 0,
 	Tower.Effect.ANTIGRAVITY: 0,
 	Tower.Effect.SPEED: 0,
@@ -33,11 +33,18 @@ var activeEffects: Dictionary = {
 }
 
 func _ready() -> void:
+	set_physics_process(true)
 	for c in get_children():
 		if c is CanvasItem:
 			_originalScales.append(c.scale)
 			
 	body_entered.connect(onCollision)
+	
+func _physics_process(delta):
+	_travelTime += delta
+	if _travelTime > maxTravelTime:
+		GameState.onPacketLost.emit()
+		queue_free()
 
 func onCollision(body: Node2D) -> void:
 	if body is Receiver:
@@ -45,6 +52,7 @@ func onCollision(body: Node2D) -> void:
 		queue_free()
 	else: # its a wall (probably)
 		ttl -= 1
+		_travelTime = 0
 		if ttl == 0:
 			GameState.onPacketLost.emit()
 			queue_free()
