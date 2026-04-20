@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://3i1vgtrekd1x"]
 
+[ext_resource type="PackedScene" uid="uid://12tdlmf5m3ru" path="res://entities/walls/ground.tscn" id="1_ew4hc"]
 [ext_resource type="PackedScene" uid="uid://cjubf2uowpulv" path="res://entities/walls/rectangle_wall.tscn" id="2_ew4hc"]
 
 [node name="Walls" type="Node2D" unique_id=903204524]
+
+[node name="Background" parent="." unique_id=215101431 instance=ExtResource("1_ew4hc")]
 
 [node name="Left" parent="." unique_id=369208461 instance=ExtResource("2_ew4hc")]
 offset_left = -3040.0

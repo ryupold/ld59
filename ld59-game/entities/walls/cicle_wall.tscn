@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://1jkoj7nk1gi3"]
 
 [ext_resource type="Texture2D" uid="uid://ru7u2urulhji" path="res://entities/walls/wall_texture_round.png" id="1_ietbt"]
-[ext_resource type="Texture2D" uid="uid://catuqaebhdrfa" path="res://entities/walls/wall_texture.jpg" id="1_n7i81"]
 [ext_resource type="Script" uid="uid://8570h0ya37kh" path="res://entities/walls/cicle_wall.gd" id="2_n7i81"]
+[ext_resource type="Texture2D" uid="uid://bm2pfm87jhsv" path="res://entities/walls/wall_texture.webp" id="3_ietbt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n7i81"]
 radius = 409.4109
@@ -30,7 +30,7 @@ layout_mode = 0
 offset_right = 500.0
 offset_bottom = 500.0
 pivot_offset = Vector2(250, 250)
-texture = ExtResource("1_n7i81")
+texture = ExtResource("3_ietbt")
 expand_mode = 1
 stretch_mode = 1
 
