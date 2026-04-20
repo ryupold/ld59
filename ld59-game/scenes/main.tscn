@@ -9,6 +9,7 @@ start = NodePath("CanvasLayer/HSplitContainer/HBoxContainer/VBoxContainer/Margin
 levels = NodePath("CanvasLayer/HSplitContainer/HBoxContainer/VBoxContainer/MarginContainer2/Levels")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=362393604]
+follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1806497696]
 anchors_preset = 15

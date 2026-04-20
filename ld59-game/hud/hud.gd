@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var button: Button
+@export var waveNumber: Label
 @export var buttonSelector: Button
 @export var buttonChooser: Button
 @export var levelSelector: PackedScene = preload("res://hud/level_selector/level_selector.tscn")
@@ -10,6 +11,7 @@ func _ready() -> void:
 	button.pressed.connect(GameState.restartLevel)
 	buttonSelector.pressed.connect(showLevelSelector)
 	GameState.onGameOver.connect(showGameOver)
+	GameState.onNextWave.connect(func(nr:int): waveNumber.text = str(nr))
 
 func showLevelSelector():
 	var selector := levelSelector.instantiate() as LevelSelectorCanvasItem

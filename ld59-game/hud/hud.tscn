@@ -6,13 +6,44 @@
 [ext_resource type="PackedScene" uid="uid://b0blgpnq2do5u" path="res://hud/level_selector/level_selector.tscn" id="4_w8tcp"]
 [ext_resource type="PackedScene" uid="uid://bfitb4kywy6li" path="res://hud/tower_chooser/tower_chooser.tscn" id="5_svhta"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_svhta"]
+line_spacing = 0.0
+font_size = 32
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector")]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "waveNumber", "buttonSelector")]
 script = ExtResource("1_318vg")
 button = NodePath("MenuBar/Button")
+waveNumber = NodePath("VBoxContainer/Number")
 buttonSelector = NodePath("MenuBar/ButtonSelector")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=835312721]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Wave" type="Label" parent="VBoxContainer" unique_id=1519663171]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Wave"
+label_settings = SubResource("LabelSettings_svhta")
+horizontal_alignment = 1
+
+[node name="Number" type="Label" parent="VBoxContainer" unique_id=1551335508]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
 visible = false
@@ -25,18 +56,21 @@ grow_horizontal = 0
 script = ExtResource("1_6ca3a")
 
 [node name="PacketsLostLabel" type="Label" parent="debug" unique_id=1300933531]
+visible = false
 layout_mode = 2
 text = "packets lost"
 label_settings = SubResource("LabelSettings_6ca3a")
 horizontal_alignment = 2
 
 [node name="PayloadReceivedLabel" type="Label" parent="debug" unique_id=2063424629]
+visible = false
 layout_mode = 2
 text = "payload received"
 label_settings = SubResource("LabelSettings_6ca3a")
 horizontal_alignment = 2
 
 [node name="PayloadPerSecondLabel" type="Label" parent="debug" unique_id=2034626969]
+visible = false
 layout_mode = 2
 text = "payload/s"
 label_settings = SubResource("LabelSettings_6ca3a")
