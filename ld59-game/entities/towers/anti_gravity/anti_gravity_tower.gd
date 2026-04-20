@@ -1,10 +1,18 @@
 extends Tower
 
-@export var antiGravity: float = 1500
+@export var antiGravity: float = 500000
+
+const EPSILON: float = 0.01
 
 func towerEffect(): return Effect.ANTIGRAVITY
 
 func doEffect(delta: float) -> void:
 	for packet in packetsColliding:
-		var offset := global_position.direction_to(packet.global_position)
-		packet.apply_force(offset.normalized() * antiGravity)
+		var offset := global_position - packet.global_position
+		
+		var distance := maxf(offset.length(), EPSILON)
+		var strength := antiGravity * (-1.0 / distance)
+		packet.apply_force(offset.normalized() * strength)
+		
+		# old formula
+		#packet.apply_force(offset.normalized() * -antiGravity)
