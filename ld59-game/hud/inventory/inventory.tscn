@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmoygirrjplv2"]
+
+[ext_resource type="Script" uid="uid://dbuhil80h1yx8" path="res://hud/inventory/inventory.gd" id="1_k4fev"]
+[ext_resource type="PackedScene" uid="uid://cett1m8m3l8gn" path="res://hud/inventory/tower_canvas_item/tower_canvas_item.tscn" id="2_ih87c"]
+
+[node name="Inventory" type="HFlowContainer" unique_id=810922384]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 150.0
+offset_bottom = 150.0
+size_flags_vertical = 8
+script = ExtResource("1_k4fev")
+
+[node name="TowerCanvasItem" parent="." unique_id=871496032 instance=ExtResource("2_ih87c")]
+layout_mode = 2

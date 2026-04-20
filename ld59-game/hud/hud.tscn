@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cibt7y28amhj5" path="res://hud/debug.gd" id="1_6ca3a"]
 [ext_resource type="Script" uid="uid://dobvu0txxlu5l" path="res://hud/hud.gd" id="1_318vg"]
-[ext_resource type="PackedScene" uid="uid://dmoygirrjplv2" path="res://hud/tower_picker/tower_picker.tscn" id="2_2gk58"]
+[ext_resource type="PackedScene" uid="uid://dmoygirrjplv2" path="res://hud/inventory/inventory.tscn" id="2_2gk58"]
 [ext_resource type="PackedScene" uid="uid://b0blgpnq2do5u" path="res://hud/level_selector/level_selector.tscn" id="4_w8tcp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
 font_size = 30
 
-[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "levelSelector")]
+[node name="HUD" type="CanvasLayer" unique_id=114495 node_paths=PackedStringArray("button", "buttonSelector", "buttonChooser", "levelSelector")]
 script = ExtResource("1_318vg")
 button = NodePath("MenuBar/Button")
 buttonSelector = NodePath("MenuBar/ButtonSelector")
+buttonChooser = NodePath("MenuBar/ButtonChooser")
 levelSelector = NodePath("LevelSelector")
 
 [node name="debug" type="VBoxContainer" parent="." unique_id=1206069560]
@@ -52,7 +53,7 @@ grow_vertical = 2
 layout_mode = 2
 alignment = 2
 
-[node name="TowerPicker" parent="AspectRatioContainer/VBoxContainer" unique_id=810922384 instance=ExtResource("2_2gk58")]
+[node name="Inventory" parent="AspectRatioContainer/VBoxContainer" unique_id=810922384 instance=ExtResource("2_2gk58")]
 layout_mode = 2
 
 [node name="LevelSelector" parent="." unique_id=770863663 instance=ExtResource("4_w8tcp")]
@@ -63,6 +64,10 @@ offset_right = 1926.0
 offset_bottom = 625.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="TowerChooser" type="VBoxContainer" parent="." unique_id=1591230774]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="MenuBar" type="HBoxContainer" parent="." unique_id=1458396715]
 offset_right = 125.0
@@ -75,3 +80,7 @@ text = "Restart"
 [node name="ButtonSelector" type="Button" parent="MenuBar" unique_id=1787972677]
 layout_mode = 2
 text = "Levels"
+
+[node name="ButtonChooser" type="Button" parent="MenuBar" unique_id=1748944340]
+layout_mode = 2
+text = "TowerChooser"

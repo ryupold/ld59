@@ -1,6 +1,6 @@
 extends HFlowContainer
 
-@export var towerCanvasItem: PackedScene = preload("res://hud/tower_picker/tower_canvas_item/tower_canvas_item.tscn")
+@export var towerCanvasItem: PackedScene = preload("res://hud/inventory/tower_canvas_item/tower_canvas_item.tscn")
 
 
 func _ready() -> void:
