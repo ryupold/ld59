@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byxtxjd27x2eb" path="res://scenes/levels/level.gd" id="1_ftfob"]
 [ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="2_fkk1g"]
 [ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="3_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://1jkoj7nk1gi3" path="res://entities/walls/cicle_wall.tscn" id="4_fkk1g"]
 [ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_pimnq"]
 [ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="5_2bnyt"]
 [ext_resource type="PackedScene" uid="uid://cjgp2nvp5027k" path="res://entities/sender/packets.tscn" id="6_n6eey"]
@@ -16,6 +17,48 @@ towers = NodePath("Towers")
 [node name="HUD" parent="." unique_id=114495 instance=ExtResource("2_fkk1g")]
 
 [node name="Walls" parent="." unique_id=903204524 instance=ExtResource("3_ugcn1")]
+
+[node name="CircleWall" parent="Walls" unique_id=2117046853 instance=ExtResource("4_fkk1g")]
+offset_left = -1722.0
+offset_top = -511.0
+offset_right = -311.0
+offset_bottom = 900.0
+pivot_offset = Vector2(705.5, 705.5)
+
+[node name="CircleWall2" parent="Walls" unique_id=77900296 instance=ExtResource("4_fkk1g")]
+offset_left = 410.0
+offset_top = -196.0
+offset_right = 1039.0
+offset_bottom = 433.0
+pivot_offset = Vector2(314.5, 314.5)
+
+[node name="CircleWall3" parent="Walls" unique_id=1030529218 instance=ExtResource("4_fkk1g")]
+offset_left = 1605.0
+offset_top = -1204.0
+offset_right = 2234.0
+offset_bottom = -575.0
+pivot_offset = Vector2(314.5, 314.5)
+
+[node name="CircleWall4" parent="Walls" unique_id=32380098 instance=ExtResource("4_fkk1g")]
+offset_left = -341.0
+offset_top = -1054.0
+offset_right = 288.0
+offset_bottom = -425.0
+pivot_offset = Vector2(314.5, 314.5)
+
+[node name="CircleWall5" parent="Walls" unique_id=422240605 instance=ExtResource("4_fkk1g")]
+offset_left = -2425.0
+offset_top = -368.0
+offset_right = -2106.0
+offset_bottom = -49.0
+pivot_offset = Vector2(159.5, 159.5)
+
+[node name="CircleWall6" parent="Walls" unique_id=693194996 instance=ExtResource("4_fkk1g")]
+offset_left = -2003.0
+offset_top = 309.0
+offset_right = -1684.0
+offset_bottom = 628.0
+pivot_offset = Vector2(159.5, 159.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1504361380]
 position = Vector2(2274, 1504)
