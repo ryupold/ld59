@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bm2pfm87jhsv" path="res://entities/walls/wall_texture.webp" id="3_ietbt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n7i81"]
-radius = 409.4109
+resource_local_to_scene = true
+radius = 250.0
 
 [node name="CircleWall" type="TextureRect" unique_id=2117046853]
 clip_children = 1

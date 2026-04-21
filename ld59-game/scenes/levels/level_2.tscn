@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cxxx16ufek7cl"]
+
+[ext_resource type="Script" uid="uid://byxtxjd27x2eb" path="res://scenes/levels/level.gd" id="1_qpwj6"]
+[ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="2_ibugp"]
+[ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="3_8qukl"]
+[ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_3p04p"]
+[ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="5_qsp8v"]
+[ext_resource type="PackedScene" uid="uid://cjgp2nvp5027k" path="res://entities/sender/packets.tscn" id="6_nt80m"]
+[ext_resource type="PackedScene" uid="uid://cjubf2uowpulv" path="res://entities/walls/rectangle_wall.tscn" id="7_8qukl"]
+
+[node name="Level 2" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers")]
+script = ExtResource("1_qpwj6")
+sender = NodePath("Sender")
+reciever = NodePath("Receiver")
+towers = NodePath("Towers")
+
+[node name="HUD" parent="." unique_id=114495 instance=ExtResource("2_ibugp")]
+
+[node name="Walls" parent="." unique_id=903204524 instance=ExtResource("3_8qukl")]
+
+[node name="RectangleWall2" parent="Walls" unique_id=1720015566 instance=ExtResource("7_8qukl")]
+offset_left = 915.0
+offset_top = -260.0
+offset_right = 2137.0
+offset_bottom = 93.0
+rotation = -0.5753736
+pivot_offset = Vector2(611, 176.5)
+
+[node name="RectangleWall4" parent="Walls" unique_id=2117046853 instance=ExtResource("7_8qukl")]
+offset_left = -2197.0
+offset_top = -280.99994
+offset_right = -975.0
+offset_bottom = 72.00006
+rotation = -0.5753736
+pivot_offset = Vector2(611, 176.5)
+
+[node name="RectangleWall3" parent="Walls" unique_id=1377659769 instance=ExtResource("7_8qukl")]
+offset_left = -732.0
+offset_top = -232.0
+offset_right = 490.0
+offset_bottom = 121.0
+rotation = -0.5753736
+pivot_offset = Vector2(611, 176.5)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1504361380]
+position = Vector2(2274, 1504)
+zoom = Vector2(0.351, 0.351)
+
+[node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_3p04p")]
+position = Vector2(-2273, -1115)
+packetParent = NodePath("../Packets")
+
+[node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("5_qsp8v")]
+position = Vector2(2293, 883)
+
+[node name="Packets" parent="." unique_id=546403375 instance=ExtResource("6_nt80m")]
+
+[node name="Towers" type="Node2D" parent="." unique_id=1245803590]
+unique_name_in_owner = true
+position = Vector2(2274, 1504)
