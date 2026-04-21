@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://bumsythby7dly" path="res://resources/levels/level_1.tres" id="4_dscq2"]
 [ext_resource type="Resource" uid="uid://b141y5oqo3xrn" path="res://resources/levels/level_2.tres" id="5_dscq2"]
 [ext_resource type="Resource" uid="uid://cpyrnkp3r6jo3" path="res://resources/levels/level_3.tres" id="6_n4bsj"]
+[ext_resource type="Resource" uid="uid://blp3rmvnptnbd" path="res://resources/levels/level_4.tres" id="7_7fko1"]
+[ext_resource type="Resource" uid="uid://c3jqbfo1hkykw" path="res://resources/levels/level_5.tres" id="8_e0mcg"]
 
 [node name="GameState" type="Node" unique_id=132192571]
 script = ExtResource("1_si82d")
 allTowers = ExtResource("2_4k0ew")
-levels = Array[ExtResource("3_an17e")]([ExtResource("4_dscq2"), ExtResource("5_dscq2"), ExtResource("6_n4bsj")])
+levels = Array[ExtResource("3_an17e")]([ExtResource("4_dscq2"), ExtResource("5_dscq2"), ExtResource("6_n4bsj"), ExtResource("7_7fko1"), ExtResource("8_e0mcg")])

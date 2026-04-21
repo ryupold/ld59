@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://c3jqbfo1hkykw"]
+
+[ext_resource type="PackedScene" uid="uid://41vs0e7vq43d" path="res://scenes/levels/level_5.tscn" id="1_yw3bn"]
+[ext_resource type="Script" uid="uid://edonykvu0lt8" path="res://resources/levels/level_resource.gd" id="2_6rgbx"]
+
+[resource]
+script = ExtResource("2_6rgbx")
+title = "Level 5"
+scene = ExtResource("1_yw3bn")
+spawnAngleMin = 1.571
+metadata/_custom_type_script = "uid://edonykvu0lt8"

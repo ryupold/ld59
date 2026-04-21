@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://41vs0e7vq43d"]
+
+[ext_resource type="Script" uid="uid://byxtxjd27x2eb" path="res://scenes/levels/level.gd" id="1_mxx4w"]
+[ext_resource type="PackedScene" uid="uid://dyn3kjroqyl50" path="res://hud/hud.tscn" id="2_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://3i1vgtrekd1x" path="res://entities/walls/walls.tscn" id="3_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://d0cuiwxuevfh" path="res://entities/sender/sender.tscn" id="4_dwyms"]
+[ext_resource type="PackedScene" uid="uid://sc317p0yslvi" path="res://entities/receiver/receiver.tscn" id="5_6xwso"]
+[ext_resource type="PackedScene" uid="uid://cjgp2nvp5027k" path="res://entities/sender/packets.tscn" id="6_5ke18"]
+[ext_resource type="PackedScene" uid="uid://cjubf2uowpulv" path="res://entities/walls/rectangle_wall.tscn" id="7_j14br"]
+[ext_resource type="PackedScene" uid="uid://1jkoj7nk1gi3" path="res://entities/walls/cicle_wall.tscn" id="8_0y7y4"]
+
+[node name="Level 2" type="Node2D" unique_id=1669637617 node_paths=PackedStringArray("sender", "reciever", "towers")]
+script = ExtResource("1_mxx4w")
+sender = NodePath("Sender")
+reciever = NodePath("Receiver")
+towers = NodePath("Towers")
+
+[node name="HUD" parent="." unique_id=114495 instance=ExtResource("2_vvoq0")]
+
+[node name="Walls" parent="." unique_id=903204524 instance=ExtResource("3_tqnj0")]
+
+[node name="RectangleWall" parent="Walls" unique_id=2117046853 instance=ExtResource("7_j14br")]
+offset_left = -2372.0
+offset_top = -247.0
+offset_right = -866.0
+offset_bottom = 114.0
+pivot_offset = Vector2(753, 180.5)
+
+[node name="RectangleWall2" parent="Walls" unique_id=1720015566 instance=ExtResource("7_j14br")]
+offset_left = 629.0
+offset_top = -192.0
+offset_right = 1851.0
+offset_bottom = 161.0
+rotation = -0.5753736
+pivot_offset = Vector2(611, 176.5)
+
+[node name="RectangleWall3" parent="Walls" unique_id=1377659769 instance=ExtResource("7_j14br")]
+offset_left = 384.0
+offset_top = -941.0
+offset_right = 1606.0
+offset_bottom = -588.0
+rotation = -0.5753736
+pivot_offset = Vector2(611, 176.5)
+
+[node name="CircleWall" parent="Walls" unique_id=1488138328 instance=ExtResource("8_0y7y4")]
+offset_left = -1321.4174
+offset_top = -887.0
+offset_right = 300.41724
+offset_bottom = 695.0
+pivot_offset = Vector2(810.9173, 791)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1504361380]
+position = Vector2(2274, 1504)
+zoom = Vector2(0.351, 0.351)
+
+[node name="Sender" parent="." unique_id=1211801374 node_paths=PackedStringArray("packetParent") instance=ExtResource("4_dwyms")]
+position = Vector2(-2273, -1115)
+packetParent = NodePath("../Packets")
+
+[node name="Receiver" parent="." unique_id=2106263029 instance=ExtResource("5_6xwso")]
+position = Vector2(2293, 883)
+
+[node name="Packets" parent="." unique_id=546403375 instance=ExtResource("6_5ke18")]
+
+[node name="Towers" type="Node2D" parent="." unique_id=1245803590]
+unique_name_in_owner = true
+position = Vector2(2274, 1504)
